@@ -87,16 +87,27 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden relative">
       {/* Smooth scroll behavior */}
-      <style>{`html { scroll-behavior: smooth; }`}</style>
+      <style>{`
+        html { scroll-behavior: smooth; }
+        body { background: #000000; }
+      `}</style>
 
       {/* Ultra Premium Ambient Background */}
       <div className="fixed inset-0 -z-10">
-        {/* Primary gradient mesh */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-black" />
+        {/* Primary cinematic black */}
+        <div className="absolute inset-0 bg-black" />
 
-        {/* Subtle purple ambient glow */}
-        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-gradient-to-br from-purple-900/20 via-violet-900/10 to-transparent rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-tl from-indigo-900/15 via-purple-900/8 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:50px_50px]" />
+
+        {/* Floating gradient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-[#ffffff10] via-[#8b5cf610] to-transparent rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/3 right-1/4 w-[800px] h-[800px] bg-gradient-to-tl from-[#3b82f610] via-[#ffffff08] to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }} />
+        <div className="absolute top-3/4 left-1/2 w-[400px] h-[400px] bg-gradient-to-br from-[#8b5cf608] via-[#ffffff05] to-transparent rounded-full blur-2xl animate-pulse" style={{ animationDelay: '6s' }} />
+
+        {/* Animated background blur */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-black/95 to-black/90 animate-pulse" style={{ animationDuration: '8s' }} />
+      </div>
 
         {/* Floating orbs */}
         <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-purple-400/30 rounded-full blur-sm animate-pulse" style={{ animationDelay: '1s' }} />
