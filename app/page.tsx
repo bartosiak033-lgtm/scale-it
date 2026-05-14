@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { useState, ChangeEvent, FormEvent } from 'react';
 
 interface FormData {
@@ -145,90 +146,132 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),transparent_30%)]" />
       </div>
 
-      <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/15 backdrop-blur-3xl shadow-[0_20px_80px_-60px_rgba(0,0,0,0.6)]">
+      <nav className="sticky top-0 z-50 w-full bg-black/20 border-b border-white/10 backdrop-blur-3xl shadow-[0_20px_80px_-60px_rgba(0,0,0,0.6)]">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 sm:px-8">
-          <div className="flex items-center gap-3 text-sm text-neutral-300">
+          <div className="flex items-center gap-4 text-sm text-neutral-300">
             <Image src="/logo-icon.png" alt="Scale It" width={24} height={24} className="object-contain" />
             <div className="hidden sm:block">
               <Image src="/logo-full.png" alt="Scale It" width={140} height={32} className="object-contain" />
             </div>
           </div>
 
+          <div className="hidden lg:flex items-center gap-10 text-sm text-neutral-300">
+            <a href="#funkcje" className="transition hover:text-white">Funkcje</a>
+            <a href="#korzysci" className="transition hover:text-white">Korzyści</a>
+            <a href="#jak-to-dziala" className="transition hover:text-white">Jak to działa</a>
+            <a href="#cennik" className="transition hover:text-white">Cennik</a>
+            <a href="#contact-form" className="transition hover:text-white">Kontakt</a>
+          </div>
+
           <a
             href="#contact-form"
-            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black shadow-[0_18px_60px_-50px_rgba(255,255,255,0.85)] transition duration-300 hover:shadow-[0_20px_70px_-46px_rgba(255,255,255,0.9)]"
+            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-white/20 hover:bg-white/10"
           >
             Zarezerwuj demo
           </a>
         </div>
       </nav>
 
-      <section className="relative overflow-hidden pt-32 pb-32 lg:pt-36 lg:pb-36">
+      <section id="korzysci" className="relative overflow-hidden pt-32 pb-28 lg:pt-36 lg:pb-32">
         <div className="absolute inset-0 -z-10 bg-black" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(139,92,246,0.06),transparent_34%)] pointer-events-none" />
-        <div className="absolute left-1/4 top-10 h-56 w-56 rounded-full bg-white/10 blur-3xl opacity-60 animate-blob" />
-        <div className="absolute right-12 top-[22%] h-52 w-52 rounded-full bg-violet-500/10 blur-3xl opacity-70 animate-blob animation-delay-200" />
-        <div className="absolute left-8 bottom-16 h-36 w-36 rounded-full bg-cyan-300/10 blur-3xl opacity-50 animate-blob-slow" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),transparent_42%)] opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(129,90,242,0.18),transparent_24%),radial-gradient(circle_at_35%_15%,rgba(255,255,255,0.08),transparent_18%)] pointer-events-none" />
+        <div className="absolute right-[-120px] top-16 h-[420px] w-[420px] rounded-full bg-violet-500/10 blur-3xl opacity-70 animate-blob" />
+        <div className="absolute left-[-100px] top-[45%] h-[280px] w-[280px] rounded-full bg-white/10 blur-3xl opacity-50 animate-blob-slow" />
+        <div className="absolute inset-x-0 bottom-0 h-[260px] bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.04),transparent_60%)] opacity-30 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid gap-16 lg:grid-cols-[1.05fr_0.95fr] items-start">
-            <div className="max-w-2xl">
+          <div className="grid gap-16 lg:grid-cols-[1.05fr_0.95fr] items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: 'easeOut' }}
+              className="max-w-2xl"
+            >
               <p className="text-xs uppercase tracking-[0.35em] text-neutral-500">Dla klinik premium</p>
-              <h1 className="mt-8 text-5xl sm:text-6xl lg:text-[5.5rem] font-semibold leading-[0.88] tracking-[-0.04em] text-white opacity-0 animate-fade-in-up animation-delay-200">
-                Recepcja AI, która działa w tle, a efekt widać od pierwszego telefonu.
+              <h1 className="mt-8 text-5xl sm:text-6xl lg:text-[5.75rem] font-semibold leading-[0.92] tracking-[-0.04em] text-white">
+                Więcej rezerwacji.<br />
+                Mniej utraconych klientów.<br />
+                Wyższy standard obsługi.
               </h1>
-              <p className="mt-8 max-w-xl text-xl sm:text-2xl leading-[1.6] text-neutral-300 opacity-0 animate-fade-in-up animation-delay-400">
-                Spokojna obsługa pacjentów. Wysoka jakość. Dyskretny styl.
+              <p className="mt-8 max-w-xl text-lg sm:text-xl leading-9 text-neutral-300">
+                Automatyzacja kontaktu, która podnosi jakość doświadczenia pacjenta i oszczędza Twój czas.
               </p>
-              <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center opacity-0 animate-fade-in-up animation-delay-600">
-                <a href="#contact-form" className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-black shadow-[0_24px_80px_-56px_rgba(255,255,255,0.9)] transition duration-300 hover:shadow-[0_28px_90px_-50px_rgba(255,255,255,0.95)]">
+              <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <motion.a
+                  whileHover={{ y: -1, scale: 1.01 }}
+                  href="#contact-form"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-black shadow-[0_24px_80px_-56px_rgba(255,255,255,0.9)] transition duration-300 hover:shadow-[0_28px_90px_-50px_rgba(255,255,255,0.95)]"
+                >
                   Zarezerwuj demo
-                </a>
-                <a href="#contact-form" className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:border-white/25 hover:bg-white/10">
-                  Zapytaj o wdrożenie
-                </a>
+                </motion.a>
+                <motion.a
+                  whileHover={{ y: -1 }}
+                  href="#jak-to-dziala"
+                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:border-white/25 hover:bg-white/10"
+                >
+                  Zobacz jak działa
+                </motion.a>
               </div>
-              <p className="mt-10 text-sm text-neutral-500 opacity-0 animate-fade-in-up animation-delay-800">
-                Ponad 50 klinik premium zaufało naszej recepcji AI.
-              </p>
-            </div>
+              <div id="funkcje" className="mt-14 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-xl">
+                  <p className="text-sm font-semibold text-white">Więcej rezerwacji</p>
+                  <p className="mt-2 text-sm text-neutral-400">Szybszy kontakt z pacjentem, bez zbędnych strat.</p>
+                </div>
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-xl">
+                  <p className="text-sm font-semibold text-white">Mniej utraconych klientów</p>
+                  <p className="mt-2 text-sm text-neutral-400">Dyskretna automatyzacja zatrzymuje każdy lead.</p>
+                </div>
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-xl">
+                  <p className="text-sm font-semibold text-white">Premium doświadczenie</p>
+                  <p className="mt-2 text-sm text-neutral-400">Elegancki kontakt zgodny z oczekiwaniami pacjentów premium.</p>
+                </div>
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-xl">
+                  <p className="text-sm font-semibold text-white">Oszczędność czasu</p>
+                  <p className="mt-2 text-sm text-neutral-400">Mniej ręcznej pracy, więcej skali i jakości.</p>
+                </div>
+              </div>
+            </motion.div>
 
-            <div className="relative flex justify-end lg:justify-start opacity-0 animate-fade-in-up animation-delay-800">
-              <div className="relative w-full max-w-xl overflow-hidden rounded-[2.5rem] bg-white/5 p-8 shadow-[0_60px_120px_-60px_rgba(0,0,0,0.45)] backdrop-blur-3xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5" />
-                <div className="absolute -right-10 -top-8 h-28 w-28 rounded-full bg-violet-500/10 blur-3xl animate-blob-slower" />
-                <div className="absolute -left-10 bottom-10 h-28 w-28 rounded-full bg-cyan-300/10 blur-3xl animate-blob-slow" />
-                <div className="relative z-10 space-y-8">
-                  <div className="flex items-center justify-between gap-4">
-                    <Image src="/logo-full.png" alt="Scale It" width={140} height={32} className="object-contain" />
-                    <span className="rounded-full bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neutral-400">W tle AI</span>
-                  </div>
-                  <div className="space-y-4">
-                    <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Rezultat</p>
-                    <h2 className="text-5xl font-semibold text-white">37% więcej rezerwacji</h2>
-                    <p className="max-w-md text-base leading-7 text-neutral-400">
-                      Subtelna technologia, która podnosi jakość kontaktu i buduje wrażenie premium.
-                    </p>
-                  </div>
-                  <div className="rounded-[1.75rem] bg-white/5 p-5 text-sm text-neutral-300">
-                    <p className="font-medium text-white">Projektowana dla klinik, które stawiają na elegancję.</p>
+            <motion.div
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
+              className="relative flex justify-end lg:justify-start"
+            >
+              <div className="relative w-full max-w-xl">
+                <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 blur-[80px]" />
+                <div className="relative overflow-hidden rounded-[3rem] bg-white/5 border border-white/10 shadow-[0_80px_140px_-70px_rgba(0,0,0,0.55)] backdrop-blur-3xl">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5" />
+                  <div className="absolute right-8 top-8 h-28 w-28 rounded-full bg-violet-500/20 blur-3xl opacity-70" />
+                  <div className="absolute left-8 bottom-10 h-24 w-24 rounded-full bg-cyan-300/10 blur-3xl opacity-50" />
+                  <div className="relative p-8">
+                    <div className="flex items-center justify-between gap-4">
+                      <Image src="/logo-full.png" alt="Scale It" width={140} height={32} className="object-contain" />
+                      <span className="text-xs uppercase tracking-[0.35em] text-neutral-400">Dyskretna automatyzacja</span>
+                    </div>
+                    <div className="mt-12">
+                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Więcej rezerwacji</p>
+                      <h2 className="mt-4 text-6xl font-semibold text-white">37%</h2>
+                      <p className="mt-4 max-w-md text-sm leading-7 text-neutral-400">
+                        Mniej utraconych pacjentów dzięki szybszemu i bardziej eleganckiemu doświadczeniu kontaktu.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* AI Receptionist Demo Section */}
-      <section className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
+      {/* Jak to działa */}
+      <section id="jak-to-dziala" className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
         <div className="absolute inset-x-0 top-0 h-[240px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_45%)] blur-3xl opacity-70" />
         <div className="relative space-y-12">
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Jak to działa</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">AI recepcjonistka w akcji</h2>
-            <p className="max-w-2xl text-lg text-neutral-400 font-light">Obsługuje połączenia tak jak doświadczona recepcjonistka. 24/7. Bez przerw.</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Dyskretna obsługa połączeń</h2>
+            <p className="max-w-2xl text-lg text-neutral-400 font-light">Odbieramy każdy telefon elegancko, dokładnie i bez przerw. Pacjenci trafiają tam, gdzie mają trafić.</p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-2">
@@ -250,16 +293,16 @@ export default function Home() {
                   <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Transkrypcja</p>
                   <div className="mt-5 space-y-4 text-sm leading-relaxed">
                     <div className="space-y-1">
-                      <p className="text-xs text-neutral-500">AI Recepcja</p>
-                      <p className="text-neutral-300">Cześć! Dzwonisz do kliniki Beauty & Care. Jak się masz? Co mogę dla Ciebie dzisiaj zrobić?</p>
+                      <p className="text-xs text-neutral-500">Inteligentna recepcja</p>
+                      <p className="text-neutral-300">Cześć! Dzwonisz do kliniki Beauty & Care. Jak się masz? Co mogę dla Ciebie dziś załatwić?</p>
                     </div>
                     <div className="space-y-1">
                       <p className="text-xs text-neutral-500">Pacjent</p>
                       <p className="text-white font-medium">Hej! Chciałbym umówić konsultację zabiegu Botoksu.</p>
                     </div>
                     <div className="space-y-1">
-                      <p className="text-xs text-neutral-500">AI Recepcja</p>
-                      <p className="text-neutral-300">Oczywiście! Mamy dostępne terminy w czwartek o 14:00 i piątek o 16:30. Który Ci bardziej odpowiada?</p>
+                      <p className="text-xs text-neutral-500">Inteligentna recepcja</p>
+                      <p className="text-neutral-300">Oczywiście. Mamy wolne terminy w czwartek o 14:00 i w piątek o 16:30. Który pasuje lepiej?</p>
                     </div>
                     <div className="space-y-1">
                       <p className="text-xs text-neutral-500">Pacjent</p>
@@ -306,10 +349,10 @@ export default function Home() {
 
               <div className="grid gap-4">
                 {[
-                  { icon: '🎤', title: 'Naturalny głos', desc: 'Odróżnić od AI jest prawie niemożliwe' },
-                  { icon: '⚡', title: 'Natychmiastowa odpowiedź', desc: 'Każde połączenie odbierane w 2-3 sekundy' },
-                  { icon: '📅', title: 'Inteligentna rezerwacja', desc: 'Sprawdza dostępność i umawia pacjentów' },
-                  { icon: '🌙', title: '24/7 dostępność', desc: 'Działa non-stop, nawet w nocy i weekendy' }
+                  { icon: '🎤', title: 'Naturalny głos', desc: 'Rozmowy brzmią jak kontakt z profesjonalną recepcjonistką' },
+                  { icon: '⚡', title: 'Błyskawiczna odpowiedź', desc: 'Telefon odbierany w kilka sekund' },
+                  { icon: '📅', title: 'Inteligentna rezerwacja', desc: 'Sprawdza dostępność i umawia wizyty' },
+                  { icon: '🌙', title: 'Dostępność 24/7', desc: 'Działa całą dobę, także poza godzinami pracy' }
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-4 rounded-3xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:border-white/20 hover:bg-white/10">
                     <div className="grid h-12 w-12 place-items-center rounded-3xl bg-white/10 text-2xl">{feature.icon}</div>
@@ -326,7 +369,7 @@ export default function Home() {
       </section>
 
       {/* Scale It System Section */}
-      <section className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
+      <section id="cennik" className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
         <div className="absolute inset-x-0 bottom-0 h-56 bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.05),transparent_45%)] blur-3xl opacity-50" />
         <div className="relative space-y-12">
           <div className="space-y-4">
@@ -341,25 +384,25 @@ export default function Home() {
                 icon: '🌐',
                 title: 'Premium strony internetowe',
                 desc: 'Responsywne strony z bookingiem online, które konwertują odwiedzających na klientów.',
-                features: ['Booking online', 'SEO optimized', 'Mobile first']
+                features: ['Rezerwacje online', 'Optymalizacja SEO', 'Projekt mobile first']
               },
               {
                 icon: '🎯',
-                title: 'AI recepcjonistka',
-                desc: 'Inteligentna recepcja odbiera połączenia 24/7 i umawia konsultacje automatycznie.',
-                features: ['24/7 dostępność', 'Naturalny głos', 'Automatyczne rezerwacje']
+                title: 'Inteligentna recepcja',
+                desc: 'Obsługa połączeń 24/7, która umawia konsultacje z najwyższą precyzją.',
+                features: ['Dostępność 24/7', 'Naturalny głos', 'Automatyczne rezerwacje']
               },
               {
                 icon: '📅',
                 title: 'System rezerwacji',
                 desc: 'Zaawansowany kalendarz z synchronizacją, przypomnieniami i zarządzaniem terminami.',
-                features: ['Sync z kalendarzem', 'SMS przypomnienia', 'Online booking']
+                features: ['Synchronizacja kalendarza', 'SMS przypomnienia', 'Rezerwacje online']
               },
               {
                 icon: '🤖',
                 title: 'Automatyzacje Instagram & WhatsApp',
-                desc: 'Automatyczne odpowiedzi na wiadomości, lead nurturing i sprzedaż przez social media.',
-                features: ['Auto odpowiedzi', 'Lead nurturing', 'Social selling']
+                desc: 'Automatyczne odpowiedzi na wiadomości, pielęgnacja leadów i sprzedaż przez social media.',
+                features: ['Automatyczne odpowiedzi', 'Pielęgnacja leadów', 'Sprzedaż social']
               },
               {
                 icon: '📊',
@@ -370,20 +413,20 @@ export default function Home() {
               {
                 icon: '📈',
                 title: 'Analityka i raporty',
-                desc: 'Szczegółowe statystyki przychodów, konwersji i efektywności marketingu.',
-                features: ['ROI tracking', 'Conversion metrics', 'Performance reports']
+                desc: 'Statystyki przychodów, konwersji i efektywności obsługi.',
+                features: ['Śledzenie wyników', 'Konwersje', 'Raporty efektywności']
               },
               {
                 icon: '💬',
                 title: 'Follow-up klientów',
-                desc: 'Automatyczne wiadomości po wizytach, przypomnienia o kolejnych zabiegach.',
-                features: ['Post-visit care', 'Retention campaigns', 'Loyalty building']
+                desc: 'Automatyczne wiadomości po wizytach i przypomnienia o dalszych zabiegach.',
+                features: ['Opieka po wizycie', 'Przypomnienia', 'Budowanie lojalności']
               },
               {
                 icon: '🔄',
                 title: 'Odzyskiwanie utraconych leadów',
-                desc: 'Inteligentne systemy odzyskiwania klientów, którzy nie dokonali rezerwacji.',
-                features: ['Lead scoring', 'Re-engagement', 'Conversion optimization']
+                desc: 'Systemy odzyskiwania klientów, którzy nie sfinalizowali rezerwacji.',
+                features: ['Ocena leadów', 'Ponowny kontakt', 'Optymalizacja konwersji']
               }
             ].map((service, i) => (
               <div key={i} className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 md:p-8 shadow-2xl shadow-black/20 transition-all duration-500 hover:border-white/20 hover:bg-white/10 hover:scale-[1.02]">
