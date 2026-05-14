@@ -85,19 +85,53 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-black text-white overflow-hidden">
+    <main className="min-h-screen bg-black text-white overflow-hidden relative">
       {/* Smooth scroll behavior */}
       <style>{`html { scroll-behavior: smooth; }`}</style>
-      
-      {/* Premium gradient background */}
+
+      {/* Ultra Premium Ambient Background */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] via-transparent to-transparent pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-white/[0.08] to-transparent rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-gradient-to-tr from-white/[0.04] to-transparent rounded-full blur-3xl -z-10" />
+        {/* Primary gradient mesh */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-black" />
+
+        {/* Subtle purple ambient glow */}
+        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-gradient-to-br from-purple-900/20 via-violet-900/10 to-transparent rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-tl from-indigo-900/15 via-purple-900/8 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+
+        {/* Floating orbs */}
+        <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-purple-400/30 rounded-full blur-sm animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-3/4 right-1/3 w-1.5 h-1.5 bg-violet-400/40 rounded-full blur-sm animate-pulse" style={{ animationDelay: '3s' }} />
+        <div className="absolute top-1/2 left-1/6 w-1 h-1 bg-indigo-400/50 rounded-full blur-sm animate-pulse" style={{ animationDelay: '0.5s' }} />
+
+        {/* Subtle noise texture */}
+        <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)] bg-[length:20px_20px]" />
       </div>
 
-      {/* Premium Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-8 py-5 border-b border-white/5 backdrop-blur-md bg-black/40">
+      {/* Ultra Modern Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-8 py-6 backdrop-blur-xl bg-black/20 border-b border-white/[0.08]">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            {/* Premium logo with glow */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-violet-400/20 rounded-lg blur-lg" />
+              <div className="relative w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500/20 to-violet-600/20 border border-white/10 flex items-center justify-center">
+                <div className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-400 to-violet-500" />
+              </div>
+            </div>
+            <h1 className="text-xl font-semibold tracking-tight bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
+              Scale It
+            </h1>
+          </div>
+
+          <a href="#contact-form" className="group relative px-6 py-2.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-400/30 text-white font-medium text-sm overflow-hidden transition-all duration-500 hover:bg-white/10">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative flex items-center justify-center gap-2">
+              Umów prezentację
+              <span className="text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0.5">→</span>
+            </div>
+          </a>
+        </div>
+      </nav>
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-white to-neutral-400" />
