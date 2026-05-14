@@ -87,15 +87,14 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-black text-white overflow-hidden relative">
-      {/* Smooth scroll behavior */}
+    <main className="min-h-screen bg-[#050306] text-white overflow-hidden relative">
       <style>{`
         html { scroll-behavior: smooth; }
-        body { background: #000000; }
+        body { background: #050306; }
 
-        @keyframes blob {
-          0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-          50% { transform: translate3d(16px, -12px, 0) scale(1.08); }
+        @keyframes float {
+          0%, 100% { transform: translate3d(0, 0, 0); }
+          50% { transform: translate3d(0, -10px, 0); }
         }
 
         @keyframes fadeInUp {
@@ -103,16 +102,8 @@ export default function Home() {
           to { opacity: 1; transform: translate3d(0, 0, 0); }
         }
 
-        .animate-blob {
-          animation: blob 8s ease-in-out infinite alternate;
-        }
-
-        .animate-blob-slow {
-          animation: blob 12s ease-in-out infinite alternate;
-        }
-
-        .animate-blob-slower {
-          animation: blob 14s ease-in-out infinite alternate;
+        .animate-float {
+          animation: float 10s ease-in-out infinite;
         }
 
         .animate-fade-in-up {
@@ -120,49 +111,33 @@ export default function Home() {
           animation: fadeInUp 1s ease-out forwards;
         }
 
-        .animation-delay-200 {
-          animation-delay: 0.2s;
-        }
-
-        .animation-delay-400 {
-          animation-delay: 0.4s;
-        }
-
-        .animation-delay-600 {
-          animation-delay: 0.6s;
-        }
-
-        .animation-delay-800 {
-          animation-delay: 0.8s;
-        }
+        .animation-delay-200 { animation-delay: 0.2s; }
+        .animation-delay-400 { animation-delay: 0.4s; }
+        .animation-delay-600 { animation-delay: 0.6s; }
+        .animation-delay-800 { animation-delay: 0.8s; }
       `}</style>
 
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-black" />
-        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_10%_10%,rgba(255,255,255,0.12),transparent_20%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.1),transparent_25%)]" />
-        <div className="absolute inset-x-0 top-0 h-[360px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] blur-3xl" />
-        <div className="absolute left-[10%] top-[18%] w-[520px] h-[520px] rounded-full bg-gradient-to-br from-[#ffffff10] via-[#8b5cf610] to-transparent blur-3xl" />
-        <div className="absolute right-[8%] bottom-[14%] w-[640px] h-[640px] rounded-full bg-gradient-to-tr from-[#3b82f610] via-[#ffffff08] to-transparent blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(255,255,255,0.08),transparent_22%),radial-gradient(circle_at_80%_10%,rgba(129,90,242,0.16),transparent_22%)] opacity-70" />
+        <div className="absolute inset-x-0 top-0 h-[360px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_40%)] blur-3xl" />
+        <div className="absolute left-[10%] top-[18%] h-[460px] w-[460px] rounded-full bg-violet-500/12 blur-3xl" />
+        <div className="absolute right-[8%] bottom-[12%] h-[560px] w-[560px] rounded-full bg-cyan-300/10 blur-3xl" />
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),transparent_30%)]" />
       </div>
 
-      <nav className="sticky top-0 z-50 w-full bg-black/20 border-b border-white/10 backdrop-blur-3xl shadow-[0_20px_80px_-60px_rgba(0,0,0,0.6)]">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 sm:px-8">
-          <div className="flex items-center gap-4 text-sm text-neutral-300">
+      <nav className="sticky top-0 z-50 w-full bg-black/15 border-b border-white/10 backdrop-blur-3xl">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5 sm:px-8">
+          <a href="#hero" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition">
             <Image src="/logo-icon.png" alt="Scale It" width={24} height={24} className="object-contain" />
-            <div className="hidden sm:block">
-              <Image src="/logo-full.png" alt="Scale It" width={140} height={32} className="object-contain" />
-            </div>
-          </div>
-
+            <span>Scale It</span>
+          </a>
           <div className="hidden lg:flex items-center gap-10 text-sm text-neutral-300">
             <a href="#funkcje" className="transition hover:text-white">Funkcje</a>
-            <a href="#korzysci" className="transition hover:text-white">Korzyści</a>
             <a href="#jak-to-dziala" className="transition hover:text-white">Jak to działa</a>
-            <a href="#cennik" className="transition hover:text-white">Cennik</a>
+            <a href="#demo" className="transition hover:text-white">Demo</a>
             <a href="#contact-form" className="transition hover:text-white">Kontakt</a>
           </div>
-
           <a
             href="#contact-form"
             className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-white/20 hover:bg-white/10"
@@ -172,29 +147,23 @@ export default function Home() {
         </div>
       </nav>
 
-      <section id="korzysci" className="relative overflow-hidden pt-32 pb-28 lg:pt-36 lg:pb-32">
-        <div className="absolute inset-0 -z-10 bg-black" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(129,90,242,0.18),transparent_24%),radial-gradient(circle_at_35%_15%,rgba(255,255,255,0.08),transparent_18%)] pointer-events-none" />
-        <div className="absolute right-[-120px] top-16 h-[420px] w-[420px] rounded-full bg-violet-500/10 blur-3xl opacity-70 animate-blob" />
-        <div className="absolute left-[-100px] top-[45%] h-[280px] w-[280px] rounded-full bg-white/10 blur-3xl opacity-50 animate-blob-slow" />
-        <div className="absolute inset-x-0 bottom-0 h-[260px] bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.04),transparent_60%)] opacity-30 pointer-events-none" />
-
+      <section id="hero" className="relative overflow-hidden pt-28 pb-24 sm:pt-32 sm:pb-32">
+        <div className="absolute inset-x-0 top-0 h-[220px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] blur-3xl opacity-70" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid gap-16 lg:grid-cols-[1.05fr_0.95fr] items-center">
+          <div className="grid gap-12 xl:grid-cols-[0.95fr_1.05fr] items-center">
             <motion.div
-              initial={{ opacity: 0, y: 32 }}
+              initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: 'easeOut' }}
               className="max-w-2xl"
             >
-              <p className="text-xs uppercase tracking-[0.35em] text-neutral-500">Dla klinik premium</p>
-              <h1 className="mt-8 text-5xl sm:text-6xl lg:text-[5.75rem] font-semibold leading-[0.92] tracking-[-0.04em] text-white">
+              <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Dla klinik premium</p>
+              <h1 className="mt-8 text-5xl sm:text-6xl lg:text-[4.8rem] font-semibold leading-[0.92] tracking-[-0.04em] text-white">
                 Więcej rezerwacji.<br />
-                Mniej utraconych klientów.<br />
-                Wyższy standard obsługi.
+                Mniej chaosu.
               </h1>
               <p className="mt-8 max-w-xl text-lg sm:text-xl leading-9 text-neutral-300">
-                Automatyzacja kontaktu, która podnosi jakość doświadczenia pacjenta i oszczędza Twój czas.
+                Profesjonalna automatyzacja kontaktu, która zatrzymuje klientów i podnosi standard obsługi.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <motion.a
@@ -212,49 +181,66 @@ export default function Home() {
                   Zobacz jak działa
                 </motion.a>
               </div>
-              <div id="funkcje" className="mt-14 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-xl">
-                  <p className="text-sm font-semibold text-white">Więcej rezerwacji</p>
-                  <p className="mt-2 text-sm text-neutral-400">Szybszy kontakt z pacjentem, bez zbędnych strat.</p>
-                </div>
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-xl">
-                  <p className="text-sm font-semibold text-white">Mniej utraconych klientów</p>
-                  <p className="mt-2 text-sm text-neutral-400">Dyskretna automatyzacja zatrzymuje każdy lead.</p>
-                </div>
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-xl">
-                  <p className="text-sm font-semibold text-white">Premium doświadczenie</p>
-                  <p className="mt-2 text-sm text-neutral-400">Elegancki kontakt zgodny z oczekiwaniami pacjentów premium.</p>
-                </div>
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-xl">
-                  <p className="text-sm font-semibold text-white">Oszczędność czasu</p>
-                  <p className="mt-2 text-sm text-neutral-400">Mniej ręcznej pracy, więcej skali i jakości.</p>
-                </div>
+
+              <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {[
+                  { title: 'Więcej rezerwacji', subtitle: 'Szybszy kontakt, mniej strat.' },
+                  { title: 'Mniej utraconych klientów', subtitle: 'Automatyczne przechwytywanie leadów.' },
+                  { title: 'Wyższy standard', subtitle: 'Pacjenci czują opiekę premium.' },
+                  { title: 'Oszczędność czasu', subtitle: 'Mniej manualnej pracy dla zespołu.' }
+                ].map((item, idx) => (
+                  <div key={idx} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+                    <p className="text-sm font-semibold text-white">{item.title}</p>
+                    <p className="mt-2 text-sm text-neutral-400">{item.subtitle}</p>
+                  </div>
+                ))}
               </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 32 }}
+              initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
               className="relative flex justify-end lg:justify-start"
             >
-              <div className="relative w-full max-w-xl">
+              <div className="relative w-full max-w-[42rem] animate-float">
                 <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 blur-[80px]" />
-                <div className="relative overflow-hidden rounded-[3rem] bg-white/5 border border-white/10 shadow-[0_80px_140px_-70px_rgba(0,0,0,0.55)] backdrop-blur-3xl">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5" />
-                  <div className="absolute right-8 top-8 h-28 w-28 rounded-full bg-violet-500/20 blur-3xl opacity-70" />
-                  <div className="absolute left-8 bottom-10 h-24 w-24 rounded-full bg-cyan-300/10 blur-3xl opacity-50" />
-                  <div className="relative p-8">
-                    <div className="flex items-center justify-between gap-4">
-                      <Image src="/logo-full.png" alt="Scale It" width={140} height={32} className="object-contain" />
+                <div className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-white/5 shadow-[0_80px_140px_-70px_rgba(0,0,0,0.55)] backdrop-blur-3xl">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(129,90,242,0.18),transparent_30%)] opacity-80" />
+                  <div className="absolute right-8 top-10 h-32 w-32 rounded-full bg-violet-500/20 blur-3xl opacity-70" />
+                  <div className="absolute left-10 bottom-10 h-28 w-28 rounded-full bg-cyan-300/10 blur-3xl opacity-50" />
+                  <div className="relative p-10 sm:p-12">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                      <div className="flex items-center gap-3">
+                        <Image src="/logo-icon.png" alt="Scale It" width={28} height={28} className="object-contain" />
+                        <span className="text-sm font-semibold uppercase tracking-[0.35em] text-white">Scale It</span>
+                      </div>
                       <span className="text-xs uppercase tracking-[0.35em] text-neutral-400">Dyskretna automatyzacja</span>
                     </div>
-                    <div className="mt-12">
-                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Więcej rezerwacji</p>
-                      <h2 className="mt-4 text-6xl font-semibold text-white">37%</h2>
-                      <p className="mt-4 max-w-md text-sm leading-7 text-neutral-400">
-                        Mniej utraconych pacjentów dzięki szybszemu i bardziej eleganckiemu doświadczeniu kontaktu.
-                      </p>
+
+                    <div className="mt-10 border-t border-white/10 pt-10">
+                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Średnio więcej konwersji</p>
+                      <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end">
+                        <p className="text-6xl font-semibold text-white">37%</p>
+                        <div className="max-w-md">
+                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">więcej rezerwacji</p>
+                          <p className="mt-3 text-sm leading-7 text-neutral-300">Mniej utraconych pacjentów dzięki szybszemu i bardziej eleganckiemu doświadczeniu kontaktu.</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-12 grid gap-4 sm:grid-cols-2">
+                      {[
+                        { label: 'Zero dodatkowych działań', value: 'Pełna automatyzacja' },
+                        { label: 'Naturalny sposób', value: 'Komunikacja bez sztywności' },
+                        { label: 'Stałe wsparcie', value: 'Dostępność 24/7' },
+                        { label: 'Eleganckie doświadczenie', value: 'Wrażenie premium' }
+                      ].map((item, index) => (
+                        <div key={index} className="rounded-3xl border border-white/10 bg-black/20 p-5">
+                          <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">{item.label}</p>
+                          <p className="mt-2 text-sm font-semibold text-white">{item.value}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -264,366 +250,319 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Jak to działa */}
+      <section id="funkcje" className="relative overflow-hidden py-24 sm:py-28 lg:py-32">
+        <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_top,rgba(129,90,242,0.14),transparent_30%)] blur-3xl opacity-60" />
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Automatyzacja kontaktu</p>
+            <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Premium usługi dla nowoczesnych klinik</h2>
+            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Rozwiązania, które wspierają sprzedaż, obsługę i reputację w jednej platformie.</p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              { icon: '📅', title: 'System rezerwacji', desc: 'Zarządzaj wizytami i potwierdzeniami bez ręcznej obsługi.' },
+              { icon: '💬', title: 'Follow-up klientów', desc: 'Przypomnienia po wizycie, które budują lojalność.' },
+              { icon: '📲', title: 'Instagram i WhatsApp', desc: 'Kanały społecznościowe obsługiwane automatycznie.' },
+              { icon: '🔄', title: 'Odzyskiwanie leadów', desc: 'Powrót klientów, którzy wycofali się z rezerwacji.' },
+              { icon: '🌐', title: 'Strony premium', desc: 'Eleganckie prezentacje, które konwertują odwiedzających.' },
+              { icon: '📊', title: 'Raporty i analityka', desc: 'Wyniki, które pozwalają podejmować lepsze decyzje.' },
+              { icon: '🗂️', title: 'CRM i organizacja', desc: 'Dane pacjentów, notatki i preferencje w jednym miejscu.' },
+              { icon: '🤝', title: 'Prestiż obsługi', desc: 'Każdy kontakt wygląda jak doświadczenie premium.' }
+            ].map((service, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.7, delay: idx * 0.05 }}
+                className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 xl:p-8 shadow-2xl shadow-black/20 transition duration-300 hover:border-white/20 hover:bg-white/10"
+              >
+                <div className="absolute -inset-0.5 rounded-[2rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 transition duration-500 group-hover:opacity-100" />
+                <div className="relative space-y-5">
+                  <div className="grid h-12 w-12 place-items-center rounded-3xl bg-white/10 text-2xl">{service.icon}</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">{service.title}</h3>
+                    <p className="mt-3 text-sm text-neutral-400 leading-relaxed">{service.desc}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="jak-to-dziala" className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
-        <div className="absolute inset-x-0 top-0 h-[240px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_45%)] blur-3xl opacity-70" />
+        <div className="absolute inset-x-0 top-0 h-[260px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)] blur-3xl opacity-70" />
         <div className="relative space-y-12">
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Jak to działa</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Dyskretna obsługa połączeń</h2>
-            <p className="max-w-2xl text-lg text-neutral-400 font-light">Odbieramy każdy telefon elegancko, dokładnie i bez przerw. Pacjenci trafiają tam, gdzie mają trafić.</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Dyskretna obsługa kontaktu</h2>
+            <p className="max-w-2xl text-lg text-neutral-400 font-light">Każdy telefon, wiadomość i rezerwacja obsługiwane z klasą.</p>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-2">
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/30 backdrop-blur-2xl">
-              <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_45%)] blur-3xl opacity-70" />
-              <div className="relative space-y-8">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Status</p>
-                    <h3 className="mt-3 text-2xl font-semibold text-white">Połączenie aktywne</h3>
-                  </div>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-2 text-sm text-green-300">
-                    <span className="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
-                    Online
-                  </div>
-                </div>
-
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                  <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Transkrypcja</p>
-                  <div className="mt-5 space-y-4 text-sm leading-relaxed">
-                    <div className="space-y-1">
-                      <p className="text-xs text-neutral-500">Inteligentna recepcja</p>
-                      <p className="text-neutral-300">Cześć! Dzwonisz do kliniki Beauty & Care. Jak się masz? Co mogę dla Ciebie dziś załatwić?</p>
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-xs text-neutral-500">Pacjent</p>
-                      <p className="text-white font-medium">Hej! Chciałbym umówić konsultację zabiegu Botoksu.</p>
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-xs text-neutral-500">Inteligentna recepcja</p>
-                      <p className="text-neutral-300">Oczywiście. Mamy wolne terminy w czwartek o 14:00 i w piątek o 16:30. Który pasuje lepiej?</p>
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-xs text-neutral-500">Pacjent</p>
-                      <p className="text-white font-medium">Piątek o 16:30 to idealne.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                  <div className="flex items-center gap-2 text-sm font-semibold text-green-300">
-                    <span>✓</span>
-                    Rezerwacja potwierdzona
-                  </div>
-                  <div className="mt-4 space-y-2 text-sm text-neutral-300">
-                    <p><span className="text-neutral-500">Data:</span> Piątek, 16:30</p>
-                    <p><span className="text-neutral-500">Zabieg:</span> Konsultacja Botoksu</p>
-                    <p><span className="text-neutral-500">Przypomnienie SMS:</span> Wysłane</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="space-y-6">
-              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/30 backdrop-blur-2xl">
-                <p className="text-xs uppercase tracking-[0.35em] text-neutral-400 font-semibold mb-6">Posłuchaj nagrania</p>
-                <div className="space-y-6">
-                  <div className="rounded-3xl bg-black/50 p-6 backdrop-blur-xl">
-                    <div className="flex items-center gap-6">
-                      <button className="grid h-16 w-16 place-items-center rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-white/20">
-                        ▶
-                      </button>
-                      <div className="flex-1 space-y-3">
-                        <p className="text-sm font-semibold text-white">Przykładowe połączenie</p>
-                        <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
-                          <div className="h-full w-1/3 rounded-full bg-gradient-to-r from-white to-neutral-400" />
-                        </div>
-                        <p className="text-xs text-neutral-500">1:25 / 3:42</p>
-                      </div>
+              {[
+                { step: '1', title: 'Automatyzacja kontaktu', desc: 'Połączenia odbierane w parę sekund, bez zbędnych opóźnień.' },
+                { step: '2', title: 'Rezerwacja w czasie rzeczywistym', desc: 'Kalendarz zawsze aktualny, pacjent otrzymuje potwierdzenie natychmiast.' },
+                { step: '3', title: 'Doświadczenie premium', desc: 'Rozmowy brzmią profesjonalnie i naturalnie, jak w eleganckiej recepcji.' }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ duration: 0.7, delay: idx * 0.08 }}
+                  className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 backdrop-blur-2xl"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-white/10 text-sm font-semibold text-white">{item.step}</div>
+                    <div>
+                      <p className="text-lg font-semibold text-white">{item.title}</p>
                     </div>
                   </div>
-                  <p className="text-sm text-neutral-400">Nagranie demonstruje pełną rozmowę od odboru do rezerwacji. Naturalny głos, precyzja, profesjonalizm.</p>
+                  <p className="mt-4 text-base text-neutral-400 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-white/5 p-10 shadow-[0_50px_120px_-80px_rgba(0,0,0,0.65)] backdrop-blur-3xl"
+            >
+              <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_35%)] blur-3xl opacity-70" />
+              <div className="relative space-y-8">
+                <div className="rounded-[2rem] border border-white/10 bg-black/20 p-6">
+                  <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Nagranie rozmowy</p>
+                  <div className="mt-6 flex items-center gap-5">
+                    <button className="grid h-16 w-16 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20">▶</button>
+                    <div>
+                      <p className="text-lg font-semibold text-white">Przykładowe połączenie</p>
+                      <p className="mt-3 text-sm text-neutral-400">1:25 / 3:42</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4 rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                  <div className="grid gap-4 text-sm">
+                    <div className="text-neutral-400">Inteligentna recepcja</div>
+                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Cześć! Dzwonisz do kliniki. Jak mogę pomóc w umówieniu wizyty?</div>
+                    <div className="rounded-3xl bg-black/40 p-5 text-white font-semibold">Piątek o 16:30 będzie idealny.</div>
+                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Wszystko potwierdzone i natychmiast zapisane w grafiku.</div>
+                  </div>
                 </div>
               </div>
-
-              <div className="grid gap-4">
-                {[
-                  { icon: '🎤', title: 'Naturalny głos', desc: 'Rozmowy brzmią jak kontakt z profesjonalną recepcjonistką' },
-                  { icon: '⚡', title: 'Błyskawiczna odpowiedź', desc: 'Telefon odbierany w kilka sekund' },
-                  { icon: '📅', title: 'Inteligentna rezerwacja', desc: 'Sprawdza dostępność i umawia wizyty' },
-                  { icon: '🌙', title: 'Dostępność 24/7', desc: 'Działa całą dobę, także poza godzinami pracy' }
-                ].map((feature, i) => (
-                  <div key={i} className="flex items-start gap-4 rounded-3xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:border-white/20 hover:bg-white/10">
-                    <div className="grid h-12 w-12 place-items-center rounded-3xl bg-white/10 text-2xl">{feature.icon}</div>
-                    <div>
-                      <p className="text-sm font-semibold text-white">{feature.title}</p>
-                      <p className="text-xs text-neutral-400">{feature.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Scale It System Section */}
-      <section id="cennik" className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
-        <div className="absolute inset-x-0 bottom-0 h-56 bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.05),transparent_45%)] blur-3xl opacity-50" />
-        <div className="relative space-y-12">
-          <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Kompletny system</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Wszystko czego potrzebuje Twoja klinika</h2>
-            <p className="max-w-2xl text-lg text-neutral-400 font-light">Scale It to kompleksowy system automatyzacji i wzrostu. Od pierwszej wizyty po lojalność klientów.</p>
+      <section id="demo" className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
+        <div className="absolute inset-x-0 top-0 h-[220px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] blur-3xl opacity-60" />
+        <div className="relative grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-center">
+          <div className="space-y-6">
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Demo</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">Rozmowa, która zamienia zainteresowanie na rezerwację</h2>
+            <p className="max-w-2xl text-lg text-neutral-400">Naturalny ton, szybka obsługa i pewność, że pacjent wróci do Twojej kliniki.</p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                icon: '🌐',
-                title: 'Premium strony internetowe',
-                desc: 'Responsywne strony z bookingiem online, które konwertują odwiedzających na klientów.',
-                features: ['Rezerwacje online', 'Optymalizacja SEO', 'Projekt mobile first']
-              },
-              {
-                icon: '🎯',
-                title: 'Inteligentna recepcja',
-                desc: 'Obsługa połączeń 24/7, która umawia konsultacje z najwyższą precyzją.',
-                features: ['Dostępność 24/7', 'Naturalny głos', 'Automatyczne rezerwacje']
-              },
-              {
-                icon: '📅',
-                title: 'System rezerwacji',
-                desc: 'Zaawansowany kalendarz z synchronizacją, przypomnieniami i zarządzaniem terminami.',
-                features: ['Synchronizacja kalendarza', 'SMS przypomnienia', 'Rezerwacje online']
-              },
-              {
-                icon: '🤖',
-                title: 'Automatyzacje Instagram & WhatsApp',
-                desc: 'Automatyczne odpowiedzi na wiadomości, pielęgnacja leadów i sprzedaż przez social media.',
-                features: ['Automatyczne odpowiedzi', 'Pielęgnacja leadów', 'Sprzedaż social']
-              },
-              {
-                icon: '📊',
-                title: 'CRM i lead management',
-                desc: 'Kompletny system zarządzania klientami z historią wizyt i preferencjami.',
-                features: ['Historia klientów', 'Segmentacja', 'Personalizacja']
-              },
-              {
-                icon: '📈',
-                title: 'Analityka i raporty',
-                desc: 'Statystyki przychodów, konwersji i efektywności obsługi.',
-                features: ['Śledzenie wyników', 'Konwersje', 'Raporty efektywności']
-              },
-              {
-                icon: '💬',
-                title: 'Follow-up klientów',
-                desc: 'Automatyczne wiadomości po wizytach i przypomnienia o dalszych zabiegach.',
-                features: ['Opieka po wizycie', 'Przypomnienia', 'Budowanie lojalności']
-              },
-              {
-                icon: '🔄',
-                title: 'Odzyskiwanie utraconych leadów',
-                desc: 'Systemy odzyskiwania klientów, którzy nie sfinalizowali rezerwacji.',
-                features: ['Ocena leadów', 'Ponowny kontakt', 'Optymalizacja konwersji']
-              }
-            ].map((service, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 md:p-8 shadow-2xl shadow-black/20 transition-all duration-500 hover:border-white/20 hover:bg-white/10 hover:scale-[1.02]">
-                <div className="absolute -inset-0.5 rounded-[2rem] bg-gradient-to-br from-white/20 via-white/5 to-transparent opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
-                <div className="relative space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="grid h-12 w-12 place-items-center rounded-3xl bg-white/10 text-2xl">{service.icon}</div>
-                    <div className="space-y-2 flex-1">
-                      <h3 className="text-lg font-semibold text-white leading-tight">{service.title}</h3>
-                      <p className="text-sm text-neutral-400 leading-relaxed">{service.desc}</p>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    {service.features.map((feature, j) => (
-                      <div key={j} className="flex items-center gap-2 text-xs text-neutral-400">
-                        <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="absolute top-5 right-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <div className="grid h-8 w-8 place-items-center rounded-full bg-white/10 text-xs text-white">→</div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+            className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-white/5 p-10 shadow-[0_50px_120px_-80px_rgba(0,0,0,0.65)] backdrop-blur-3xl"
+          >
+            <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_35%)] blur-3xl opacity-70" />
+            <div className="relative space-y-8">
+              <div className="rounded-[2rem] border border-white/10 bg-black/20 p-6">
+                <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Przykładowa rozmowa</p>
+                <div className="mt-6 flex items-center gap-5">
+                  <button className="grid h-16 w-16 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20">▶</button>
+                  <div>
+                    <p className="text-lg font-semibold text-white">Nagranie demonstracyjne</p>
+                    <p className="mt-3 text-sm text-neutral-400">1:25 / 3:42</p>
                   </div>
                 </div>
               </div>
+
+              <div className="space-y-4 rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <div className="grid gap-4 text-sm">
+                  <div className="text-neutral-400">Inteligentna recepcja</div>
+                  <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Dzień dobry, dzwonię z kliniki. Czy mogę zaproponować termin konsultacji?</div>
+                  <div className="rounded-3xl bg-black/40 p-5 text-white font-semibold">Tak, proszę o piątek o 16:30.</div>
+                  <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Świetnie. Rezerwacja potwierdzona, przypomnienie SMS wysłane.</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section id="ekosystem" className="relative overflow-hidden bg-[#06050b] py-24 sm:py-28 lg:py-32">
+        <div className="absolute inset-x-0 bottom-0 h-[320px] bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.06),transparent_45%)] blur-3xl opacity-50" />
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Ekosystem</p>
+            <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Wszystko działa razem</h2>
+            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Od rezerwacji po follow-up, wszystkie elementy współgrają w jednej eleganckiej platformie.</p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              { title: 'Automatyzacja kontaktu', desc: 'Każde zapytanie jest obsłużone szybko i dyskretnie.' },
+              { title: 'Instagram i WhatsApp', desc: 'Kanały społecznościowe zawsze pod kontrolą.' },
+              { title: 'CRM i organizacja', desc: 'Dane pacjentów, terminy i przypomnienia w jednym miejscu.' },
+              { title: 'Raporty i analityka', desc: 'Efekty w liczbach, gotowe do decyzji.' }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.7, delay: idx * 0.08 }}
+                className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/25"
+              >
+                <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">{item.title}</p>
+                <p className="mt-4 text-lg font-semibold text-white">{item.desc}</p>
+              </motion.div>
             ))}
           </div>
-
-          <div className="mt-16 text-center">
-            <p className="text-sm text-neutral-400 mb-6">Wszystko w jednym miejscu. Bez integracji. Bez kosztów ukrytych.</p>
-            <a href="#contact-form" className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
-              Zobacz pełny system w akcji
-            </a>
-          </div>
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section id="contact-form" className="max-w-4xl mx-auto px-6 sm:px-8 py-24 md:py-32 lg:py-40">
-        {/* Section Header */}
-        <div className="mb-16 md:mb-20 space-y-4">
-          <p className="text-xs uppercase tracking-[0.35em] text-neutral-600 font-semibold">
-            Zaczynamy
-          </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-            Umów bezpłatną prezentację
-          </h2>
-          <p className="text-lg text-neutral-400 font-light">
-            Pokaże Ci dokładnie, jak Scale It może zwiększyć przychody Twojej kliniki.
-          </p>
-        </div>
+      <section id="contact-form" className="relative overflow-hidden max-w-6xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_50%)]" />
+        <div className="relative space-y-12">
+          <div className="max-w-2xl space-y-4">
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Kontakt</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">Umów prezentację Scale It</h2>
+            <p className="text-lg text-neutral-400">Krótka rozmowa, która pokaże jak zatrzymać więcej pacjentów i podnieść standard obsługi.</p>
+          </div>
 
-        {/* Form Container */}
-        <div className="relative group">
-          {/* Glow effect */}
-          <div className="absolute -inset-1 bg-gradient-to-br from-white/20 via-white/5 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          
-          {/* Form Card */}
-          <div className="relative bg-gradient-to-br from-white/8 via-white/4 to-white/2 backdrop-blur-2xl border border-white/15 group-hover:border-white/30 rounded-3xl p-8 sm:p-10 md:p-12 overflow-hidden">
-            {/* Shine effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
-            
-            <div className="relative">
-              {/* Success State */}
-              {submitSuccess && (
-                <div className="mb-8 bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/30 rounded-2xl p-6 space-y-2">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">✓</span>
-                    <div>
-                      <h3 className="font-semibold text-green-300">Wiadomość wysłana!</h3>
-                      <p className="text-sm text-green-300/70">Skontaktujemy się z Tobą w ciągu 24 godzin.</p>
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-br from-white/20 via-white/10 to-transparent rounded-[2.5rem] blur-3xl opacity-0 group-hover:opacity-100 transition duration-700" />
+            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/15 bg-white/5 p-8 shadow-[0_50px_120px_-70px_rgba(0,0,0,0.7)] backdrop-blur-3xl">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(129,90,242,0.14),transparent_25%)] opacity-50" />
+              <div className="relative space-y-8">
+                {submitSuccess && (
+                  <div className="rounded-3xl border border-green-500/20 bg-green-500/10 p-6">
+                    <div className="flex items-center gap-3 text-green-200">
+                      <span className="text-2xl">✓</span>
+                      <div>
+                        <p className="font-semibold">Wiadomość wysłana!</p>
+                        <p className="text-sm text-green-300/80">Skontaktujemy się z Tobą w ciągu 24 godzin.</p>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Form */}
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name Field */}
-                <div>
-                  <label className="block text-sm font-medium text-neutral-300 mb-2">
-                    Imię i nazwisko
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Jan Kowalski"
-                    className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-300 ${
-                      errors.name ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'
-                    }`}
-                  />
-                  {errors.name && <p className="text-xs text-red-400 mt-1">{errors.name}</p>}
-                </div>
-
-                {/* Clinic Name Field */}
-                <div>
-                  <label className="block text-sm font-medium text-neutral-300 mb-2">
-                    Nazwa kliniki
-                  </label>
-                  <input
-                    type="text"
-                    name="clinic"
-                    value={formData.clinic}
-                    onChange={handleChange}
-                    placeholder="Beauty & Care"
-                    className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-300 ${
-                      errors.clinic ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'
-                    }`}
-                  />
-                  {errors.clinic && <p className="text-xs text-red-400 mt-1">{errors.clinic}</p>}
-                </div>
-
-                {/* Phone Field */}
-                <div>
-                  <label className="block text-sm font-medium text-neutral-300 mb-2">
-                    Telefon
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+48 123 456 789"
-                    className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-300 ${
-                      errors.phone ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'
-                    }`}
-                  />
-                  {errors.phone && <p className="text-xs text-red-400 mt-1">{errors.phone}</p>}
-                </div>
-
-                {/* Email Field */}
-                <div>
-                  <label className="block text-sm font-medium text-neutral-300 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="jan@clinic.pl"
-                    className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-300 ${
-                      errors.email ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'
-                    }`}
-                  />
-                  {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email}</p>}
-                </div>
-
-                {/* Message Field */}
-                <div>
-                  <label className="block text-sm font-medium text-neutral-300 mb-2">
-                    Wiadomość
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Powiedz nam o Twojej klinice..."
-                    rows={4}
-                    className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-300 resize-none ${
-                      errors.message ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'
-                    }`}
-                  />
-                  {errors.message && <p className="text-xs text-red-400 mt-1">{errors.message}</p>}
-                </div>
-
-                {/* Submit Error */}
-                {errors.submit && (
-                  <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
-                    <p className="text-sm text-red-300">{errors.submit}</p>
                   </div>
                 )}
 
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full group relative px-8 py-4 rounded-xl bg-white text-black font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-white to-neutral-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
-                  <div className="relative">
-                    {isSubmitting ? 'Wysyłam...' : 'Wyślij wiadomość'}
+                <form onSubmit={handleSubmit} className="grid gap-6">
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <div>
+                      <label className="block text-sm font-medium text-neutral-300 mb-2">Imię i nazwisko</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Jan Kowalski"
+                        className={`w-full bg-black/25 border rounded-2xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition ${errors.name ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'}`}
+                      />
+                      {errors.name && <p className="text-xs text-red-400 mt-2">{errors.name}</p>}
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-neutral-300 mb-2">Nazwa kliniki</label>
+                      <input
+                        type="text"
+                        name="clinic"
+                        value={formData.clinic}
+                        onChange={handleChange}
+                        placeholder="Beauty & Care"
+                        className={`w-full bg-black/25 border rounded-2xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition ${errors.clinic ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'}`}
+                      />
+                      {errors.clinic && <p className="text-xs text-red-400 mt-2">{errors.clinic}</p>}
+                    </div>
                   </div>
-                  <div className="absolute inset-0 rounded-xl shadow-lg shadow-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-                </button>
 
-                {/* Privacy note */}
-                <p className="text-xs text-neutral-600 text-center">
-                  Respektujemy Twoją prywatność. Nie będziemy wysyłać spamu.
-                </p>
-              </form>
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <div>
+                      <label className="block text-sm font-medium text-neutral-300 mb-2">Telefon</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="+48 123 456 789"
+                        className={`w-full bg-black/25 border rounded-2xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition ${errors.phone ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'}`}
+                      />
+                      {errors.phone && <p className="text-xs text-red-400 mt-2">{errors.phone}</p>}
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-neutral-300 mb-2">Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="jan@clinic.pl"
+                        className={`w-full bg-black/25 border rounded-2xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition ${errors.email ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'}`}
+                      />
+                      {errors.email && <p className="text-xs text-red-400 mt-2">{errors.email}</p>}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-neutral-300 mb-2">Wiadomość</label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Powiedz nam o Twojej klinice..."
+                      rows={5}
+                      className={`w-full bg-black/25 border rounded-2xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition resize-none ${errors.message ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'}`}
+                    />
+                    {errors.message && <p className="text-xs text-red-400 mt-2">{errors.message}</p>}
+                  </div>
+
+                  {errors.submit && (
+                    <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-300">{errors.submit}</div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-sm font-semibold text-black transition hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? 'Wysyłam...' : 'Wyślij wiadomość'}
+                  </button>
+                </form>
+
+                <p className="text-sm text-neutral-500">Respektujemy prywatność Twojej kliniki. Bez spamu, tylko konkret.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      <footer className="border-t border-white/10 bg-[#050306] py-10">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-4 text-neutral-300">
+            <Image src="/logo-icon.png" alt="Scale It" width={24} height={24} className="object-contain" />
+            <span className="text-sm uppercase tracking-[0.35em]">Scale It</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-500">
+            <a href="#funkcje" className="transition hover:text-white">Funkcje</a>
+            <a href="#jak-to-dziala" className="transition hover:text-white">Jak to działa</a>
+            <a href="#demo" className="transition hover:text-white">Demo</a>
+            <a href="#contact-form" className="transition hover:text-white">Kontakt</a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
