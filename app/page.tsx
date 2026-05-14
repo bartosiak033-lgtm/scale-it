@@ -412,6 +412,131 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Scale It System Section */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-32 lg:py-40">
+        {/* Section Header */}
+        <div className="mb-16 md:mb-20 space-y-4">
+          <p className="text-xs uppercase tracking-[0.35em] text-neutral-600 font-semibold">
+            Kompletny system
+          </p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            Wszystko czego potrzebuje Twoja klinika
+          </h2>
+          <p className="text-lg text-neutral-400 max-w-2xl font-light">
+            Scale It to kompleksowy system automatyzacji i wzrostu. Od pierwszej wizyty po lojalność klientów.
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {[
+            {
+              icon: "🌐",
+              title: "Premium strony internetowe",
+              desc: "Responsywne strony z bookingiem online, które konwertują odwiedzających na klientów.",
+              features: ["Booking online", "SEO optimized", "Mobile first"]
+            },
+            {
+              icon: "🎯",
+              title: "AI recepcjonistka",
+              desc: "Inteligentna recepcja odbiera połączenia 24/7 i umawia konsultacje automatycznie.",
+              features: ["24/7 dostępność", "Naturalny głos", "Automatyczne rezerwacje"]
+            },
+            {
+              icon: "📅",
+              title: "System rezerwacji",
+              desc: "Zaawansowany kalendarz z synchronizacją, przypomnieniami i zarządzaniem terminami.",
+              features: ["Sync z kalendarzem", "SMS przypomnienia", "Online booking"]
+            },
+            {
+              icon: "🤖",
+              title: "Automatyzacje Instagram & WhatsApp",
+              desc: "Automatyczne odpowiedzi na wiadomości, lead nurturing i sprzedaż przez social media.",
+              features: ["Auto odpowiedzi", "Lead nurturing", "Social selling"]
+            },
+            {
+              icon: "📊",
+              title: "CRM i lead management",
+              desc: "Kompletny system zarządzania klientami z historią wizyt i preferencjami.",
+              features: ["Historia klientów", "Segmentacja", "Personalizacja"]
+            },
+            {
+              icon: "📈",
+              title: "Analityka i raporty",
+              desc: "Szczegółowe statystyki przychodów, konwersji i efektywności marketingu.",
+              features: ["ROI tracking", "Conversion metrics", "Performance reports"]
+            },
+            {
+              icon: "💬",
+              title: "Follow-up klientów",
+              desc: "Automatyczne wiadomości po wizytach, przypomnienia o kolejnych zabiegach.",
+              features: ["Post-visit care", "Retention campaigns", "Loyalty building"]
+            },
+            {
+              icon: "🔄",
+              title: "Odzyskiwanie utraconych leadów",
+              desc: "Inteligentne systemy odzyskiwania klientów, którzy nie dokonali rezerwacji.",
+              features: ["Lead scoring", "Re-engagement", "Conversion optimization"]
+            }
+          ].map((service, i) => (
+            <div 
+              key={i} 
+              className="group relative bg-gradient-to-br from-white/8 via-white/4 to-white/2 backdrop-blur-2xl border border-white/15 hover:border-white/30 rounded-3xl p-6 md:p-8 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+            >
+              {/* Glow effect */}
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-white/20 via-white/5 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              <div className="relative space-y-6">
+                {/* Icon & Title */}
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <div className="space-y-2 flex-1">
+                    <h3 className="text-lg font-bold text-white leading-tight">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-neutral-400 leading-relaxed">
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Features */}
+                <div className="space-y-2">
+                  {service.features.map((feature, j) => (
+                    <div key={j} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-white/60 to-white/40 flex-shrink-0" />
+                      <span className="text-xs text-neutral-500 font-medium">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Hover indicator */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
+                    <span className="text-xs text-white">→</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-16 md:mt-20 text-center">
+          <p className="text-sm text-neutral-500 mb-6">
+            Wszystko w jednym miejscu. Bez integracji. Bez kosztów ukrytych.
+          </p>
+          <a 
+            href="#contact-form" 
+            className="inline-block px-8 py-4 rounded-full bg-white text-black font-semibold transition-all duration-300 hover:shadow-2xl hover:scale-105 active:scale-95"
+          >
+            Zobacz pełny system w akcji
+          </a>
+        </div>
+      </section>
+
       {/* Contact Form Section */}
       <section id="contact-form" className="max-w-4xl mx-auto px-6 sm:px-8 py-24 md:py-32 lg:py-40">
         {/* Section Header */}
