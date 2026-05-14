@@ -57,21 +57,28 @@ export default function Home() {
     setIsSubmitting(true);
     
     try {
+      const form = new FormData();
+      form.append('name', formData.name);
+      form.append('clinic', formData.clinic);
+      form.append('phone', formData.phone);
+      form.append('email', formData.email);
+      form.append('message', formData.message);
+
       const response = await fetch('https://formspree.io/f/maqvgypg', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: form,
       });
 
       if (response.ok) {
         setSubmitSuccess(true);
         setFormData({ name: '', clinic: '', phone: '', email: '', message: '' });
         setTimeout(() => setSubmitSuccess(false), 5000);
+      } else {
+        setErrors({ submit: 'Błąd przy wysyłaniu. Spróbuj ponownie.' });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      setErrors({ submit: 'Błąd sieci. Sprawdź połączenie i spróbuj ponownie.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -535,6 +542,13 @@ export default function Home() {
                   />
                   {errors.message && <p className="text-xs text-red-400 mt-1">{errors.message}</p>}
                 </div>
+
+                {/* Submit Error */}
+                {errors.submit && (
+                  <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
+                    <p className="text-sm text-red-300">{errors.submit}</p>
+                  </div>
+                )}
 
                 {/* Submit Button */}
                 <button
