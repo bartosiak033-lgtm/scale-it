@@ -91,6 +91,45 @@ export default function Home() {
       <style>{`
         html { scroll-behavior: smooth; }
         body { background: #000000; }
+
+        @keyframes blob {
+          0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+          50% { transform: translate3d(16px, -12px, 0) scale(1.08); }
+        }
+
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translate3d(0, 24px, 0); }
+          to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+
+        .animate-blob {
+          animation: blob 8s ease-in-out infinite alternate;
+        }
+
+        .animate-blob-slow {
+          animation: blob 12s ease-in-out infinite alternate;
+        }
+
+        .animate-fade-in-up {
+          opacity: 0;
+          animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .animation-delay-200 {
+          animation-delay: 0.2s;
+        }
+
+        .animation-delay-400 {
+          animation-delay: 0.4s;
+        }
+
+        .animation-delay-600 {
+          animation-delay: 0.6s;
+        }
+
+        .animation-delay-800 {
+          animation-delay: 0.8s;
+        }
       `}</style>
 
       <div className="fixed inset-0 -z-10">
@@ -123,67 +162,56 @@ export default function Home() {
       </nav>
 
       <section className="relative overflow-hidden pt-28 pb-28 lg:pt-32 lg:pb-32">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.06),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(139,92,246,0.08),transparent_38%)] opacity-80" />
-        <div className="absolute right-0 top-0 h-[280px] w-[280px] rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute left-0 bottom-0 h-[320px] w-[320px] rounded-full bg-violet-500/5 blur-3xl" />
+        <div className="absolute inset-0 -z-10 bg-black" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_22%),radial-gradient(circle_at_bottom_left,rgba(139,92,246,0.06),transparent_30%)] pointer-events-none" />
+        <div className="absolute left-1/4 top-10 h-56 w-56 rounded-full bg-white/10 blur-3xl opacity-60 animate-blob" />
+        <div className="absolute right-12 top-[22%] h-44 w-44 rounded-full bg-violet-500/10 blur-3xl opacity-70 animate-blob animation-delay-2000" />
+        <div className="absolute left-8 bottom-20 h-44 w-44 rounded-full bg-cyan-300/10 blur-3xl opacity-50 animate-blob-slow" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),transparent_40%)] opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02),transparent_25%)] opacity-30 pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 grid gap-16 lg:grid-cols-[1.1fr_0.9fr] items-start">
-          <div className="lg:pt-10 xl:pt-14">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neutral-400">
-              Premium AI Concierge
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
+          <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] items-start">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neutral-400 backdrop-blur-xl">
+                Premium AI concierge
+              </div>
+              <h1 className="mt-10 text-5xl sm:text-6xl lg:text-[5.5rem] font-semibold leading-[0.9] tracking-[-0.04em] text-white opacity-0 animate-fade-in-up animation-delay-200">
+                AI reception for clinics built to feel private, precise, and unmistakably premium.
+              </h1>
+              <p className="mt-8 max-w-xl text-xl sm:text-2xl leading-[1.6] text-neutral-300 opacity-0 animate-fade-in-up animation-delay-400">
+                The quiet engine behind every high-end appointment — elegant, always-on, and designed to leave an impression.
+              </p>
+              <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center opacity-0 animate-fade-in-up animation-delay-600">
+                <a href="#contact-form" className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-black shadow-[0_24px_80px_-56px_rgba(255,255,255,0.9)] transition duration-300 hover:shadow-[0_28px_90px_-50px_rgba(255,255,255,0.95)]">
+                  Umów prezentację
+                </a>
+                <a href="#contact-form" className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:border-white/25 hover:bg-white/10">
+                  Brief AI demo
+                </a>
+              </div>
             </div>
-            <h1 className="mt-10 max-w-3xl text-5xl sm:text-6xl lg:text-7xl xl:text-[5.75rem] font-semibold leading-[0.88] tracking-tight text-white">
-              Wyznaczamy nowy standard AI dla klinik premium.
-            </h1>
-            <p className="mt-8 max-w-2xl text-xl sm:text-2xl leading-9 text-neutral-300 tracking-[0.01em]">
-              Inteligentna recepcja, która wprowadza rezerwacje na wyższy poziom — bez dodatkowego wysiłku personelu.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <a
-                href="#contact-form"
-                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-black shadow-[0_24px_80px_-48px_rgba(255,255,255,0.92)] transition duration-300 hover:shadow-[0_24px_90px_-46px_rgba(255,255,255,0.95)]"
-              >
-                Umów prezentację
-              </a>
-              <a
-                href="#contact-form"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:border-white/25 hover:bg-white/10"
-              >
-                Zobacz ofertę
-              </a>
-            </div>
-            <div className="mt-10 flex flex-wrap gap-4 text-sm text-neutral-400">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-violet-400" /> 50+ klinik premium aktywowanych
-              </span>
-            </div>
-          </div>
 
-          <div className="relative flex justify-end lg:justify-center">
-            <div className="relative w-full max-w-md overflow-hidden rounded-[2.25rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/25 backdrop-blur-2xl">
-              <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-gradient-to-br from-white/10 via-transparent to-transparent blur-3xl" />
-              <div className="absolute -left-8 bottom-10 h-36 w-36 rounded-full bg-violet-500/5 blur-3xl" />
-              <div className="relative z-10 space-y-10">
-                <div className="flex items-center justify-between gap-4">
-                  <Image src="/logo-full.png" alt="Scale It" width={132} height={32} className="object-contain" />
-                  <div className="rounded-3xl border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neutral-400">
-                    AI w tle
+            <div className="relative flex justify-end lg:justify-start opacity-0 animate-fade-in-up animation-delay-800">
+              <div className="relative w-full max-w-xl">
+                <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 blur-[120px]" />
+                <div className="relative overflow-hidden rounded-[2.5rem] bg-[#111419]/90 p-8 shadow-[0_60px_120px_-60px_rgba(0,0,0,0.45)] ring-1 ring-white/10 backdrop-blur-2xl">
+                  <div className="absolute -right-10 -top-8 h-28 w-28 rounded-full bg-violet-500/10 blur-3xl animate-blob-slower" />
+                  <div className="absolute -left-10 bottom-10 h-28 w-28 rounded-full bg-cyan-300/10 blur-3xl animate-blob-slow" />
+                  <div className="relative z-10 space-y-9">
+                    <div className="flex items-center justify-between gap-4">
+                      <Image src="/logo-full.png" alt="Scale It" width={140} height={32} className="object-contain" />
+                      <span className="rounded-full bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neutral-400">Live AI</span>
+                    </div>
+                    <div className="space-y-4">
+                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Atmosphere</p>
+                      <h2 className="text-5xl font-semibold text-white">37% faster conversions</h2>
+                      <p className="max-w-lg text-base leading-7 text-neutral-400">A cinematic reception layer that creates clarity, confidence and motion from first voice contact.</p>
+                    </div>
+                    <div className="rounded-[1.75rem] bg-white/5 p-5 text-sm text-neutral-300 ring-1 ring-white/10">
+                      <p className="font-medium text-white">Built for boutique clinics, designed for scale.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="space-y-4">
-                  <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Wyniki</p>
-                  <h2 className="text-5xl font-semibold text-white leading-tight">+37%</h2>
-                  <p className="max-w-sm text-base text-neutral-300 leading-relaxed">
-                    Średni wzrost rezerwacji w pierwszym miesiącu dla klinik, które wdrożyły naszą inteligentną recepcję.
-                  </p>
-                </div>
-                <div className="rounded-[1.75rem] border border-white/10 bg-black/20 p-5 text-sm text-neutral-300">
-                  <p className="font-medium text-white">Wybrane funkcje</p>
-                  <ul className="mt-4 space-y-3">
-                    <li>Automatyczne potwierdzenia</li>
-                    <li>Obsługa 24/7</li>
-                    <li>Precyzyjne przekierowanie pacjentów</li>
-                  </ul>
                 </div>
               </div>
             </div>
