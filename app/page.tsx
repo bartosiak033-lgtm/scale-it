@@ -30,12 +30,12 @@ export default function Home() {
 
   const validateForm = (): FormErrors => {
     const newErrors: FormErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Imię jest wymagane';
-    if (!formData.clinic.trim()) newErrors.clinic = 'Nazwa kliniki jest wymagana';
-    if (!formData.phone.trim()) newErrors.phone = 'Telefon jest wymagany';
-    if (!formData.email.trim()) newErrors.email = 'Email jest wymagany';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Podaj prawidłowy email';
-    if (!formData.message.trim()) newErrors.message = 'Wiadomość jest wymagana';
+    if (!formData.name.trim()) newErrors.name = 'Podaj imię';
+    if (!formData.clinic.trim()) newErrors.clinic = 'Podaj nazwę kliniki';
+    if (!formData.phone.trim()) newErrors.phone = 'Podaj telefon';
+    if (!formData.email.trim()) newErrors.email = 'Podaj email';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Wprowadź poprawny email';
+    if (!formData.message.trim()) newErrors.message = 'Napisz krótką wiadomość';
     return newErrors;
   };
 
@@ -76,11 +76,11 @@ export default function Home() {
         setFormData({ name: '', clinic: '', phone: '', email: '', message: '' });
         setTimeout(() => setSubmitSuccess(false), 5000);
       } else {
-        setErrors({ submit: 'Błąd przy wysyłaniu. Spróbuj ponownie.' });
+        setErrors({ submit: 'Wysyłka nie powiodła się. Spróbuj ponownie.' });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      setErrors({ submit: 'Błąd sieci. Sprawdź połączenie i spróbuj ponownie.' });
+      setErrors({ submit: 'Problem z połączeniem. Sprawdź sieć i spróbuj jeszcze raz.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -135,14 +135,14 @@ export default function Home() {
           <div className="hidden lg:flex items-center gap-10 text-sm text-neutral-300">
             <a href="#funkcje" className="transition hover:text-white">Funkcje</a>
             <a href="#jak-to-dziala" className="transition hover:text-white">Jak to działa</a>
-            <a href="#demo" className="transition hover:text-white">Demo</a>
+            <a href="#demo" className="transition hover:text-white">Prezentacja</a>
             <a href="#contact-form" className="transition hover:text-white">Kontakt</a>
           </div>
           <a
             href="#contact-form"
             className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-white/20 hover:bg-white/10"
           >
-            Zarezerwuj demo
+            Umów prezentację
           </a>
         </div>
       </nav>
@@ -163,7 +163,7 @@ export default function Home() {
                 Mniej chaosu.
               </h1>
               <p className="mt-8 max-w-xl text-lg sm:text-xl leading-9 text-neutral-300">
-                Profesjonalna automatyzacja kontaktu, która zatrzymuje klientów i podnosi standard obsługi.
+                Obsługa kontaktu, która zatrzymuje klientów i podnosi standard.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <motion.a
@@ -171,23 +171,23 @@ export default function Home() {
                   href="#contact-form"
                   className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-black shadow-[0_24px_80px_-56px_rgba(255,255,255,0.9)] transition duration-300 hover:shadow-[0_28px_90px_-50px_rgba(255,255,255,0.95)]"
                 >
-                  Zarezerwuj demo
+                  Umów prezentację
                 </motion.a>
                 <motion.a
                   whileHover={{ y: -1 }}
                   href="#jak-to-dziala"
                   className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:border-white/25 hover:bg-white/10"
                 >
-                  Zobacz jak działa
+                  Zobacz działanie
                 </motion.a>
               </div>
 
               <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {[
-                  { title: 'Więcej rezerwacji', subtitle: 'Szybszy kontakt, mniej strat.' },
-                  { title: 'Mniej utraconych klientów', subtitle: 'Automatyczne przechwytywanie leadów.' },
+                  { title: 'Więcej rezerwacji', subtitle: 'Bez przestojów w recepcji.' },
+                  { title: 'Mniej utraconych klientów', subtitle: 'Więcej potwierdzonych terminów.' },
                   { title: 'Wyższy standard', subtitle: 'Pacjenci czują opiekę premium.' },
-                  { title: 'Oszczędność czasu', subtitle: 'Mniej manualnej pracy dla zespołu.' }
+                  { title: 'Oszczędność czasu', subtitle: 'Recepcja działa sprawniej.' }
                 ].map((item, idx) => (
                   <div key={idx} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
                     <p className="text-sm font-semibold text-white">{item.title}</p>
@@ -215,26 +215,26 @@ export default function Home() {
                         <Image src="/logo-icon.png" alt="Scale It" width={28} height={28} className="object-contain" />
                         <span className="text-sm font-semibold uppercase tracking-[0.35em] text-white">Scale It</span>
                       </div>
-                      <span className="text-xs uppercase tracking-[0.35em] text-neutral-400">Dyskretna automatyzacja</span>
+                      <span className="text-xs uppercase tracking-[0.35em] text-neutral-400">Dyskretne wsparcie</span>
                     </div>
 
                     <div className="mt-10 border-t border-white/10 pt-10">
-                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Średnio więcej konwersji</p>
+                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Średnio więcej rezerwacji</p>
                       <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end">
                         <p className="text-6xl font-semibold text-white">37%</p>
                         <div className="max-w-md">
-                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">więcej rezerwacji</p>
-                          <p className="mt-3 text-sm leading-7 text-neutral-300">Mniej utraconych pacjentów dzięki szybszemu i bardziej eleganckiemu doświadczeniu kontaktu.</p>
+                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">mniej pustych terminów</p>
+                          <p className="mt-3 text-sm leading-7 text-neutral-300">Recepcja obsługuje więcej pacjentów szybciej i bez przerw.</p>
                         </div>
                       </div>
                     </div>
 
                     <div className="mt-12 grid gap-4 sm:grid-cols-2">
                       {[
-                        { label: 'Zero dodatkowych działań', value: 'Pełna automatyzacja' },
-                        { label: 'Naturalny sposób', value: 'Komunikacja bez sztywności' },
-                        { label: 'Stałe wsparcie', value: 'Dostępność 24/7' },
-                        { label: 'Eleganckie doświadczenie', value: 'Wrażenie premium' }
+                        { label: 'Bez dodatkowej pracy', value: 'Kontakt obsłużony od początku do końca' },
+                        { label: 'Naturalny rytm', value: 'Rozmowy brzmią zwyczajnie' },
+                        { label: 'Całodobowa obsługa', value: 'Dostępność 24/7' },
+                        { label: 'Stylowa prezentacja', value: 'Obsługa w wysokim standardzie' }
                       ].map((item, index) => (
                         <div key={index} className="rounded-3xl border border-white/10 bg-black/20 p-5">
                           <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">{item.label}</p>
@@ -254,21 +254,21 @@ export default function Home() {
         <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_top,rgba(129,90,242,0.14),transparent_30%)] blur-3xl opacity-60" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Automatyzacja kontaktu</p>
-            <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Premium usługi dla nowoczesnych klinik</h2>
-            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Rozwiązania, które wspierają sprzedaż, obsługę i reputację w jednej platformie.</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Obsługa kontaktu</p>
+            <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Przygotowane dla klinik premium</h2>
+            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Narzędzia, które usprawniają obsługę i dbają o pierwsze wrażenie.</p>
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {[
-              { icon: '📅', title: 'System rezerwacji', desc: 'Zarządzaj wizytami i potwierdzeniami bez ręcznej obsługi.' },
-              { icon: '💬', title: 'Follow-up klientów', desc: 'Przypomnienia po wizycie, które budują lojalność.' },
-              { icon: '📲', title: 'Instagram i WhatsApp', desc: 'Kanały społecznościowe obsługiwane automatycznie.' },
-              { icon: '🔄', title: 'Odzyskiwanie leadów', desc: 'Powrót klientów, którzy wycofali się z rezerwacji.' },
-              { icon: '🌐', title: 'Strony premium', desc: 'Eleganckie prezentacje, które konwertują odwiedzających.' },
-              { icon: '📊', title: 'Raporty i analityka', desc: 'Wyniki, które pozwalają podejmować lepsze decyzje.' },
-              { icon: '🗂️', title: 'CRM i organizacja', desc: 'Dane pacjentów, notatki i preferencje w jednym miejscu.' },
-              { icon: '🤝', title: 'Prestiż obsługi', desc: 'Każdy kontakt wygląda jak doświadczenie premium.' }
+              { icon: '📅', title: 'Rezerwacje', desc: 'Terminy i potwierdzenia bez ręcznej pracy.' },
+              { icon: '💬', title: 'Kontakty po wizycie', desc: 'Przypomnienia trafiają w odpowiednim czasie.' },
+              { icon: '📲', title: 'Instagram i WhatsApp', desc: 'Wiadomości tam, gdzie pacjent jest.' },
+              { icon: '🔄', title: 'Odzyskiwanie rezerwacji', desc: 'Klienci wracają do terminu, który już wybrali.' },
+              { icon: '🌐', title: 'Strona kliniki', desc: 'Elegancka prezentacja, która dobrze wygląda.' },
+              { icon: '📊', title: 'Wyniki w prostym widoku', desc: 'Dane, które łatwo zrozumieć i wykorzystać.' },
+              { icon: '🗂️', title: 'Porządek w danych', desc: 'Pacjenci, terminy i preferencje w jednym miejscu.' },
+              { icon: '🤝', title: 'Obsługa premium', desc: 'Każdy kontakt ma szlachetny charakter.' }
             ].map((service, idx) => (
               <motion.div
                 key={idx}
@@ -304,9 +304,9 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="space-y-6">
               {[
-                { step: '1', title: 'Automatyzacja kontaktu', desc: 'Połączenia odbierane w parę sekund, bez zbędnych opóźnień.' },
-                { step: '2', title: 'Rezerwacja w czasie rzeczywistym', desc: 'Kalendarz zawsze aktualny, pacjent otrzymuje potwierdzenie natychmiast.' },
-                { step: '3', title: 'Doświadczenie premium', desc: 'Rozmowy brzmią profesjonalnie i naturalnie, jak w eleganckiej recepcji.' }
+                { step: '1', title: 'Kontakt bez opóźnień', desc: 'Pacjent otrzymuje odpowiedź natychmiast.' },
+                { step: '2', title: 'Rezerwacja od ręki', desc: 'Kalendarz jest zawsze aktualny i bez błędów.' },
+                { step: '3', title: 'Wysoka jakość rozmowy', desc: 'Rozmowy brzmią naturalnie, jak w eleganckiej recepcji.' }
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -341,7 +341,7 @@ export default function Home() {
                   <div className="mt-6 flex items-center gap-5">
                     <button className="grid h-16 w-16 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20">▶</button>
                     <div>
-                      <p className="text-lg font-semibold text-white">Przykładowe połączenie</p>
+                      <p className="text-lg font-semibold text-white">Przykład rozmowy</p>
                       <p className="mt-3 text-sm text-neutral-400">1:25 / 3:42</p>
                     </div>
                   </div>
@@ -349,10 +349,10 @@ export default function Home() {
 
                 <div className="space-y-4 rounded-[2rem] border border-white/10 bg-white/5 p-6">
                   <div className="grid gap-4 text-sm">
-                    <div className="text-neutral-400">Inteligentna recepcja</div>
-                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Cześć! Dzwonisz do kliniki. Jak mogę pomóc w umówieniu wizyty?</div>
-                    <div className="rounded-3xl bg-black/40 p-5 text-white font-semibold">Piątek o 16:30 będzie idealny.</div>
-                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Wszystko potwierdzone i natychmiast zapisane w grafiku.</div>
+                    <div className="text-neutral-400">Dyskretny kontakt</div>
+                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Dzień dobry, czy mogę pomóc w ustaleniu terminu konsultacji?</div>
+                    <div className="rounded-3xl bg-black/40 p-5 text-white font-semibold">Piątek o 16:30 będzie najlepszy.</div>
+                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Termin zapisany i potwierdzony w systemie.</div>
                   </div>
                 </div>
               </div>
@@ -365,9 +365,9 @@ export default function Home() {
         <div className="absolute inset-x-0 top-0 h-[220px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] blur-3xl opacity-60" />
         <div className="relative grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-center">
           <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Demo</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">Rozmowa, która zamienia zainteresowanie na rezerwację</h2>
-            <p className="max-w-2xl text-lg text-neutral-400">Naturalny ton, szybka obsługa i pewność, że pacjent wróci do Twojej kliniki.</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Prezentacja</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">Rozmowa, która zamyka termin</h2>
+            <p className="max-w-2xl text-lg text-neutral-400">Kontakt prowadzony naturalnie, bez zbędnych formalności.</p>
           </div>
 
           <motion.div
@@ -380,11 +380,11 @@ export default function Home() {
             <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_35%)] blur-3xl opacity-70" />
             <div className="relative space-y-8">
               <div className="rounded-[2rem] border border-white/10 bg-black/20 p-6">
-                <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Przykładowa rozmowa</p>
+                <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Przykład rozmowy</p>
                 <div className="mt-6 flex items-center gap-5">
                   <button className="grid h-16 w-16 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20">▶</button>
                   <div>
-                    <p className="text-lg font-semibold text-white">Nagranie demonstracyjne</p>
+                    <p className="text-lg font-semibold text-white">Nagranie</p>
                     <p className="mt-3 text-sm text-neutral-400">1:25 / 3:42</p>
                   </div>
                 </div>
@@ -392,10 +392,10 @@ export default function Home() {
 
               <div className="space-y-4 rounded-[2rem] border border-white/10 bg-white/5 p-6">
                 <div className="grid gap-4 text-sm">
-                  <div className="text-neutral-400">Inteligentna recepcja</div>
-                  <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Dzień dobry, dzwonię z kliniki. Czy mogę zaproponować termin konsultacji?</div>
-                  <div className="rounded-3xl bg-black/40 p-5 text-white font-semibold">Tak, proszę o piątek o 16:30.</div>
-                  <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Świetnie. Rezerwacja potwierdzona, przypomnienie SMS wysłane.</div>
+                  <div className="text-neutral-400">Dyskretny kontakt</div>
+                  <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Dzień dobry, czy mogę pomóc w ustaleniu terminu konsultacji?</div>
+                  <div className="rounded-3xl bg-black/40 p-5 text-white font-semibold">Piątek o 16:30 będzie najlepszy.</div>
+                  <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Termin zapisany i potwierdzony od razu.</div>
                 </div>
               </div>
             </div>
@@ -407,17 +407,17 @@ export default function Home() {
         <div className="absolute inset-x-0 bottom-0 h-[320px] bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.06),transparent_45%)] blur-3xl opacity-50" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Ekosystem</p>
-            <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Wszystko działa razem</h2>
-            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Od rezerwacji po follow-up, wszystkie elementy współgrają w jednej eleganckiej platformie.</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Całość</p>
+            <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Wszystko w jednym miejscu</h2>
+            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Rezerwacje, wiadomości i przypomnienia działają razem bez zakłóceń.</p>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {[
-              { title: 'Automatyzacja kontaktu', desc: 'Każde zapytanie jest obsłużone szybko i dyskretnie.' },
-              { title: 'Instagram i WhatsApp', desc: 'Kanały społecznościowe zawsze pod kontrolą.' },
-              { title: 'CRM i organizacja', desc: 'Dane pacjentów, terminy i przypomnienia w jednym miejscu.' },
-              { title: 'Raporty i analityka', desc: 'Efekty w liczbach, gotowe do decyzji.' }
+              { title: 'Obsługa kontaktu', desc: 'Każde zapytanie obsługiwane szybko i dyskretnie.' },
+              { title: 'Instagram i WhatsApp', desc: 'Wiadomości trafiają tam, gdzie pacjent jest.' },
+              { title: 'Porządek w danych', desc: 'Pacjenci, terminy i preferencje w jednym miejscu.' },
+              { title: 'Wyniki w prostym widoku', desc: 'Raporty dostępne w klarownym formacie.' }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -440,8 +440,8 @@ export default function Home() {
         <div className="relative space-y-12">
           <div className="max-w-2xl space-y-4">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Kontakt</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">Umów prezentację Scale It</h2>
-            <p className="text-lg text-neutral-400">Krótka rozmowa, która pokaże jak zatrzymać więcej pacjentów i podnieść standard obsługi.</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">Umów prezentację</h2>
+            <p className="text-lg text-neutral-400">Krótka prezentacja. Zobacz, jak kontakt może działać lepiej.</p>
           </div>
 
           <div className="relative group">
@@ -455,7 +455,7 @@ export default function Home() {
                       <span className="text-2xl">✓</span>
                       <div>
                         <p className="font-semibold">Wiadomość wysłana!</p>
-                        <p className="text-sm text-green-300/80">Skontaktujemy się z Tobą w ciągu 24 godzin.</p>
+                        <p className="text-sm text-green-300/80">Odezwemy się w ciągu 24 godzin.</p>
                       </div>
                     </div>
                   </div>
@@ -482,7 +482,7 @@ export default function Home() {
                         name="clinic"
                         value={formData.clinic}
                         onChange={handleChange}
-                        placeholder="Beauty & Care"
+                        placeholder="Klinika Nova"
                         className={`w-full bg-black/25 border rounded-2xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition ${errors.clinic ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'}`}
                       />
                       {errors.clinic && <p className="text-xs text-red-400 mt-2">{errors.clinic}</p>}
@@ -522,7 +522,7 @@ export default function Home() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Powiedz nam o Twojej klinice..."
+                        placeholder="Napisz krótko, czego potrzebujecie"
                       rows={5}
                       className={`w-full bg-black/25 border rounded-2xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition resize-none ${errors.message ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'}`}
                     />
@@ -542,7 +542,7 @@ export default function Home() {
                   </button>
                 </form>
 
-                <p className="text-sm text-neutral-500">Respektujemy prywatność Twojej kliniki. Bez spamu, tylko konkret.</p>
+                <p className="text-sm text-neutral-500">Prywatność kliniki jest dla nas ważna. Bez spamu, tylko konkret.</p>
               </div>
             </div>
           </div>
@@ -558,7 +558,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-500">
             <a href="#funkcje" className="transition hover:text-white">Funkcje</a>
             <a href="#jak-to-dziala" className="transition hover:text-white">Jak to działa</a>
-            <a href="#demo" className="transition hover:text-white">Demo</a>
+            <a href="#demo" className="transition hover:text-white">Prezentacja</a>
             <a href="#contact-form" className="transition hover:text-white">Kontakt</a>
           </div>
         </div>
