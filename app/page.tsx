@@ -101,19 +101,20 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),transparent_30%)]" />
       </div>
 
-      <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5 sm:px-8">
+      <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/15 backdrop-blur-3xl shadow-[0_20px_80px_-60px_rgba(0,0,0,0.6)]">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 sm:px-8">
           <div className="flex items-center gap-4">
-            <div className="relative flex h-12 w-12 items-center justify-center rounded-3xl border border-white/10 bg-white/5 shadow-[0_0_40px_rgba(255,255,255,0.05)]">
-              <span className="text-2xl font-bold tracking-tight text-white">S</span>
+            <div className="relative flex h-12 w-12 items-center justify-center rounded-3xl border border-white/10 bg-white/5 shadow-[0_0_30px_rgba(255,255,255,0.06)]">
+              <span className="text-2xl font-semibold tracking-tight text-white">S</span>
             </div>
-            <div className="space-y-1">
-              <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Scale It</p>
+            <div className="hidden sm:block">
+              <p className="text-sm font-semibold tracking-[0.3em] text-white uppercase">Scale It</p>
             </div>
           </div>
+
           <a
             href="#contact-form"
-            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-white/20 hover:bg-white/10"
+            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-white/20 hover:bg-white/10 hover:scale-[1.01]"
           >
             Umów prezentację
           </a>
