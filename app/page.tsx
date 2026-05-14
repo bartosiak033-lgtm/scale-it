@@ -1,6 +1,75 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: '',
+    clinic: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = 'Imię jest wymagane';
+    if (!formData.clinic.trim()) newErrors.clinic = 'Nazwa kliniki jest wymagana';
+    if (!formData.phone.trim()) newErrors.phone = 'Telefon jest wymagany';
+    if (!formData.email.trim()) newErrors.email = 'Email jest wymagany';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Podaj prawidłowy email';
+    if (!formData.message.trim()) newErrors.message = 'Wiadomość jest wymagana';
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newErrors = validateForm();
+    
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/xyzabc123', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitSuccess(true);
+        setFormData({ name: '', clinic: '', phone: '', email: '', message: '' });
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
+      {/* Smooth scroll behavior */}
+      <style>{`html { scroll-behavior: smooth; }`}</style>
+      
       {/* Premium gradient background */}
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] via-transparent to-transparent pointer-events-none" />
@@ -22,10 +91,10 @@ export default function Home() {
             <div className="absolute inset-0 bg-white/10 rounded-full" />
             <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="absolute inset-0 border border-white/20 group-hover:border-white/40 rounded-full transition-colors duration-300" />
-            <div className="relative flex items-center justify-center gap-2 backdrop-blur-sm">
+            <a href="#contact-form" className="relative flex items-center justify-center gap-2 backdrop-blur-sm">
               Umów prezentację
               <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">→</span>
-            </div>
+            </a>
           </button>
         </div>
       </nav>
@@ -62,13 +131,13 @@ export default function Home() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6">
             {/* Primary CTA */}
-            <button className="group relative px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white text-black font-semibold text-sm overflow-hidden transition-all duration-500 active:scale-95">
+            <a href="#contact-form" className="group relative px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white text-black font-semibold text-sm overflow-hidden transition-all duration-500 active:scale-95 inline-block">
               <div className="absolute inset-0 bg-gradient-to-r from-white to-neutral-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative flex items-center justify-center gap-2">
                 Umów prezentację
               </div>
               <div className="absolute inset-0 rounded-full shadow-lg shadow-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-            </button>
+            </a>
 
             {/* Secondary CTA */}
             <button className="group relative px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white/5 text-white font-semibold text-sm border border-white/15 overflow-hidden transition-all duration-500 hover:border-white/40">
@@ -319,6 +388,160 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section id="contact-form" className="max-w-4xl mx-auto px-6 sm:px-8 py-24 md:py-32 lg:py-40">
+        {/* Section Header */}
+        <div className="mb-16 md:mb-20 space-y-4">
+          <p className="text-xs uppercase tracking-[0.35em] text-neutral-600 font-semibold">
+            Zaczynamy
+          </p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            Umów bezpłatną prezentację
+          </h2>
+          <p className="text-lg text-neutral-400 font-light">
+            Pokaże Ci dokładnie, jak Scale It może zwiększyć przychody Twojej kliniki.
+          </p>
+        </div>
+
+        {/* Form Container */}
+        <div className="relative group">
+          {/* Glow effect */}
+          <div className="absolute -inset-1 bg-gradient-to-br from-white/20 via-white/5 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          
+          {/* Form Card */}
+          <div className="relative bg-gradient-to-br from-white/8 via-white/4 to-white/2 backdrop-blur-2xl border border-white/15 group-hover:border-white/30 rounded-3xl p-8 sm:p-10 md:p-12 overflow-hidden">
+            {/* Shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
+            
+            <div className="relative">
+              {/* Success State */}
+              {submitSuccess && (
+                <div className="mb-8 bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/30 rounded-2xl p-6 space-y-2">
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">✓</span>
+                    <div>
+                      <h3 className="font-semibold text-green-300">Wiadomość wysłana!</h3>
+                      <p className="text-sm text-green-300/70">Skontaktujemy się z Tobą w ciągu 24 godzin.</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Form */}
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name Field */}
+                <div>
+                  <label className="block text-sm font-medium text-neutral-300 mb-2">
+                    Imię i nazwisko
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Jan Kowalski"
+                    className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-300 ${
+                      errors.name ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'
+                    }`}
+                  />
+                  {errors.name && <p className="text-xs text-red-400 mt-1">{errors.name}</p>}
+                </div>
+
+                {/* Clinic Name Field */}
+                <div>
+                  <label className="block text-sm font-medium text-neutral-300 mb-2">
+                    Nazwa kliniki
+                  </label>
+                  <input
+                    type="text"
+                    name="clinic"
+                    value={formData.clinic}
+                    onChange={handleChange}
+                    placeholder="Beauty & Care"
+                    className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-300 ${
+                      errors.clinic ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'
+                    }`}
+                  />
+                  {errors.clinic && <p className="text-xs text-red-400 mt-1">{errors.clinic}</p>}
+                </div>
+
+                {/* Phone Field */}
+                <div>
+                  <label className="block text-sm font-medium text-neutral-300 mb-2">
+                    Telefon
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+48 123 456 789"
+                    className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-300 ${
+                      errors.phone ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'
+                    }`}
+                  />
+                  {errors.phone && <p className="text-xs text-red-400 mt-1">{errors.phone}</p>}
+                </div>
+
+                {/* Email Field */}
+                <div>
+                  <label className="block text-sm font-medium text-neutral-300 mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="jan@clinic.pl"
+                    className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-300 ${
+                      errors.email ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'
+                    }`}
+                  />
+                  {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email}</p>}
+                </div>
+
+                {/* Message Field */}
+                <div>
+                  <label className="block text-sm font-medium text-neutral-300 mb-2">
+                    Wiadomość
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Powiedz nam o Twojej klinice..."
+                    rows={4}
+                    className={`w-full bg-white/5 border rounded-xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-300 resize-none ${
+                      errors.message ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'
+                    }`}
+                  />
+                  {errors.message && <p className="text-xs text-red-400 mt-1">{errors.message}</p>}
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full group relative px-8 py-4 rounded-xl bg-white text-black font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-white to-neutral-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                  <div className="relative">
+                    {isSubmitting ? 'Wysyłam...' : 'Wyślij wiadomość'}
+                  </div>
+                  <div className="absolute inset-0 rounded-xl shadow-lg shadow-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+                </button>
+
+                {/* Privacy note */}
+                <p className="text-xs text-neutral-600 text-center">
+                  Respektujemy Twoją prywatność. Nie będziemy wysyłać spamu.
+                </p>
+              </form>
             </div>
           </div>
         </div>
