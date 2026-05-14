@@ -123,80 +123,68 @@ export default function Home() {
       </nav>
 
       <section className="relative overflow-hidden pt-28 pb-28 lg:pt-32 lg:pb-32">
-        <div className="absolute inset-x-0 top-0 h-[280px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] blur-3xl opacity-80" />
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 grid gap-16 lg:grid-cols-[0.95fr_1.05fr] items-center">
-          <div className="space-y-10 lg:max-w-2xl">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neutral-400 shadow-[0_0_30px_rgba(255,255,255,0.04)]">
-              Inteligentna recepcja
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.06),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(139,92,246,0.08),transparent_38%)] opacity-80" />
+        <div className="absolute right-0 top-0 h-[280px] w-[280px] rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute left-0 bottom-0 h-[320px] w-[320px] rounded-full bg-violet-500/5 blur-3xl" />
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 grid gap-16 lg:grid-cols-[1.1fr_0.9fr] items-start">
+          <div className="lg:pt-10 xl:pt-14">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neutral-400">
+              Premium AI Concierge
             </div>
-            <div className="flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 px-5 py-3 shadow-[0_0_25px_rgba(255,255,255,0.04)]">
-              <Image src="/logo-full.png" alt="Scale It" width={140} height={32} className="object-contain" />
-            </div>
-            <div className="space-y-6">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-[0.94] tracking-tight">
-                <span className="block text-white">Więcej</span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#d9d4ff] to-white">konsultacji.</span>
-                <span className="block text-white">Mniej strat.</span>
-              </h1>
-              <p className="max-w-xl text-lg sm:text-xl text-neutral-300 leading-relaxed tracking-wide">
-                Automatyzujemy kontakt z klientami. Pomagamy klinikom medycyny estetycznej zwiększać rezerwacje o <span className="text-white font-semibold">37%</span> średnio w pierwszy miesiąc.
-              </p>
-            </div>
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <h1 className="mt-10 max-w-3xl text-5xl sm:text-6xl lg:text-7xl xl:text-[5.75rem] font-semibold leading-[0.88] tracking-tight text-white">
+              Wyznaczamy nowy standard AI dla klinik premium.
+            </h1>
+            <p className="mt-8 max-w-2xl text-xl sm:text-2xl leading-9 text-neutral-300 tracking-[0.01em]">
+              Inteligentna recepcja, która wprowadza rezerwacje na wyższy poziom — bez dodatkowego wysiłku personelu.
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
               <a
                 href="#contact-form"
-                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-black transition-all duration-300 shadow-[0_24px_80px_-48px_rgba(255,255,255,0.8)] hover:shadow-[0_28px_90px_-54px_rgba(255,255,255,0.9)]"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-black shadow-[0_24px_80px_-48px_rgba(255,255,255,0.92)] transition duration-300 hover:shadow-[0_24px_90px_-46px_rgba(255,255,255,0.95)]"
               >
                 Umów prezentację
-                <span className="ml-3 transition-transform duration-300 group-hover:translate-x-1">→</span>
               </a>
-              <button className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:border-white/20 hover:bg-white/10">
-                Posłuchaj nagrania
-              </button>
+              <a
+                href="#contact-form"
+                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:border-white/25 hover:bg-white/10"
+              >
+                Zobacz ofertę
+              </a>
             </div>
-            <div className="flex flex-wrap gap-3 text-sm text-neutral-400">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-violet-400" /> 50+ klinik zaufało Scale It
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-slate-400" /> Średni wzrost rezerwacji o 37%
+            <div className="mt-10 flex flex-wrap gap-4 text-sm text-neutral-400">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-violet-400" /> 50+ klinik premium aktywowanych
               </span>
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/40 backdrop-blur-2xl">
-            <div className="absolute inset-x-0 top-0 h-52 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_40%)] opacity-70 blur-3xl" />
-            <div className="absolute -left-16 top-10 h-72 w-72 rounded-full bg-gradient-to-br from-[#ffffff10] via-[#8b5cf610] to-transparent blur-3xl" />
-            <div className="relative space-y-8">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Średnie rezultaty</p>
-                  <h2 className="mt-3 text-5xl font-semibold text-white">+37%</h2>
-                </div>
-                <div className="grid h-16 w-16 place-items-center rounded-3xl bg-white/10 border border-white/10 text-2xl">
-                  📈
-                </div>
-              </div>
-              <div className="space-y-4">
-                {[
-                  { label: 'Konsultacji zaplanowanych', value: '312', icon: '📞' },
-                  { label: 'Klientów odzyskanych', value: '89%', icon: '✨' },
-                  { label: 'Czas odpowiedzi', value: '12 sek', icon: '⚡' }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center justify-between gap-4 rounded-3xl border border-white/10 bg-white/5 px-5 py-4 transition-all duration-300 hover:border-white/20 hover:bg-white/10">
-                    <div>
-                      <p className="text-sm text-neutral-400">{item.label}</p>
-                      <p className="mt-2 text-2xl font-semibold text-white">{item.value}</p>
-                    </div>
-                    <div className="grid h-12 w-12 place-items-center rounded-3xl bg-white/10 text-xl">
-                      {item.icon}
-                    </div>
+          <div className="relative flex justify-end lg:justify-center">
+            <div className="relative w-full max-w-md overflow-hidden rounded-[2.25rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/25 backdrop-blur-2xl">
+              <div className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-gradient-to-br from-white/10 via-transparent to-transparent blur-3xl" />
+              <div className="absolute -left-8 bottom-10 h-36 w-36 rounded-full bg-violet-500/5 blur-3xl" />
+              <div className="relative z-10 space-y-10">
+                <div className="flex items-center justify-between gap-4">
+                  <Image src="/logo-full.png" alt="Scale It" width={132} height={32} className="object-contain" />
+                  <div className="rounded-3xl border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neutral-400">
+                    AI w tle
                   </div>
-                ))}
-              </div>
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
-                <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Wybrane statystyki</p>
-                <p className="mt-3 text-sm leading-relaxed text-neutral-300">Dane oparte na rzeczywistych wynikach z naszych klientów.</p>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Wyniki</p>
+                  <h2 className="text-5xl font-semibold text-white leading-tight">+37%</h2>
+                  <p className="max-w-sm text-base text-neutral-300 leading-relaxed">
+                    Średni wzrost rezerwacji w pierwszym miesiącu dla klinik, które wdrożyły naszą inteligentną recepcję.
+                  </p>
+                </div>
+                <div className="rounded-[1.75rem] border border-white/10 bg-black/20 p-5 text-sm text-neutral-300">
+                  <p className="font-medium text-white">Wybrane funkcje</p>
+                  <ul className="mt-4 space-y-3">
+                    <li>Automatyczne potwierdzenia</li>
+                    <li>Obsługa 24/7</li>
+                    <li>Precyzyjne przekierowanie pacjentów</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
