@@ -92,203 +92,106 @@ export default function Home() {
         body { background: #000000; }
       `}</style>
 
-      {/* Ultra Premium Ambient Background */}
       <div className="fixed inset-0 -z-10">
-        {/* Primary cinematic black */}
         <div className="absolute inset-0 bg-black" />
-
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:50px_50px]" />
-
-        {/* Floating gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-[#ffffff10] via-[#8b5cf610] to-transparent rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/3 right-1/4 w-[800px] h-[800px] bg-gradient-to-tl from-[#3b82f610] via-[#ffffff08] to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s' }} />
-        <div className="absolute top-3/4 left-1/2 w-[400px] h-[400px] bg-gradient-to-br from-[#8b5cf608] via-[#ffffff05] to-transparent rounded-full blur-2xl animate-pulse" style={{ animationDelay: '6s' }} />
-
-        {/* Animated background blur */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-black/95 to-black/90 animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_10%_10%,rgba(255,255,255,0.12),transparent_20%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.1),transparent_25%)]" />
+        <div className="absolute inset-x-0 top-0 h-[360px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] blur-3xl" />
+        <div className="absolute left-[10%] top-[18%] w-[520px] h-[520px] rounded-full bg-gradient-to-br from-[#ffffff10] via-[#8b5cf610] to-transparent blur-3xl" />
+        <div className="absolute right-[8%] bottom-[14%] w-[640px] h-[640px] rounded-full bg-gradient-to-tr from-[#3b82f610] via-[#ffffff08] to-transparent blur-3xl" />
+        <div className="absolute inset-0 opacity-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),transparent_30%)]" />
       </div>
 
-        {/* Floating orbs */}
-        <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-purple-400/30 rounded-full blur-sm animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-3/4 right-1/3 w-1.5 h-1.5 bg-violet-400/40 rounded-full blur-sm animate-pulse" style={{ animationDelay: '3s' }} />
-        <div className="absolute top-1/2 left-1/6 w-1 h-1 bg-indigo-400/50 rounded-full blur-sm animate-pulse" style={{ animationDelay: '0.5s' }} />
-
-        {/* Subtle noise texture */}
-        <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)] bg-[length:20px_20px]" />
-      </div>
-
-      {/* Ultra Modern Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-8 py-6 backdrop-blur-xl bg-black/20 border-b border-white/[0.08]">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5 sm:px-8">
           <div className="flex items-center gap-4">
-            {/* Premium logo with glow */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-violet-400/20 rounded-lg blur-lg" />
-              <div className="relative w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500/20 to-violet-600/20 border border-white/10 flex items-center justify-center">
-                <div className="w-3 h-3 rounded-full bg-gradient-to-r from-purple-400 to-violet-500" />
-              </div>
+            <div className="relative flex h-12 w-12 items-center justify-center rounded-3xl border border-white/10 bg-white/5 shadow-[0_0_40px_rgba(255,255,255,0.05)]">
+              <span className="text-2xl font-bold tracking-tight text-white">S</span>
             </div>
-            <h1 className="text-xl font-semibold tracking-tight bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
-              Scale It
-            </h1>
+            <div className="space-y-1">
+              <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Scale It</p>
+            </div>
           </div>
-
-          <a href="#contact-form" className="group relative px-6 py-2.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 hover:border-purple-400/30 text-white font-medium text-sm overflow-hidden transition-all duration-500 hover:bg-white/10">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative flex items-center justify-center gap-2">
-              Umów prezentację
-              <span className="text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0.5">→</span>
-            </div>
+          <a
+            href="#contact-form"
+            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-white/20 hover:bg-white/10"
+          >
+            Umów prezentację
           </a>
         </div>
       </nav>
 
-      {/* Ultra Premium Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 pt-48 pb-32 md:pt-56 md:pb-40 grid lg:grid-cols-2 gap-20 md:gap-28 items-center relative">
-        {/* Left Column */}
-        <div className="space-y-16 lg:space-y-18">
-          {/* Premium Label */}
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-violet-500/10 border border-purple-400/20 backdrop-blur-sm">
-            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-violet-500 animate-pulse" />
-            <p className="text-xs uppercase tracking-[0.25em] text-purple-200 font-semibold">
+      <section className="relative overflow-hidden pt-28 pb-28 lg:pt-32 lg:pb-32">
+        <div className="absolute inset-x-0 top-0 h-[280px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] blur-3xl opacity-80" />
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 grid gap-16 lg:grid-cols-[0.95fr_1.05fr] items-center">
+          <div className="space-y-10 lg:max-w-2xl">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neutral-400 shadow-[0_0_30px_rgba(255,255,255,0.04)]">
               Inteligentna recepcja
-            </p>
-          </div>
-
-          {/* Ultra Luxury Headline */}
-          <div className="space-y-8">
-            <h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.9] tracking-tight">
-              <span className="block text-white">Więcej</span>
-              <span className="block relative">
-                <span className="text-transparent bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text">
-                  konsultacji.
-                </span>
-                {/* Subtle glow behind text */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-violet-500/20 blur-2xl -z-10 opacity-50" />
+            </div>
+            <div className="space-y-6">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-[0.94] tracking-tight">
+                <span className="block text-white">Więcej</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-[#d9d4ff] to-white">konsultacji.</span>
+                <span className="block text-white">Mniej strat.</span>
+              </h1>
+              <p className="max-w-xl text-lg sm:text-xl text-neutral-300 leading-relaxed tracking-wide">
+                Automatyzujemy kontakt z klientami. Pomagamy klinikom medycyny estetycznej zwiększać rezerwacje o <span className="text-white font-semibold">37%</span> średnio w pierwszy miesiąc.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a
+                href="#contact-form"
+                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-black transition-all duration-300 shadow-[0_24px_80px_-48px_rgba(255,255,255,0.8)] hover:shadow-[0_28px_90px_-54px_rgba(255,255,255,0.9)]"
+              >
+                Umów prezentację
+                <span className="ml-3 transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </a>
+              <button className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:border-white/20 hover:bg-white/10">
+                Posłuchaj nagrania
+              </button>
+            </div>
+            <div className="flex flex-wrap gap-3 text-sm text-neutral-400">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-violet-400" /> 50+ klinik zaufało Scale It
               </span>
-              <span className="block text-white">Mniej strat.</span>
-            </h2>
-          </div>
-
-          {/* Premium Description */}
-          <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-xl font-light tracking-wide">
-            Automatyzujemy kontakt z klientami. Pomagamy klinikom medycyny estetycznej zwiększać rezerwacje o <span className="text-purple-300 font-semibold">37%</span> średnio w pierwszy miesiąc.
-          </p>
-
-          {/* Ultra Premium CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-8">
-            {/* Primary CTA - Ultra Luxury */}
-            <a href="#contact-form" className="group relative px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-white to-neutral-100 text-black font-semibold text-sm overflow-hidden transition-all duration-700 active:scale-95 inline-block shadow-2xl shadow-white/10 hover:shadow-white/20">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative flex items-center justify-center gap-3">
-                <span>Umów prezentację</span>
-                <div className="w-5 h-5 rounded-full bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1">
-                  <span className="text-xs">→</span>
-                </div>
-              </div>
-              {/* Premium glow effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/30 to-violet-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
-            </a>
-
-            {/* Secondary CTA - Glassmorphism */}
-            <button className="group relative px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-white/5 backdrop-blur-xl text-white font-semibold text-sm border border-white/10 overflow-hidden transition-all duration-700 hover:border-purple-400/30 hover:bg-white/10">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative flex items-center justify-center gap-3">
-                <span>Posłuchaj nagrania</span>
-                <div className="w-4 h-4 rounded-full border border-white/30 flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-xs">▶</span>
-                </div>
-              </div>
-            </button>
-          </div>
-
-          {/* Premium Social Proof */}
-          <div className="flex items-center gap-6 pt-12 text-sm text-neutral-400">
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-violet-600/20 border border-purple-400/30 flex-shrink-0 transition-all duration-300 hover:scale-110 backdrop-blur-sm"
-                />
-              ))}
-            </div>
-            <div className="space-y-1">
-              <p className="font-semibold text-white">50+ klinik zaufało Scale It</p>
-              <p className="text-xs text-neutral-500">Średni wzrost rezerwacji o 37%</p>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-slate-400" /> Średni wzrost rezerwacji o 37%
+              </span>
             </div>
           </div>
-        </div>
 
-        {/* Right Column - Ultra Premium Dashboard Card */}
-        <div className="relative group h-full min-h-96 lg:min-h-full">
-          {/* Ultra glow effect with purple */}
-          <div className="absolute -inset-2 bg-gradient-to-br from-purple-500/20 via-violet-500/10 to-transparent rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-
-          {/* Main card with ultra glassmorphism */}
-          <div className="relative h-full bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-white/[0.02] backdrop-blur-3xl border border-white/[0.12] group-hover:border-purple-400/30 rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl group-hover:shadow-purple-500/10 transition-all duration-700 overflow-hidden">
-            {/* Premium shine effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
-
-            <div className="relative space-y-10">
-              {/* Card Header with luxury styling */}
-              <div className="flex justify-between items-start">
-                <div className="space-y-4 flex-1">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/20">
-                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-                    <p className="text-xs uppercase tracking-[0.15em] text-purple-200 font-semibold">Średnie rezultaty</p>
-                  </div>
-                  <h3 className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
-                    +37%
-                  </h3>
+          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/40 backdrop-blur-2xl">
+            <div className="absolute inset-x-0 top-0 h-52 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_40%)] opacity-70 blur-3xl" />
+            <div className="absolute -left-16 top-10 h-72 w-72 rounded-full bg-gradient-to-br from-[#ffffff10] via-[#8b5cf610] to-transparent blur-3xl" />
+            <div className="relative space-y-8">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Średnie rezultaty</p>
+                  <h2 className="mt-3 text-5xl font-semibold text-white">+37%</h2>
                 </div>
-
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-br from-purple-500/20 to-violet-600/20 flex items-center justify-center text-4xl sm:text-5xl backdrop-blur-sm border border-purple-400/30 group-hover:border-purple-300/50 transition-all duration-500 flex-shrink-0 shadow-lg shadow-purple-500/10">
+                <div className="grid h-16 w-16 place-items-center rounded-3xl bg-white/10 border border-white/10 text-2xl">
                   📈
                 </div>
               </div>
-
-              {/* Luxury divider */}
-              <div className="h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent" />
-
-              {/* Premium Stats Grid */}
-              <div className="space-y-4 sm:space-y-5">
+              <div className="space-y-4">
                 {[
-                  { label: "Konsultacji zaplanowanych", value: "312", icon: "📞", color: "from-blue-400 to-cyan-400" },
-                  { label: "Klientów odzyskanych", value: "89%", icon: "✨", color: "from-purple-400 to-pink-400" },
-                  { label: "Czas odpowiedzi", value: "12 sek", icon: "⚡", color: "from-green-400 to-emerald-400" }
-                ].map((stat, i) => (
-                  <div
-                    key={i}
-                    className="group/stat relative bg-gradient-to-r from-white/[0.05] to-transparent hover:from-white/[0.08] hover:to-white/[0.02] rounded-2xl p-5 sm:p-6 border border-white/[0.08] hover:border-purple-400/25 transition-all duration-500 cursor-pointer overflow-hidden"
-                  >
-                    {/* Subtle stat glow */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${stat.color} opacity-0 group-hover/stat:opacity-[0.03] transition-opacity duration-500`} />
-
-                    <div className="relative flex items-start justify-between gap-4">
-                      <div className="space-y-3 flex-1">
-                        <p className="text-sm text-neutral-400 font-medium uppercase tracking-wide group-hover/stat:text-purple-200 transition-colors duration-300">
-                          {stat.label}
-                        </p>
-                        <h4 className="text-3xl sm:text-4xl font-bold text-white group-hover/stat:text-transparent group-hover/stat:bg-gradient-to-r group-hover/stat:from-white group-hover/stat:to-purple-100 group-hover/stat:bg-clip-text transition-all duration-500">
-                          {stat.value}
-                        </h4>
-                      </div>
-                      <div className={`text-2xl opacity-70 group-hover/stat:opacity-100 transition-all duration-300 transform group-hover/stat:scale-110 p-2 rounded-xl bg-gradient-to-br ${stat.color} bg-opacity-10`}>
-                        {stat.icon}
-                      </div>
+                  { label: 'Konsultacji zaplanowanych', value: '312', icon: '📞' },
+                  { label: 'Klientów odzyskanych', value: '89%', icon: '✨' },
+                  { label: 'Czas odpowiedzi', value: '12 sek', icon: '⚡' }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center justify-between gap-4 rounded-3xl border border-white/10 bg-white/5 px-5 py-4 transition-all duration-300 hover:border-white/20 hover:bg-white/10">
+                    <div>
+                      <p className="text-sm text-neutral-400">{item.label}</p>
+                      <p className="mt-2 text-2xl font-semibold text-white">{item.value}</p>
+                    </div>
+                    <div className="grid h-12 w-12 place-items-center rounded-3xl bg-white/10 text-xl">
+                      {item.icon}
                     </div>
                   </div>
                 ))}
               </div>
-
-              {/* Premium footer indicator */}
-              <div className="pt-6 border-t border-white/[0.08]">
-                <p className="text-xs text-neutral-500 flex items-center gap-2 leading-relaxed">
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  Dane oparte na rzeczywistych wynikach z naszych klientów
-                </p>
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Wybrane statystyki</p>
+                <p className="mt-3 text-sm leading-relaxed text-neutral-300">Dane oparte na rzeczywistych wynikach z naszych klientów.</p>
               </div>
             </div>
           </div>
@@ -296,104 +199,58 @@ export default function Home() {
       </section>
 
       {/* AI Receptionist Demo Section */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-32 lg:py-40">
-        {/* Section Header */}
-        <div className="mb-16 md:mb-20 space-y-4">
-          <p className="text-xs uppercase tracking-[0.35em] text-neutral-600 font-semibold">
-            Jak to działa
-          </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-            AI recepcjonistka w akcji
-          </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl font-light">
-            Obsługuje połączenia tak jak doświadczona recepcjonistka. 24/7. Bez przerw.
-          </p>
-        </div>
+      <section className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
+        <div className="absolute inset-x-0 top-0 h-[240px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_45%)] blur-3xl opacity-70" />
+        <div className="relative space-y-12">
+          <div className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Jak to działa</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">AI recepcjonistka w akcji</h2>
+            <p className="max-w-2xl text-lg text-neutral-400 font-light">Obsługuje połączenia tak jak doświadczona recepcjonistka. 24/7. Bez przerw.</p>
+          </div>
 
-        {/* Main Demo Container */}
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Left: Call Interface */}
-          <div className="relative group">
-            {/* Glow background */}
-            <div className="absolute -inset-1 bg-gradient-to-br from-white/20 via-white/5 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            
-            {/* Phone-like interface */}
-            <div className="relative bg-gradient-to-br from-white/8 via-white/4 to-white/2 backdrop-blur-2xl border border-white/15 group-hover:border-white/30 rounded-3xl p-8 overflow-hidden">
-              {/* Shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
-              
+          <div className="grid gap-8 lg:grid-cols-2">
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/30 backdrop-blur-2xl">
+              <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_45%)] blur-3xl opacity-70" />
               <div className="relative space-y-8">
-                {/* Call Status */}
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="space-y-1">
-                      <p className="text-xs text-neutral-600 uppercase tracking-wide font-semibold">Status</p>
-                      <h3 className="text-2xl font-bold text-white">Połączenie aktywne</h3>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-                      <span className="text-sm text-green-400 font-medium">Online</span>
-                    </div>
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Status</p>
+                    <h3 className="mt-3 text-2xl font-semibold text-white">Połączenie aktywne</h3>
                   </div>
-                  
-                  {/* Timer */}
-                  <div className="text-sm text-neutral-500">
-                    <span className="font-mono">02:34</span>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-2 text-sm text-green-300">
+                    <span className="h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse" />
+                    Online
                   </div>
                 </div>
 
-                {/* Divider */}
-                <div className="h-px bg-gradient-to-r from-white/20 via-white/10 to-transparent" />
-
-                {/* Conversation Transcript */}
-                <div className="space-y-4">
-                  <p className="text-xs text-neutral-600 uppercase tracking-wide font-semibold">Transkrypcja</p>
-                  
-                  <div className="space-y-3">
-                    {/* AI message */}
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Transkrypcja</p>
+                  <div className="mt-5 space-y-4 text-sm leading-relaxed">
                     <div className="space-y-1">
                       <p className="text-xs text-neutral-500">AI Recepcja</p>
-                      <p className="text-sm text-neutral-300 leading-relaxed">
-                        Cześć! Dzwonisz do kliniki Beauty & Care. Jak się masz? Co mogę dla Ciebie dzisiaj zrobić?
-                      </p>
+                      <p className="text-neutral-300">Cześć! Dzwonisz do kliniki Beauty & Care. Jak się masz? Co mogę dla Ciebie dzisiaj zrobić?</p>
                     </div>
-
-                    {/* User message */}
                     <div className="space-y-1">
                       <p className="text-xs text-neutral-500">Pacjent</p>
-                      <p className="text-sm text-white font-medium leading-relaxed">
-                        Hej! Chciałbym umówić konsultację zabiegu Botoksu.
-                      </p>
+                      <p className="text-white font-medium">Hej! Chciałbym umówić konsultację zabiegu Botoksu.</p>
                     </div>
-
-                    {/* AI message */}
                     <div className="space-y-1">
                       <p className="text-xs text-neutral-500">AI Recepcja</p>
-                      <p className="text-sm text-neutral-300 leading-relaxed">
-                        Oczywiście! Mamy dostępne terminy w czwartek o 14:00 i piątek o 16:30. Który Ci bardziej odpowiada?
-                      </p>
+                      <p className="text-neutral-300">Oczywiście! Mamy dostępne terminy w czwartek o 14:00 i piątek o 16:30. Który Ci bardziej odpowiada?</p>
                     </div>
-
-                    {/* User message */}
                     <div className="space-y-1">
                       <p className="text-xs text-neutral-500">Pacjent</p>
-                      <p className="text-sm text-white font-medium leading-relaxed">
-                        Piątek o 16:30 to idealne.
-                      </p>
+                      <p className="text-white font-medium">Piątek o 16:30 to idealne.</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Divider */}
-                <div className="h-px bg-gradient-to-r from-white/20 via-white/10 to-transparent" />
-
-                {/* Booking Confirmation */}
-                <div className="bg-gradient-to-r from-green-500/10 to-transparent border border-green-500/20 rounded-2xl p-4 space-y-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-green-400">✓</span>
-                    <p className="text-sm font-semibold text-green-300">Rezerwacja potwierdzona</p>
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-green-300">
+                    <span>✓</span>
+                    Rezerwacja potwierdzona
                   </div>
-                  <div className="space-y-2 text-sm text-neutral-300">
+                  <div className="mt-4 space-y-2 text-sm text-neutral-300">
                     <p><span className="text-neutral-500">Data:</span> Piątek, 16:30</p>
                     <p><span className="text-neutral-500">Zabieg:</span> Konsultacja Botoksu</p>
                     <p><span className="text-neutral-500">Przypomnienie SMS:</span> Wysłane</p>
@@ -401,185 +258,143 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Right: Audio Player & Features */}
-          <div className="space-y-8">
-            {/* Audio Player */}
-            <div className="bg-gradient-to-br from-white/8 via-white/4 to-white/2 backdrop-blur-2xl border border-white/15 hover:border-white/30 rounded-3xl p-8 transition-all duration-300">
-              <p className="text-xs text-neutral-600 uppercase tracking-wide font-semibold mb-6">Posłuchaj nagrania</p>
-              
-              <div className="space-y-4">
-                {/* Player */}
-                <div className="bg-black/40 rounded-2xl p-6 flex items-center gap-6">
-                  <button className="group relative w-14 h-14 rounded-full bg-gradient-to-br from-white/30 to-white/10 hover:from-white/40 hover:to-white/20 flex items-center justify-center transition-all duration-300 flex-shrink-0">
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-full" />
-                    <span className="relative text-xl">▶</span>
-                  </button>
-                  
-                  <div className="flex-1 space-y-2">
-                    <div className="text-sm font-medium text-white">Przykładowe połączenie</div>
-                    <div className="w-full bg-white/10 rounded-full h-1">
-                      <div className="bg-gradient-to-r from-white to-neutral-400 h-1 rounded-full w-1/3" />
+            <div className="space-y-6">
+              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/30 backdrop-blur-2xl">
+                <p className="text-xs uppercase tracking-[0.35em] text-neutral-400 font-semibold mb-6">Posłuchaj nagrania</p>
+                <div className="space-y-6">
+                  <div className="rounded-3xl bg-black/50 p-6 backdrop-blur-xl">
+                    <div className="flex items-center gap-6">
+                      <button className="grid h-16 w-16 place-items-center rounded-full bg-white/10 text-white transition-all duration-300 hover:bg-white/20">
+                        ▶
+                      </button>
+                      <div className="flex-1 space-y-3">
+                        <p className="text-sm font-semibold text-white">Przykładowe połączenie</p>
+                        <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
+                          <div className="h-full w-1/3 rounded-full bg-gradient-to-r from-white to-neutral-400" />
+                        </div>
+                        <p className="text-xs text-neutral-500">1:25 / 3:42</p>
+                      </div>
                     </div>
-                    <div className="text-xs text-neutral-500">1:25 / 3:42</div>
                   </div>
+                  <p className="text-sm text-neutral-400">Nagranie demonstruje pełną rozmowę od odboru do rezerwacji. Naturalny głos, precyzja, profesjonalizm.</p>
                 </div>
-
-                <p className="text-sm text-neutral-400">
-                  Nagranie demonstruje pełną rozmowę od odboru do rezerwacji. Naturalny głos, precyzja, profesjonalizm.
-                </p>
               </div>
-            </div>
 
-            {/* Features List */}
-            <div className="space-y-3">
-              {[
-                { icon: "🎤", title: "Naturalny głos", desc: "Odróżnić od AI jest prawie niemożliwe" },
-                { icon: "⚡", title: "Natychmiastowa odpowiedź", desc: "Każde połączenie odbierane w 2-3 sekundy" },
-                { icon: "📅", title: "Inteligentna rezerwacja", desc: "Sprawdza dostępność i umawia pacjentów" },
-                { icon: "🌙", title: "24/7 dostępność", desc: "Działa non-stop, nawet w nocy i weekendy" }
-              ].map((feature, i) => (
-                <div 
-                  key={i} 
-                  className="group/feature bg-gradient-to-r from-white/5 to-transparent hover:from-white/10 hover:to-white/5 border border-white/10 hover:border-white/25 rounded-2xl p-4 transition-all duration-300"
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="text-2xl flex-shrink-0">{feature.icon}</span>
-                    <div className="space-y-1">
-                      <h4 className="font-semibold text-white text-sm">{feature.title}</h4>
-                      <p className="text-xs text-neutral-500">{feature.desc}</p>
+              <div className="grid gap-4">
+                {[
+                  { icon: '🎤', title: 'Naturalny głos', desc: 'Odróżnić od AI jest prawie niemożliwe' },
+                  { icon: '⚡', title: 'Natychmiastowa odpowiedź', desc: 'Każde połączenie odbierane w 2-3 sekundy' },
+                  { icon: '📅', title: 'Inteligentna rezerwacja', desc: 'Sprawdza dostępność i umawia pacjentów' },
+                  { icon: '🌙', title: '24/7 dostępność', desc: 'Działa non-stop, nawet w nocy i weekendy' }
+                ].map((feature, i) => (
+                  <div key={i} className="flex items-start gap-4 rounded-3xl border border-white/10 bg-white/5 p-5 transition-all duration-300 hover:border-white/20 hover:bg-white/10">
+                    <div className="grid h-12 w-12 place-items-center rounded-3xl bg-white/10 text-2xl">{feature.icon}</div>
+                    <div>
+                      <p className="text-sm font-semibold text-white">{feature.title}</p>
+                      <p className="text-xs text-neutral-400">{feature.desc}</p>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Scale It System Section */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-32 lg:py-40">
-        {/* Section Header */}
-        <div className="mb-16 md:mb-20 space-y-4">
-          <p className="text-xs uppercase tracking-[0.35em] text-neutral-600 font-semibold">
-            Kompletny system
-          </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-            Wszystko czego potrzebuje Twoja klinika
-          </h2>
-          <p className="text-lg text-neutral-400 max-w-2xl font-light">
-            Scale It to kompleksowy system automatyzacji i wzrostu. Od pierwszej wizyty po lojalność klientów.
-          </p>
-        </div>
+      <section className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
+        <div className="absolute inset-x-0 bottom-0 h-56 bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.05),transparent_45%)] blur-3xl opacity-50" />
+        <div className="relative space-y-12">
+          <div className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Kompletny system</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Wszystko czego potrzebuje Twoja klinika</h2>
+            <p className="max-w-2xl text-lg text-neutral-400 font-light">Scale It to kompleksowy system automatyzacji i wzrostu. Od pierwszej wizyty po lojalność klientów.</p>
+          </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {[
-            {
-              icon: "🌐",
-              title: "Premium strony internetowe",
-              desc: "Responsywne strony z bookingiem online, które konwertują odwiedzających na klientów.",
-              features: ["Booking online", "SEO optimized", "Mobile first"]
-            },
-            {
-              icon: "🎯",
-              title: "AI recepcjonistka",
-              desc: "Inteligentna recepcja odbiera połączenia 24/7 i umawia konsultacje automatycznie.",
-              features: ["24/7 dostępność", "Naturalny głos", "Automatyczne rezerwacje"]
-            },
-            {
-              icon: "📅",
-              title: "System rezerwacji",
-              desc: "Zaawansowany kalendarz z synchronizacją, przypomnieniami i zarządzaniem terminami.",
-              features: ["Sync z kalendarzem", "SMS przypomnienia", "Online booking"]
-            },
-            {
-              icon: "🤖",
-              title: "Automatyzacje Instagram & WhatsApp",
-              desc: "Automatyczne odpowiedzi na wiadomości, lead nurturing i sprzedaż przez social media.",
-              features: ["Auto odpowiedzi", "Lead nurturing", "Social selling"]
-            },
-            {
-              icon: "📊",
-              title: "CRM i lead management",
-              desc: "Kompletny system zarządzania klientami z historią wizyt i preferencjami.",
-              features: ["Historia klientów", "Segmentacja", "Personalizacja"]
-            },
-            {
-              icon: "📈",
-              title: "Analityka i raporty",
-              desc: "Szczegółowe statystyki przychodów, konwersji i efektywności marketingu.",
-              features: ["ROI tracking", "Conversion metrics", "Performance reports"]
-            },
-            {
-              icon: "💬",
-              title: "Follow-up klientów",
-              desc: "Automatyczne wiadomości po wizytach, przypomnienia o kolejnych zabiegach.",
-              features: ["Post-visit care", "Retention campaigns", "Loyalty building"]
-            },
-            {
-              icon: "🔄",
-              title: "Odzyskiwanie utraconych leadów",
-              desc: "Inteligentne systemy odzyskiwania klientów, którzy nie dokonali rezerwacji.",
-              features: ["Lead scoring", "Re-engagement", "Conversion optimization"]
-            }
-          ].map((service, i) => (
-            <div 
-              key={i} 
-              className="group relative bg-gradient-to-br from-white/8 via-white/4 to-white/2 backdrop-blur-2xl border border-white/15 hover:border-white/30 rounded-3xl p-6 md:p-8 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
-            >
-              {/* Glow effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-br from-white/20 via-white/5 to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              
-              <div className="relative space-y-6">
-                {/* Icon & Title */}
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
-                  <div className="space-y-2 flex-1">
-                    <h3 className="text-lg font-bold text-white leading-tight">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-neutral-400 leading-relaxed">
-                      {service.desc}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-2">
-                  {service.features.map((feature, j) => (
-                    <div key={j} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-white/60 to-white/40 flex-shrink-0" />
-                      <span className="text-xs text-neutral-500 font-medium">{feature}</span>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                icon: '🌐',
+                title: 'Premium strony internetowe',
+                desc: 'Responsywne strony z bookingiem online, które konwertują odwiedzających na klientów.',
+                features: ['Booking online', 'SEO optimized', 'Mobile first']
+              },
+              {
+                icon: '🎯',
+                title: 'AI recepcjonistka',
+                desc: 'Inteligentna recepcja odbiera połączenia 24/7 i umawia konsultacje automatycznie.',
+                features: ['24/7 dostępność', 'Naturalny głos', 'Automatyczne rezerwacje']
+              },
+              {
+                icon: '📅',
+                title: 'System rezerwacji',
+                desc: 'Zaawansowany kalendarz z synchronizacją, przypomnieniami i zarządzaniem terminami.',
+                features: ['Sync z kalendarzem', 'SMS przypomnienia', 'Online booking']
+              },
+              {
+                icon: '🤖',
+                title: 'Automatyzacje Instagram & WhatsApp',
+                desc: 'Automatyczne odpowiedzi na wiadomości, lead nurturing i sprzedaż przez social media.',
+                features: ['Auto odpowiedzi', 'Lead nurturing', 'Social selling']
+              },
+              {
+                icon: '📊',
+                title: 'CRM i lead management',
+                desc: 'Kompletny system zarządzania klientami z historią wizyt i preferencjami.',
+                features: ['Historia klientów', 'Segmentacja', 'Personalizacja']
+              },
+              {
+                icon: '📈',
+                title: 'Analityka i raporty',
+                desc: 'Szczegółowe statystyki przychodów, konwersji i efektywności marketingu.',
+                features: ['ROI tracking', 'Conversion metrics', 'Performance reports']
+              },
+              {
+                icon: '💬',
+                title: 'Follow-up klientów',
+                desc: 'Automatyczne wiadomości po wizytach, przypomnienia o kolejnych zabiegach.',
+                features: ['Post-visit care', 'Retention campaigns', 'Loyalty building']
+              },
+              {
+                icon: '🔄',
+                title: 'Odzyskiwanie utraconych leadów',
+                desc: 'Inteligentne systemy odzyskiwania klientów, którzy nie dokonali rezerwacji.',
+                features: ['Lead scoring', 'Re-engagement', 'Conversion optimization']
+              }
+            ].map((service, i) => (
+              <div key={i} className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 md:p-8 shadow-2xl shadow-black/20 transition-all duration-500 hover:border-white/20 hover:bg-white/10 hover:scale-[1.02]">
+                <div className="absolute -inset-0.5 rounded-[2rem] bg-gradient-to-br from-white/20 via-white/5 to-transparent opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="relative space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="grid h-12 w-12 place-items-center rounded-3xl bg-white/10 text-2xl">{service.icon}</div>
+                    <div className="space-y-2 flex-1">
+                      <h3 className="text-lg font-semibold text-white leading-tight">{service.title}</h3>
+                      <p className="text-sm text-neutral-400 leading-relaxed">{service.desc}</p>
                     </div>
-                  ))}
-                </div>
-
-                {/* Hover indicator */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
-                    <span className="text-xs text-white">→</span>
+                  </div>
+                  <div className="space-y-2">
+                    {service.features.map((feature, j) => (
+                      <div key={j} className="flex items-center gap-2 text-xs text-neutral-400">
+                        <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="absolute top-5 right-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="grid h-8 w-8 place-items-center rounded-full bg-white/10 text-xs text-white">→</div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 md:mt-20 text-center">
-          <p className="text-sm text-neutral-500 mb-6">
-            Wszystko w jednym miejscu. Bez integracji. Bez kosztów ukrytych.
-          </p>
-          <a 
-            href="#contact-form" 
-            className="inline-block px-8 py-4 rounded-full bg-white text-black font-semibold transition-all duration-300 hover:shadow-2xl hover:scale-105 active:scale-95"
-          >
-            Zobacz pełny system w akcji
-          </a>
+          <div className="mt-16 text-center">
+            <p className="text-sm text-neutral-400 mb-6">Wszystko w jednym miejscu. Bez integracji. Bez kosztów ukrytych.</p>
+            <a href="#contact-form" className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+              Zobacz pełny system w akcji
+            </a>
+          </div>
         </div>
       </section>
 
