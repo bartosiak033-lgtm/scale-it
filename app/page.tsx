@@ -132,149 +132,150 @@ export default function Home() {
           </a>
         </div>
       </nav>
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-white to-neutral-400" />
-            <h1 className="text-xl font-semibold tracking-tight text-white">
-              Scale It
-            </h1>
-          </div>
 
-          <button className="group relative px-6 py-2.5 rounded-full text-white font-medium text-sm overflow-hidden">
-            <div className="absolute inset-0 bg-white/10 rounded-full" />
-            <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute inset-0 border border-white/20 group-hover:border-white/40 rounded-full transition-colors duration-300" />
-            <a href="#contact-form" className="relative flex items-center justify-center gap-2 backdrop-blur-sm">
-              Umów prezentację
-              <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">→</span>
-            </a>
-          </button>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 pt-40 pb-24 md:pt-48 md:pb-32 grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
+      {/* Ultra Premium Hero Section */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 pt-48 pb-32 md:pt-56 md:pb-40 grid lg:grid-cols-2 gap-20 md:gap-28 items-center relative">
         {/* Left Column */}
-        <div className="space-y-12 lg:space-y-14">
-          {/* Label */}
-          <div className="inline-block">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-600 font-semibold">
+        <div className="space-y-16 lg:space-y-18">
+          {/* Premium Label */}
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-violet-500/10 border border-purple-400/20 backdrop-blur-sm">
+            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-400 to-violet-500 animate-pulse" />
+            <p className="text-xs uppercase tracking-[0.25em] text-purple-200 font-semibold">
               Inteligentna recepcja
             </p>
           </div>
 
-          {/* Hero Headline */}
-          <div className="space-y-6">
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+          {/* Ultra Luxury Headline */}
+          <div className="space-y-8">
+            <h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold leading-[0.9] tracking-tight">
               <span className="block text-white">Więcej</span>
-              <span className="block h-20 sm:h-24 lg:h-32 flex items-center">
-                <span className="text-transparent bg-gradient-to-r from-white via-white to-neutral-300 bg-clip-text animate-in fade-in">
+              <span className="block relative">
+                <span className="text-transparent bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text">
                   konsultacji.
                 </span>
+                {/* Subtle glow behind text */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-violet-500/20 blur-2xl -z-10 opacity-50" />
               </span>
               <span className="block text-white">Mniej strat.</span>
             </h2>
           </div>
 
-          {/* Description */}
-          <p className="text-base sm:text-lg text-neutral-400 leading-relaxed max-w-lg font-light tracking-wide">
-            Automatyzujemy kontakt z klientami. Pomagamy klinikom medycyny estetycznej zwiększać rezerwacje o 37% średnio w pierwszy miesiąc.
+          {/* Premium Description */}
+          <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed max-w-xl font-light tracking-wide">
+            Automatyzujemy kontakt z klientami. Pomagamy klinikom medycyny estetycznej zwiększać rezerwacje o <span className="text-purple-300 font-semibold">37%</span> średnio w pierwszy miesiąc.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6">
-            {/* Primary CTA */}
-            <a href="#contact-form" className="group relative px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white text-black font-semibold text-sm overflow-hidden transition-all duration-500 active:scale-95 inline-block">
-              <div className="absolute inset-0 bg-gradient-to-r from-white to-neutral-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative flex items-center justify-center gap-2">
-                Umów prezentację
+          {/* Ultra Premium CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-8">
+            {/* Primary CTA - Ultra Luxury */}
+            <a href="#contact-form" className="group relative px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-white to-neutral-100 text-black font-semibold text-sm overflow-hidden transition-all duration-700 active:scale-95 inline-block shadow-2xl shadow-white/10 hover:shadow-white/20">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-center justify-center gap-3">
+                <span>Umów prezentację</span>
+                <div className="w-5 h-5 rounded-full bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1">
+                  <span className="text-xs">→</span>
+                </div>
               </div>
-              <div className="absolute inset-0 rounded-full shadow-lg shadow-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+              {/* Premium glow effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/30 to-violet-500/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
             </a>
 
-            {/* Secondary CTA */}
-            <button className="group relative px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white/5 text-white font-semibold text-sm border border-white/15 overflow-hidden transition-all duration-500 hover:border-white/40">
-              <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative flex items-center justify-center gap-2 backdrop-blur-sm">
-                Posłuchaj nagrania
+            {/* Secondary CTA - Glassmorphism */}
+            <button className="group relative px-8 sm:px-10 py-4 sm:py-5 rounded-2xl bg-white/5 backdrop-blur-xl text-white font-semibold text-sm border border-white/10 overflow-hidden transition-all duration-700 hover:border-purple-400/30 hover:bg-white/10">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative flex items-center justify-center gap-3">
+                <span>Posłuchaj nagrania</span>
+                <div className="w-4 h-4 rounded-full border border-white/30 flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-xs">▶</span>
+                </div>
               </div>
             </button>
           </div>
 
-          {/* Social Proof */}
-          <div className="flex items-center gap-4 pt-8 text-sm text-neutral-500">
+          {/* Premium Social Proof */}
+          <div className="flex items-center gap-6 pt-12 text-sm text-neutral-400">
             <div className="flex -space-x-3">
-              {[1, 2, 3].map((i) => (
-                <div 
-                  key={i} 
-                  className="w-9 h-9 rounded-full bg-gradient-to-br from-white/20 to-white/5 border border-white/20 flex-shrink-0 transition-transform duration-300 hover:scale-110"
+              {[1, 2, 3, 4].map((i) => (
+                <div
+                  key={i}
+                  className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/20 to-violet-600/20 border border-purple-400/30 flex-shrink-0 transition-all duration-300 hover:scale-110 backdrop-blur-sm"
                 />
               ))}
             </div>
-            <span className="font-medium">Zaufało nam 50+ klinik w Polsce</span>
+            <div className="space-y-1">
+              <p className="font-semibold text-white">50+ klinik zaufało Scale It</p>
+              <p className="text-xs text-neutral-500">Średni wzrost rezerwacji o 37%</p>
+            </div>
           </div>
         </div>
 
-        {/* Right Column - Premium Dashboard Card */}
+        {/* Right Column - Ultra Premium Dashboard Card */}
         <div className="relative group h-full min-h-96 lg:min-h-full">
-          {/* Animated glow effect */}
-          <div className="absolute -inset-1 bg-gradient-to-br from-white/15 via-white/5 to-transparent rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-          
-          {/* Main card with glassmorphism */}
-          <div className="relative h-full bg-gradient-to-br from-white/8 via-white/4 to-white/2 backdrop-blur-2xl border border-white/15 group-hover:border-white/30 rounded-3xl p-8 sm:p-10 shadow-2xl group-hover:shadow-3xl transition-all duration-500 overflow-hidden">
-            {/* Card shine effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-700 pointer-events-none" />
-            
-            <div className="relative space-y-8">
-              {/* Card Header */}
+          {/* Ultra glow effect with purple */}
+          <div className="absolute -inset-2 bg-gradient-to-br from-purple-500/20 via-violet-500/10 to-transparent rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+
+          {/* Main card with ultra glassmorphism */}
+          <div className="relative h-full bg-gradient-to-br from-white/[0.08] via-white/[0.04] to-white/[0.02] backdrop-blur-3xl border border-white/[0.12] group-hover:border-purple-400/30 rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl group-hover:shadow-purple-500/10 transition-all duration-700 overflow-hidden">
+            {/* Premium shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
+
+            <div className="relative space-y-10">
+              {/* Card Header with luxury styling */}
               <div className="flex justify-between items-start">
-                <div className="space-y-3 flex-1">
-                  <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 font-semibold">Średnie rezultaty</p>
-                  <h3 className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-white via-white to-neutral-300 bg-clip-text text-transparent">
+                <div className="space-y-4 flex-1">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/20">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+                    <p className="text-xs uppercase tracking-[0.15em] text-purple-200 font-semibold">Średnie rezultaty</p>
+                  </div>
+                  <h3 className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
                     +37%
                   </h3>
                 </div>
 
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center text-3xl sm:text-4xl backdrop-blur-sm border border-white/20 group-hover:border-white/40 transition-all duration-300 flex-shrink-0">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-br from-purple-500/20 to-violet-600/20 flex items-center justify-center text-4xl sm:text-5xl backdrop-blur-sm border border-purple-400/30 group-hover:border-purple-300/50 transition-all duration-500 flex-shrink-0 shadow-lg shadow-purple-500/10">
                   📈
                 </div>
               </div>
 
-              {/* Divider */}
-              <div className="h-px bg-gradient-to-r from-white/20 via-white/10 to-transparent" />
+              {/* Luxury divider */}
+              <div className="h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent" />
 
-              {/* Stats Grid */}
-              <div className="space-y-3 sm:space-y-4">
+              {/* Premium Stats Grid */}
+              <div className="space-y-4 sm:space-y-5">
                 {[
-                  { label: "Konsultacji zaplanowanych", value: "312", icon: "📞" },
-                  { label: "Klientów odzyskanych", value: "89%", icon: "✨" },
-                  { label: "Czas odpowiedzi", value: "12 sek", icon: "⚡" }
+                  { label: "Konsultacji zaplanowanych", value: "312", icon: "📞", color: "from-blue-400 to-cyan-400" },
+                  { label: "Klientów odzyskanych", value: "89%", icon: "✨", color: "from-purple-400 to-pink-400" },
+                  { label: "Czas odpowiedzi", value: "12 sek", icon: "⚡", color: "from-green-400 to-emerald-400" }
                 ].map((stat, i) => (
-                  <div 
-                    key={i} 
-                    className="group/stat relative bg-gradient-to-r from-white/5 to-transparent hover:from-white/10 hover:to-white/5 rounded-2xl p-4 sm:p-5 border border-white/10 hover:border-white/25 transition-all duration-400 cursor-pointer overflow-hidden"
+                  <div
+                    key={i}
+                    className="group/stat relative bg-gradient-to-r from-white/[0.05] to-transparent hover:from-white/[0.08] hover:to-white/[0.02] rounded-2xl p-5 sm:p-6 border border-white/[0.08] hover:border-purple-400/25 transition-all duration-500 cursor-pointer overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover/stat:opacity-100 transition-opacity duration-300" />
-                    
+                    {/* Subtle stat glow */}
+                    <div className={`absolute inset-0 bg-gradient-to-r ${stat.color} opacity-0 group-hover/stat:opacity-[0.03] transition-opacity duration-500`} />
+
                     <div className="relative flex items-start justify-between gap-4">
-                      <div className="space-y-2 flex-1">
-                        <p className="text-xs text-neutral-500 font-semibold uppercase tracking-wide">
+                      <div className="space-y-3 flex-1">
+                        <p className="text-sm text-neutral-400 font-medium uppercase tracking-wide group-hover/stat:text-purple-200 transition-colors duration-300">
                           {stat.label}
                         </p>
-                        <h4 className="text-2xl sm:text-3xl font-bold text-white group-hover/stat:text-transparent group-hover/stat:bg-gradient-to-r group-hover/stat:from-white group-hover/stat:to-neutral-300 group-hover/stat:bg-clip-text transition-all duration-300">
+                        <h4 className="text-3xl sm:text-4xl font-bold text-white group-hover/stat:text-transparent group-hover/stat:bg-gradient-to-r group-hover/stat:from-white group-hover/stat:to-purple-100 group-hover/stat:bg-clip-text transition-all duration-500">
                           {stat.value}
                         </h4>
                       </div>
-                      <span className="text-xl opacity-60 group-hover/stat:opacity-100 transition-opacity duration-300">{stat.icon}</span>
+                      <div className={`text-2xl opacity-70 group-hover/stat:opacity-100 transition-all duration-300 transform group-hover/stat:scale-110 p-2 rounded-xl bg-gradient-to-br ${stat.color} bg-opacity-10`}>
+                        {stat.icon}
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Footer indicator */}
-              <div className="pt-4 border-t border-white/10">
-                <p className="text-xs text-neutral-600 flex items-center gap-2 leading-relaxed">
-                  <span className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0 animate-pulse" />
+              {/* Premium footer indicator */}
+              <div className="pt-6 border-t border-white/[0.08]">
+                <p className="text-xs text-neutral-500 flex items-center gap-2 leading-relaxed">
+                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                   Dane oparte na rzeczywistych wynikach z naszych klientów
                 </p>
               </div>
