@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, ChangeEvent, FormEvent } from 'react';
 
 interface FormData {
@@ -104,11 +105,11 @@ export default function Home() {
       <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/15 backdrop-blur-3xl shadow-[0_20px_80px_-60px_rgba(0,0,0,0.6)]">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 sm:px-8">
           <div className="flex items-center gap-4">
-            <div className="relative flex h-12 w-12 items-center justify-center rounded-3xl border border-white/10 bg-white/5 shadow-[0_0_30px_rgba(255,255,255,0.06)]">
-              <span className="text-2xl font-semibold tracking-tight text-white">S</span>
+            <div className="relative flex h-12 w-12 items-center justify-center rounded-3xl border border-white/10 bg-white/5 shadow-[0_0_30px_rgba(255,255,255,0.06)] backdrop-blur-xl">
+              <Image src="/logo-icon.png" alt="Scale It" width={24} height={24} className="object-contain" />
             </div>
-            <div className="hidden sm:block">
-              <p className="text-sm font-semibold tracking-[0.3em] text-white uppercase">Scale It</p>
+            <div className="hidden sm:flex items-center gap-3">
+              <Image src="/logo-full.png" alt="Scale It" width={120} height={28} className="object-contain" />
             </div>
           </div>
 
@@ -127,6 +128,9 @@ export default function Home() {
           <div className="space-y-10 lg:max-w-2xl">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neutral-400 shadow-[0_0_30px_rgba(255,255,255,0.04)]">
               Inteligentna recepcja
+            </div>
+            <div className="flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 px-5 py-3 shadow-[0_0_25px_rgba(255,255,255,0.04)]">
+              <Image src="/logo-full.png" alt="Scale It" width={140} height={32} className="object-contain" />
             </div>
             <div className="space-y-6">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-[0.94] tracking-tight">
