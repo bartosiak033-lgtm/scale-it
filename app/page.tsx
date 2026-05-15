@@ -4,6 +4,19 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState, ChangeEvent, FormEvent } from 'react';
 
+const sectionFade = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } }
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.16 } }
+};
+
+const cardHover = { y: -6, scale: 1.01 };
+const buttonHover = { y: -1, scale: 1.01 };
+
 interface FormData {
   name: string;
   clinic: string;
@@ -92,6 +105,21 @@ export default function Home() {
         html { scroll-behavior: smooth; }
         body { background: #050306; }
 
+        @keyframes slowFloat {
+          0%, 100% { transform: translate3d(0, 0, 0); }
+          50% { transform: translate3d(0, -12px, 0); }
+        }
+
+        @keyframes breathe {
+          0%, 100% { opacity: 0.65; }
+          50% { opacity: 1; }
+        }
+
+        @keyframes driftX {
+          0%, 100% { transform: translate3d(0, 0, 0); }
+          50% { transform: translate3d(10px, 0, 0); }
+        }
+
         @keyframes float {
           0%, 100% { transform: translate3d(0, 0, 0); }
           50% { transform: translate3d(0, -10px, 0); }
@@ -103,12 +131,28 @@ export default function Home() {
         }
 
         .animate-float {
-          animation: float 10s ease-in-out infinite;
+          animation: slowFloat 18s ease-in-out infinite;
+        }
+
+        .animate-glow-breathe {
+          animation: breathe 6.8s ease-in-out infinite;
+        }
+
+        .animate-drift-x {
+          animation: driftX 14s ease-in-out infinite;
         }
 
         .animate-fade-in-up {
           opacity: 0;
           animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .soft-transition {
+          transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, opacity 0.35s ease;
+        }
+
+        .glow-trail:hover {
+          box-shadow: 0 0 28px rgba(129, 90, 242, 0.18);
         }
 
         .animation-delay-200 { animation-delay: 0.2s; }
@@ -121,8 +165,16 @@ export default function Home() {
         <div className="absolute inset-0 bg-black" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(255,255,255,0.08),transparent_22%),radial-gradient(circle_at_80%_10%,rgba(129,90,242,0.16),transparent_22%)] opacity-70" />
         <div className="absolute inset-x-0 top-0 h-[360px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_40%)] blur-3xl" />
-        <div className="absolute left-[10%] top-[18%] h-[460px] w-[460px] rounded-full bg-violet-500/12 blur-3xl" />
-        <div className="absolute right-[8%] bottom-[12%] h-[560px] w-[560px] rounded-full bg-cyan-300/10 blur-3xl" />
+        <motion.div
+          className="absolute left-[10%] top-[18%] h-[460px] w-[460px] rounded-full bg-violet-500/12 blur-3xl animate-glow-breathe"
+          animate={{ x: [0, 10, 0], y: [0, -6, 0], opacity: [0.55, 0.95, 0.55] }}
+          transition={{ duration: 18, ease: 'easeInOut', repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute right-[8%] bottom-[12%] h-[560px] w-[560px] rounded-full bg-cyan-300/10 blur-3xl animate-drift-x"
+          animate={{ x: [0, -12, 0], y: [0, 6, 0], opacity: [0.35, 0.75, 0.35] }}
+          transition={{ duration: 20, ease: 'easeInOut', repeat: Infinity }}
+        />
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),transparent_30%)]" />
       </div>
 
@@ -147,7 +199,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <section id="hero" className="relative overflow-hidden pt-28 pb-24 sm:pt-32 sm:pb-32">
+      <motion.section id="hero" className="relative overflow-hidden pt-28 pb-24 sm:pt-32 sm:pb-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
         <div className="absolute inset-x-0 top-0 h-[220px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] blur-3xl opacity-70" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="grid gap-12 xl:grid-cols-[0.95fr_1.05fr] items-center">
@@ -189,10 +241,15 @@ export default function Home() {
                   { title: 'Prestiż i doświadczenie', subtitle: 'Obsługa na poziomie premium.' },
                   { title: 'Mierzalne efekty', subtitle: 'Wyniki, które robią różnicę.' }
                 ].map((item, idx) => (
-                  <div key={idx} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
+                  <motion.div
+                    key={idx}
+                    whileHover={cardHover}
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                    className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5 backdrop-blur-xl soft-transition"
+                  >
                     <p className="text-sm font-semibold text-white">{item.title}</p>
                     <p className="mt-2 text-sm text-neutral-400">{item.subtitle}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -200,8 +257,9 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -4, scale: 1.002 }}
               transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
-              className="relative flex justify-end lg:justify-start"
+              className="relative flex justify-end lg:justify-start soft-transition"
             >
               <div className="relative w-full max-w-[42rem] animate-float">
                 <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 blur-[80px]" />
@@ -236,10 +294,15 @@ export default function Home() {
                         { label: 'Całodobowa obsługa', value: 'Dostępność 24/7' },
                         { label: 'Stylowa prezentacja', value: 'Obsługa w wysokim standardzie' }
                       ].map((item, index) => (
-                        <div key={index} className="rounded-3xl border border-white/10 bg-black/20 p-5">
+                        <motion.div
+                          key={index}
+                          whileHover={cardHover}
+                          transition={{ duration: 0.35, ease: 'easeOut' }}
+                          className="rounded-3xl border border-white/10 bg-black/20 p-5 soft-transition"
+                        >
                           <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">{item.label}</p>
                           <p className="mt-2 text-sm font-semibold text-white">{item.value}</p>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   </div>
@@ -248,9 +311,9 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="korzysci" className="relative overflow-hidden py-24 sm:py-28 lg:py-32">
+      <motion.section id="korzysci" className="relative overflow-hidden py-24 sm:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
         <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_top,rgba(129,90,242,0.12),transparent_35%)] blur-3xl opacity-50" />
         <div className="absolute inset-x-0 bottom-1/3 h-80 bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.06),transparent_40%)] blur-3xl opacity-40" />
         
@@ -360,9 +423,9 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="funkcje" className="relative overflow-hidden py-24 sm:py-28 lg:py-32">
+      <motion.section id="funkcje" className="relative overflow-hidden py-24 sm:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
         <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_top,rgba(129,90,242,0.14),transparent_30%)] blur-3xl opacity-60" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-2xl">
@@ -386,9 +449,10 @@ export default function Home() {
                 key={idx}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={cardHover}
                 viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.7, delay: idx * 0.05 }}
-                className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 xl:p-8 shadow-2xl shadow-black/20 transition duration-300 hover:border-white/20 hover:bg-white/10"
+                transition={{ duration: 0.7, delay: idx * 0.05, ease: 'easeOut' }}
+                className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 xl:p-8 shadow-2xl shadow-black/20 soft-transition hover:border-white/20 hover:bg-white/10"
               >
                 <div className="absolute -inset-0.5 rounded-[2rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 transition duration-500 group-hover:opacity-100" />
                 <div className="relative space-y-5">
@@ -402,9 +466,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="jak-to-dziala" className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
+      <motion.section id="jak-to-dziala" className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
         <div className="absolute inset-x-0 top-0 h-[260px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)] blur-3xl opacity-70" />
         <div className="relative space-y-12">
           <div className="space-y-4">
@@ -424,9 +488,10 @@ export default function Home() {
                   key={idx}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={cardHover}
                   viewport={{ once: true, amount: 0.25 }}
-                  transition={{ duration: 0.7, delay: idx * 0.08 }}
-                  className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 backdrop-blur-2xl"
+                  transition={{ duration: 0.7, delay: idx * 0.08, ease: 'easeOut' }}
+                  className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 backdrop-blur-2xl soft-transition"
                 >
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-white/10 text-sm font-semibold text-white">{item.step}</div>
@@ -471,9 +536,9 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="demo" className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
+      <motion.section id="demo" className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
         <div className="absolute inset-x-0 top-0 h-[220px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] blur-3xl opacity-60" />
         <div className="relative grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-center">
           <div className="space-y-6">
@@ -513,9 +578,9 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="ekosystem" className="relative overflow-hidden bg-[#06050b] py-24 sm:py-28 lg:py-32">
+      <motion.section id="ekosystem" className="relative overflow-hidden bg-[#06050b] py-24 sm:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
         <div className="absolute inset-x-0 bottom-0 h-[320px] bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.06),transparent_45%)] blur-3xl opacity-50" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-2xl">
@@ -535,9 +600,10 @@ export default function Home() {
                 key={idx}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={cardHover}
                 viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.7, delay: idx * 0.08 }}
-                className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/25"
+                transition={{ duration: 0.7, delay: idx * 0.08, ease: 'easeOut' }}
+                className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/25 soft-transition"
               >
                 <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">{item.title}</p>
                 <p className="mt-4 text-lg font-semibold text-white">{item.desc}</p>
@@ -545,9 +611,9 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="cennik" className="relative overflow-hidden bg-[#06050b] py-24 sm:py-28 lg:py-32">
+      <motion.section id="cennik" className="relative overflow-hidden bg-[#06050b] py-24 sm:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
         <div className="absolute inset-x-0 top-0 h-[260px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)] blur-3xl opacity-70" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-3xl mx-auto text-center mb-14">
@@ -557,26 +623,38 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20">
+            <motion.div
+              whileHover={cardHover}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+              className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 soft-transition"
+            >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Pakiet startowy</p>
               <p className="mt-4 text-3xl font-semibold text-white">Dla eleganckich klinik</p>
               <p className="mt-3 text-sm text-neutral-400">Wsparcie kontaktu, które zwiększa liczbę rezerwacji bez zbędnych zmian w zespole.</p>
-            </div>
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20">
+            </motion.div>
+            <motion.div
+              whileHover={cardHover}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+              className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 soft-transition"
+            >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Ekskluzywna oferta</p>
               <p className="mt-4 text-3xl font-semibold text-white">Dla klinik, które oczekują więcej</p>
               <p className="mt-3 text-sm text-neutral-400">Prestiżowa obsługa pacjenta i pełny porządek w kontaktach.</p>
-            </div>
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20">
+            </motion.div>
+            <motion.div
+              whileHover={cardHover}
+              transition={{ duration: 0.35, ease: 'easeOut' }}
+              className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 soft-transition"
+            >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Rozmowa demo</p>
               <p className="mt-4 text-3xl font-semibold text-white">Wycena po spotkaniu</p>
               <p className="mt-3 text-sm text-neutral-400">Zarezerwuj demonstrację i poznaj spersonalizowane rozwiązanie dla swojej kliniki.</p>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="contact-form" className="relative overflow-hidden max-w-6xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
+      <motion.section id="contact-form" className="relative overflow-hidden max-w-6xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_50%)]" />
         <div className="relative space-y-12">
           <div className="max-w-2xl space-y-4">
@@ -688,7 +766,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <footer className="border-t border-white/10 bg-[#050306] py-10">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
