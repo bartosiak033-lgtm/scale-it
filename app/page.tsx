@@ -160,10 +160,10 @@ export default function Home() {
               <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Dla klinik premium</p>
               <h1 className="mt-8 text-5xl sm:text-6xl lg:text-[4.8rem] font-semibold leading-[0.92] tracking-[-0.04em] text-white">
                 Więcej rezerwacji.<br />
-                Mniej chaosu.
+                Mniej straconych możliwości.
               </h1>
               <p className="mt-8 max-w-xl text-lg sm:text-xl leading-9 text-neutral-300">
-                Obsługa kontaktu, która zatrzymuje klientów i podnosi standard.
+                Zaprojektowane, aby zwiększać efektywność Twojej kliniki i zapewniać doświadczenie na najwyższym poziomie.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <motion.a
@@ -171,23 +171,23 @@ export default function Home() {
                   href="#contact-form"
                   className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-black shadow-[0_24px_80px_-56px_rgba(255,255,255,0.9)] transition duration-300 hover:shadow-[0_28px_90px_-50px_rgba(255,255,255,0.95)]"
                 >
-                  Umów prezentację
+                  Zarezerwuj demo →
                 </motion.a>
                 <motion.a
                   whileHover={{ y: -1 }}
                   href="#jak-to-dziala"
                   className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-sm font-semibold text-white transition duration-300 hover:border-white/25 hover:bg-white/10"
                 >
-                  Zobacz działanie
+                  Zobacz jak to działa
                 </motion.a>
               </div>
 
               <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {[
-                  { title: 'Więcej rezerwacji', subtitle: 'Bez przestojów w recepcji.' },
-                  { title: 'Mniej utraconych klientów', subtitle: 'Więcej potwierdzonych terminów.' },
-                  { title: 'Wyższy standard', subtitle: 'Pacjenci czują opiekę premium.' },
-                  { title: 'Oszczędność czasu', subtitle: 'Recepcja działa sprawniej.' }
+                  { title: 'Więcej rezerwacji', subtitle: 'Bez dodatkowych działań.' },
+                  { title: 'Pełna automatyzacja', subtitle: 'Oszczędność czasu i zasobów.' },
+                  { title: 'Prestiż i doświadczenie', subtitle: 'Obsługa na poziomie premium.' },
+                  { title: 'Mierzalne efekty', subtitle: 'Wyniki, które robią różnicę.' }
                 ].map((item, idx) => (
                   <div key={idx} className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5 backdrop-blur-xl">
                     <p className="text-sm font-semibold text-white">{item.title}</p>
@@ -213,17 +213,17 @@ export default function Home() {
                     <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                       <div className="flex items-center gap-3">
                         <Image src="/logo-icon.png" alt="Scale It" width={28} height={28} className="object-contain" />
-                        <span className="text-sm font-semibold uppercase tracking-[0.35em] text-white">Scale It</span>
+                        <span className="text-sm font-semibold uppercase tracking-[0.35em] text-white">SCALE IT</span>
                       </div>
                       <span className="text-xs uppercase tracking-[0.35em] text-neutral-400">Dyskretne wsparcie</span>
                     </div>
 
                     <div className="mt-10 border-t border-white/10 pt-10">
-                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Średnio więcej rezerwacji</p>
+                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Więcej rezerwacji</p>
                       <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end">
                         <p className="text-6xl font-semibold text-white">37%</p>
                         <div className="max-w-md">
-                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">mniej pustych terminów</p>
+                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">ŚREDNIO WIĘCEJ KONWERSJI</p>
                           <p className="mt-3 text-sm leading-7 text-neutral-300">Recepcja obsługuje więcej pacjentów szybciej i bez przerw.</p>
                         </div>
                       </div>
@@ -245,6 +245,118 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section id="korzysci" className="relative overflow-hidden py-24 sm:py-28 lg:py-32">
+        <div className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_top,rgba(129,90,242,0.12),transparent_35%)] blur-3xl opacity-50" />
+        <div className="absolute inset-x-0 bottom-1/3 h-80 bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.06),transparent_40%)] blur-3xl opacity-40" />
+        
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+              className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold"
+            >
+              Panel zarządzania
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white"
+            >
+              Wszystkie zapytania.<br />
+              Jedno miejsce.
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto"
+            >
+              Pełna kontrola nad wszystkimi kontaktami. Czytelnie, szybko, elegancko.
+            </motion.p>
+          </div>
+
+          <div className="relative h-auto">
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute top-1/4 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-violet-500/10 blur-3xl opacity-40" />
+              <div className="absolute bottom-1/4 right-0 h-80 w-80 rounded-full bg-cyan-400/5 blur-3xl opacity-30" />
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-2 lg:gap-0 items-end">
+              <motion.div
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.9, ease: 'easeOut' }}
+                className="relative z-10"
+              >
+                <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-[0_80px_160px_-80px_rgba(0,0,0,0.7)] backdrop-blur-3xl p-2">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(129,90,242,0.08),transparent_35%)] rounded-[2rem]" />
+                  <Image
+                    src="/crm1.png"
+                    alt="Panel zarządzania Scale It"
+                    width={600}
+                    height={500}
+                    className="relative w-full h-auto rounded-[1.75rem] object-cover"
+                  />
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 60, scale: 0.92 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
+                className="relative z-20 -mt-12 lg:-ml-12"
+              >
+                <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-[0_80px_160px_-80px_rgba(0,0,0,0.7)] backdrop-blur-3xl p-2">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(129,90,242,0.08),transparent_35%)] rounded-[2rem]" />
+                  <Image
+                    src="/crm2.png"
+                    alt="Szczegóły rezerwacji"
+                    width={520}
+                    height={420}
+                    className="relative w-full h-auto rounded-[1.75rem] object-cover"
+                  />
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="mt-16 grid gap-8 md:grid-cols-3"
+            >
+              {[
+                { icon: '⚡', title: 'Szybka odpowiedź', desc: 'Każde pytanie obsłużone w sekundach.' },
+                { icon: '👁️', title: 'Pełny przegląd', desc: 'Wszystkie rozmowy i rezerwacje na ekranie.' },
+                { icon: '🎯', title: 'Wyższe konwersje', desc: 'Mniej zagubionego czasu, więcej transakcji.' }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.5 + idx * 0.08 }}
+                  className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
+                >
+                  <p className="text-3xl mb-4">{item.icon}</p>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm text-neutral-400">{item.desc}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </div>
@@ -435,6 +547,35 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="cennik" className="relative overflow-hidden bg-[#06050b] py-24 sm:py-28 lg:py-32">
+        <div className="absolute inset-x-0 top-0 h-[260px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)] blur-3xl opacity-70" />
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Cennik</p>
+            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Oferta dla klinik premium</h2>
+            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Wycena dopasowana do prestiżu Twojej kliniki. Rozmowa, która otwiera nowy standard obsługi.</p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20">
+              <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Pakiet startowy</p>
+              <p className="mt-4 text-3xl font-semibold text-white">Dla eleganckich klinik</p>
+              <p className="mt-3 text-sm text-neutral-400">Wsparcie kontaktu, które zwiększa liczbę rezerwacji bez zbędnych zmian w zespole.</p>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20">
+              <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Ekskluzywna oferta</p>
+              <p className="mt-4 text-3xl font-semibold text-white">Dla klinik, które oczekują więcej</p>
+              <p className="mt-3 text-sm text-neutral-400">Prestiżowa obsługa pacjenta i pełny porządek w kontaktach.</p>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20">
+              <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Rozmowa demo</p>
+              <p className="mt-4 text-3xl font-semibold text-white">Wycena po spotkaniu</p>
+              <p className="mt-3 text-sm text-neutral-400">Zarezerwuj demonstrację i poznaj spersonalizowane rozwiązanie dla swojej kliniki.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="contact-form" className="relative overflow-hidden max-w-6xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_50%)]" />
         <div className="relative space-y-12">
@@ -553,12 +694,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-4 text-neutral-300">
             <Image src="/logo-icon.png" alt="Scale It" width={24} height={24} className="object-contain" />
-            <span className="text-sm uppercase tracking-[0.35em]">Scale It</span>
+            <span className="text-sm uppercase tracking-[0.35em]">SCALE IT</span>
           </div>
           <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-500">
             <a href="#funkcje" className="transition hover:text-white">Funkcje</a>
+            <a href="#korzysci" className="transition hover:text-white">Korzyści</a>
             <a href="#jak-to-dziala" className="transition hover:text-white">Jak to działa</a>
-            <a href="#demo" className="transition hover:text-white">Prezentacja</a>
+            <a href="#cennik" className="transition hover:text-white">Cennik</a>
             <a href="#contact-form" className="transition hover:text-white">Kontakt</a>
           </div>
         </div>
