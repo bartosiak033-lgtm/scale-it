@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -43,12 +43,12 @@ export default function Home() {
 
   const validateForm = (): FormErrors => {
     const newErrors: FormErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Podaj imię';
-    if (!formData.business.trim()) newErrors.business = 'Podaj nazwę firmy';
+    if (!formData.name.trim()) newErrors.name = 'Podaj imiÄ™';
+    if (!formData.business.trim()) newErrors.business = 'Podaj nazwÄ™ firmy';
     if (!formData.phone.trim()) newErrors.phone = 'Podaj telefon';
     if (!formData.email.trim()) newErrors.email = 'Podaj email';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Wprowadź poprawny email';
-    if (!formData.message.trim()) newErrors.message = 'Napisz krótką wiadomość';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'WprowadĹş poprawny email';
+    if (!formData.message.trim()) newErrors.message = 'Napisz krĂłtkÄ… wiadomoĹ›Ä‡';
     return newErrors;
   };
 
@@ -89,11 +89,11 @@ export default function Home() {
         setFormData({ name: '', business: '', phone: '', email: '', message: '' });
         setTimeout(() => setSubmitSuccess(false), 5000);
       } else {
-        setErrors({ submit: 'Wysyłka nie powiodła się. Spróbuj ponownie.' });
+        setErrors({ submit: 'WysyĹ‚ka nie powiodĹ‚a siÄ™. SprĂłbuj ponownie.' });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      setErrors({ submit: 'Problem z połączeniem. Sprawdź sieć i spróbuj jeszcze raz.' });
+      setErrors({ submit: 'Problem z poĹ‚Ä…czeniem. SprawdĹş sieÄ‡ i sprĂłbuj jeszcze raz.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -186,7 +186,7 @@ export default function Home() {
           </a>
           <div className="hidden lg:flex items-center gap-10 text-sm text-neutral-300">
             <a href="#funkcje" className="transition hover:text-white">Funkcje</a>
-            <a href="#jak-to-dziala" className="transition hover:text-white">Jak to działa</a>
+            <a href="#jak-to-dziala" className="transition hover:text-white">Jak to dziaĹ‚a</a>
             <a href="#demo" className="transition hover:text-white">Prezentacja</a>
             <a href="#contact-form" className="transition hover:text-white">Kontakt</a>
           </div>
@@ -194,7 +194,7 @@ export default function Home() {
             href="#contact-form"
             className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:border-white/20 hover:bg-white/10"
           >
-            Umów prezentację
+            UmĂłw prezentacjÄ™
           </a>
         </div>
       </nav>
@@ -217,11 +217,11 @@ export default function Home() {
             >
               <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">DLA FIRM PREMIUM</p>
               <h1 className="mt-8 text-[3.7rem] sm:text-[4.4rem] lg:text-[5.8rem] font-semibold leading-[0.92] tracking-[-0.04em] text-white">
-                Więcej klientów.<br />
-                Mniej straconych możliwości.
+                WiÄ™cej klientĂłw.<br />
+                Mniej straconych moĹĽliwoĹ›ci.
               </h1>
               <p className="mt-10 max-w-xl text-lg sm:text-xl leading-9 text-neutral-300">
-                Nowoczesny system kontaktu i obsługi klienta dla firm premium.
+                Nowoczesny system kontaktu i obsĹ‚ugi klienta dla firm premium.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <motion.a
@@ -236,16 +236,16 @@ export default function Home() {
                   href="#jak-to-dziala"
                   className="inline-flex min-w-[15rem] items-center justify-center rounded-full border border-white/15 bg-white/5 px-10 py-4 text-sm font-semibold text-white transition duration-300 hover:border-white/25 hover:bg-white/10"
                 >
-                  Zobacz działanie
+                  Zobacz dziaĹ‚anie
                 </motion.a>
               </div>
 
               <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {[
-                  { title: 'Więcej kontaktu', subtitle: 'Mniej porzuconych zapytań.' },
-                  { title: 'Automatyczny przepływ', subtitle: 'Bez zbędnych interwencji.' },
-                  { title: 'Doświadczenie premium', subtitle: 'Komunikacja na najwyższym poziomie.' },
-                  { title: 'Mierzalne wyniki', subtitle: 'Efekty, które widać w liczbach.' }
+                  { title: 'WiÄ™cej kontaktu', subtitle: 'Mniej porzuconych zapytaĹ„.' },
+                  { title: 'Automatyczny przepĹ‚yw', subtitle: 'Bez zbÄ™dnych interwencji.' },
+                  { title: 'DoĹ›wiadczenie premium', subtitle: 'Komunikacja na najwyĹĽszym poziomie.' },
+                  { title: 'Mierzalne wyniki', subtitle: 'Efekty, ktĂłre widaÄ‡ w liczbach.' }
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
@@ -283,21 +283,21 @@ export default function Home() {
                     </div>
 
                     <div className="mt-10 border-t border-white/10 pt-10">
-                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Konwersja zapytań</p>
+                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Konwersja zapytaĹ„</p>
                       <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end">
                         <p className="text-6xl font-semibold text-white">37%</p>
                         <div className="max-w-md">
-                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Więcej umówionych spotkań bez dodatkowego wysiłku</p>
-                          <p className="mt-3 text-sm leading-7 text-neutral-300">Klienci otrzymują szybką odpowiedź, ale bez poczucia pośpiechu.</p>
+                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">WiÄ™cej umĂłwionych spotkaĹ„ bez dodatkowego wysiĹ‚ku</p>
+                          <p className="mt-3 text-sm leading-7 text-neutral-300">Klienci otrzymujÄ… szybkÄ… odpowiedĹş, ale bez poczucia poĹ›piechu.</p>
                         </div>
                       </div>
                     </div>
 
                     <div className="mt-12 grid gap-4 sm:grid-cols-2">
                       {[
-                        { label: 'Bez dodatkowej pracy', value: 'Zapytanie obsłużone od początku do końca' },
-                        { label: 'Płynny rytm', value: 'Rozmowy brzmią naturalnie' },
-                        { label: 'Dostępność 24/7', value: 'Obsługa klienta bez przerw' },
+                        { label: 'Bez dodatkowej pracy', value: 'Zapytanie obsĹ‚uĹĽone od poczÄ…tku do koĹ„ca' },
+                        { label: 'PĹ‚ynny rytm', value: 'Rozmowy brzmiÄ… naturalnie' },
+                        { label: 'DostÄ™pnoĹ›Ä‡ 24/7', value: 'ObsĹ‚uga klienta bez przerw' },
                         { label: 'Styl premium', value: 'Kontakt prowadzony w eleganckim tonie' }
                       ].map((item, index) => (
                         <motion.div
@@ -332,7 +332,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold"
             >
-              Panel zarządzania
+              Panel zarzÄ…dzania
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -373,7 +373,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(129,90,242,0.08),transparent_35%)] rounded-[2rem]" />
                   <Image
                     src="/crm1.png"
-                    alt="Panel zarządzania Scale It"
+                    alt="Panel zarzÄ…dzania Scale It"
                     width={600}
                     height={500}
                     className="relative w-full h-auto rounded-[1.75rem] object-cover"
@@ -392,7 +392,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(129,90,242,0.08),transparent_35%)] rounded-[2rem]" />
                   <Image
                     src="/crm2.png"
-                    alt="Szczegóły rezerwacji"
+                    alt="SzczegĂłĹ‚y rezerwacji"
                     width={520}
                     height={420}
                     className="relative w-full h-auto rounded-[1.75rem] object-cover"
@@ -409,9 +409,9 @@ export default function Home() {
               className="mt-16 grid gap-8 md:grid-cols-3"
             >
               {[
-                { icon: '⚡', title: 'Kontakt od razu', desc: 'Każde zapytanie otrzymuje uwagę niemal natychmiast.' },
-                { icon: '👁️', title: 'Przejrzysty dzień', desc: 'Cały harmonogram i rozmowy w jednym widoku.' },
-                { icon: '🎯', title: 'Większa konwersja', desc: 'Mniej porzuconych zapytań, więcej umówionych spotkań.' }
+                { icon: 'âšˇ', title: 'Kontakt od razu', desc: 'KaĹĽde zapytanie otrzymuje uwagÄ™ niemal natychmiast.' },
+                { icon: 'đź‘ď¸Ź', title: 'Przejrzysty dzieĹ„', desc: 'CaĹ‚y harmonogram i rozmowy w jednym widoku.' },
+                { icon: 'đźŽŻ', title: 'WiÄ™ksza konwersja', desc: 'Mniej porzuconych zapytaĹ„, wiÄ™cej umĂłwionych spotkaĹ„.' }
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -435,21 +435,21 @@ export default function Home() {
         <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_top,rgba(129,90,242,0.14),transparent_30%)] blur-3xl opacity-60" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Obsługa kontaktu</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">ObsĹ‚uga kontaktu</p>
             <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Przygotowane dla firm premium</h2>
-            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Narzędzia, które usprawniają obsługę i podnoszą prestiż kontaktu.</p>
+            <p className="mt-4 text-lg text-neutral-400 max-w-xl">NarzÄ™dzia, ktĂłre usprawniajÄ… obsĹ‚ugÄ™ i podnoszÄ… prestiĹĽ kontaktu.</p>
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {[
-              { icon: '📅', title: 'Rezerwacje', desc: 'Terminy i potwierdzenia bez ręcznej pracy.' },
-              { icon: '📤', title: 'Follow-up', desc: 'Rozmowy pośrodowiska, które podtrzymują relację.' },
-              { icon: '📲', title: 'Instagram i WhatsApp', desc: 'Wiadomości tam, gdzie klient już jest.' },
-              { icon: '🔄', title: 'Odzyskiwanie zapytań', desc: 'Klienci wracają do pozostawionych terminów.' },
-              { icon: '🌐', title: 'Witryna firmy', desc: 'Prestiżowa prezentacja, która wzmacnia markę.' },
-              { icon: '📐', title: 'Wyniki w skrócie', desc: 'Najważniejsze dane podane w klarowny sposób.' },
-              { icon: '📄', title: 'Porądek w danych', desc: 'Klienci, terminy i preferencje w jednym miejscu.' },
-              { icon: '🤝', title: 'Obsługa premium', desc: 'Każdy kontakt prowadzimy z taktem i elegancją.' }
+              { icon: 'đź“…', title: 'Rezerwacje', desc: 'Terminy i potwierdzenia bez rÄ™cznej pracy.' },
+              { icon: 'đź“¤', title: 'Follow-up', desc: 'Rozmowy poĹ›rodowiska, ktĂłre podtrzymujÄ… relacjÄ™.' },
+              { icon: 'đź“˛', title: 'Instagram i WhatsApp', desc: 'WiadomoĹ›ci tam, gdzie klient juĹĽ jest.' },
+              { icon: 'đź”„', title: 'Odzyskiwanie zapytaĹ„', desc: 'Klienci wracajÄ… do pozostawionych terminĂłw.' },
+              { icon: 'đźŚ', title: 'Witryna firmy', desc: 'PrestiĹĽowa prezentacja, ktĂłra wzmacnia markÄ™.' },
+              { icon: 'đź“', title: 'Wyniki w skrĂłcie', desc: 'NajwaĹĽniejsze dane podane w klarowny sposĂłb.' },
+              { icon: 'đź“„', title: 'PorÄ…dek w danych', desc: 'Klienci, terminy i preferencje w jednym miejscu.' },
+              { icon: 'đź¤ť', title: 'ObsĹ‚uga premium', desc: 'KaĹĽdy kontakt prowadzimy z taktem i elegancjÄ….' }
             ].map((service, idx) => (
               <motion.div
                 key={idx}
@@ -478,17 +478,17 @@ export default function Home() {
         <div className="absolute inset-x-0 top-0 h-[260px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)] blur-3xl opacity-70" />
         <div className="relative space-y-12">
           <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Jak to działa</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Dyskretna obsługa klienta</h2>
-            <p className="max-w-2xl text-lg text-neutral-400 font-light">Klient już od pierwszego kontaktu otrzymuje obsługę na poziomie ekskluzywnej recepcji.</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Jak to dziaĹ‚a</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Dyskretna obsĹ‚uga klienta</h2>
+            <p className="max-w-2xl text-lg text-neutral-400 font-light">Klient juĹĽ od pierwszego kontaktu otrzymuje obsĹ‚ugÄ™ na poziomie ekskluzywnej recepcji.</p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="space-y-6">
               {[
-                { step: '1', title: 'Kontakt od razu', desc: 'Klient otrzymuje odpowiedź niemal natychmiast.' },
-                { step: '2', title: 'Rezerwacja bez luk', desc: 'Kalendarz aktualizuje się automatycznie i bez pomyłek.' },
-                { step: '3', title: 'Rozmowa z klasą', desc: 'Każde połączenie brzmi naturalnie i profesjonalnie.' }
+                { step: '1', title: 'Kontakt od razu', desc: 'Klient otrzymuje odpowiedĹş niemal natychmiast.' },
+                { step: '2', title: 'Rezerwacja bez luk', desc: 'Kalendarz aktualizuje siÄ™ automatycznie i bez pomyĹ‚ek.' },
+                { step: '3', title: 'Rozmowa z klasÄ…', desc: 'KaĹĽde poĹ‚Ä…czenie brzmi naturalnie i profesjonalnie.' }
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -510,109 +510,40 @@ export default function Home() {
               ))}
             </div>
 
+          </div>
+        </div>
+      </motion.section>
+
+      <motion.section id="communicate" className="relative overflow-hidden bg-black py-28 sm:py-32 lg:py-36" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
+        <div className="pointer-events-none absolute inset-x-0 top-0 flex justify-center">
+          <motion.div
+            className="h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(129,90,242,0.16),transparent_85%)]"
+            animate={{ scale: [1, 1.03, 1], opacity: [0.55, 0.9, 0.55] }}
+            transition={{ duration: 16, ease: 'easeInOut', repeat: Infinity }}
+          />
+        </div>
+
+        <div className="relative max-w-[1200px] mx-auto px-6 sm:px-8">
+          <motion.div
+            initial={{ y: 24 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.85, ease: 'easeOut' }}
+            className="relative mx-auto"
+          >
             <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-white/5 p-10 shadow-[0_50px_120px_-80px_rgba(0,0,0,0.65)] backdrop-blur-3xl"
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 18, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror' }}
+              className="relative"
             >
-              <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_35%)] blur-3xl opacity-70" />
-              <div className="relative space-y-8">
-                <div className="rounded-[2rem] border border-white/10 bg-black/20 p-6">
-                  <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Nagranie rozmowy</p>
-                  <div className="mt-6 flex items-center gap-5">
-                    <button className="grid h-16 w-16 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20">▶</button>
-                    <div>
-                      <p className="text-lg font-semibold text-white">Przykład rozmowy</p>
-                      <p className="mt-3 text-sm text-neutral-400">1:25 / 3:42</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-4 rounded-[2rem] border border-white/10 bg-white/5 p-6">
-                  <div className="grid gap-4 text-sm">
-                    <div className="text-neutral-400">Premium kontakt</div>
-                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Dzień dobry, czy mogę pomóc w ustaleniu terminu spotkania?</div>
-                    <div className="rounded-3xl bg-black/40 p-5 text-white font-semibold">Piątek o 16:30 będzie najlepszy.</div>
-                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Termin zapisany i potwierdzony od razu.</div>
-                  </div>
-                </div>
-              </div>
+              <Image
+                src="/communication-showcase.png"
+                alt="Premium showcase komunikacji Instagram i WhatsApp"
+                width={1535}
+                height={1024}
+                className="w-full h-auto"
+              />
             </motion.div>
-          </div>
-        </div>
-      </motion.section>
-
-      <motion.section id="demo" className="relative overflow-hidden max-w-7xl mx-auto px-6 sm:px-8 py-24 md:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
-        <div className="absolute inset-x-0 top-0 h-[220px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] blur-3xl opacity-60" />
-        <div className="relative grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-center">
-          <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Prezentacja</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">Rozmowa, która zamyka termin</h2>
-            <p className="max-w-2xl text-lg text-neutral-400">Naturalny kontakt, który konwertuje i buduje zaufanie.</p>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-white/5 p-10 shadow-[0_50px_120px_-80px_rgba(0,0,0,0.65)] backdrop-blur-3xl"
-          >
-            <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_35%)] blur-3xl opacity-70" />
-            <div className="relative space-y-8">
-              <div className="rounded-[2rem] border border-white/10 bg-black/20 p-6">
-                <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Przykład rozmowy</p>
-                <div className="mt-6 flex items-center gap-5">
-                  <button className="grid h-16 w-16 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20">▶</button>
-                  <div>
-                    <p className="text-lg font-semibold text-white">Nagranie</p>
-                    <p className="mt-3 text-sm text-neutral-400">1:25 / 3:42</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4 rounded-[2rem] border border-white/10 bg-white/5 p-6">
-                <div className="grid gap-4 text-sm">
-                  <div className="text-neutral-400">Dyskretny kontakt</div>
-                  <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Dzień dobry, czy mogę pomóc w ustaleniu terminu konsultacji?</div>
-                  <div className="rounded-3xl bg-black/40 p-5 text-white font-semibold">Piątek o 16:30 będzie najlepszy.</div>
-                  <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Termin zapisany i potwierdzony od razu.</div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      <motion.section id="communicate" className="relative overflow-hidden py-24 sm:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
-        <div className="absolute inset-x-0 top-0 h-[280px] pointer-events-none">
-          <div className="absolute inset-x-0 top-1/2 mx-auto h-[420px] max-w-[1400px] rounded-full bg-[radial-gradient(circle_at_center,rgba(129,90,242,0.16),transparent_70%)]" />
-        </div>
-
-        <div className="relative max-w-[1400px] mx-auto px-6 sm:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">KOMUNIKACJA, KTÓRA SPRZEDAJE</p>
-            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Instagram. WhatsApp. Kontakt bez chaosu.</h2>
-            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Minimalny premium showcase, z pełnym naciskiem na gotowy asset i cinematic rozmowę.</p>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 14, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror' }}
-            className="relative mx-auto overflow-visible"
-          >
-            <Image
-              src="/communication-showcase.png"
-              alt="Premiunowy showcase komunikacji Instagram i WhatsApp"
-              width={1535}
-              height={1024}
-              className="w-full h-auto shadow-[0_60px_140px_-70px_rgba(0,0,0,0.55)]"
-            />
           </motion.div>
         </div>
       </motion.section>
@@ -621,17 +552,17 @@ export default function Home() {
         <div className="absolute inset-x-0 bottom-0 h-[320px] bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.06),transparent_45%)] blur-3xl opacity-50" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Całość</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">CaĹ‚oĹ›Ä‡</p>
             <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Wszystko w jednym miejscu</h2>
-            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Rezerwacje, wiadomości i przypomnienia działają razem, bez utraty jakości.</p>
+            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Rezerwacje, wiadomoĹ›ci i przypomnienia dziaĹ‚ajÄ… razem, bez utraty jakoĹ›ci.</p>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {[
-              { title: 'Obsługa kontaktu', desc: 'Każde zapytanie obsługiwane szybko i dyskretnie.' },
-              { title: 'Instagram i WhatsApp', desc: 'Wiadomości trafiają tam, gdzie klient już jest.' },
-              { title: 'Porądek w danych', desc: 'Klienci, terminy i preferencje w jednym miejscu.' },
-              { title: 'Wyniki w prostym widoku', desc: 'Raporty dostępne w klarownym formacie.' }
+              { title: 'ObsĹ‚uga kontaktu', desc: 'KaĹĽde zapytanie obsĹ‚ugiwane szybko i dyskretnie.' },
+              { title: 'Instagram i WhatsApp', desc: 'WiadomoĹ›ci trafiajÄ… tam, gdzie klient juĹĽ jest.' },
+              { title: 'PorÄ…dek w danych', desc: 'Klienci, terminy i preferencje w jednym miejscu.' },
+              { title: 'Wyniki w prostym widoku', desc: 'Raporty dostÄ™pne w klarownym formacie.' }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -656,7 +587,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center mb-14">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Cennik</p>
             <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Oferta dla firm premium</h2>
-            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Oferta stworzona dla firm, które traktują kontakt jako część luksusowego doświadczenia.</p>
+            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Oferta stworzona dla firm, ktĂłre traktujÄ… kontakt jako czÄ™Ĺ›Ä‡ luksusowego doĹ›wiadczenia.</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -667,7 +598,7 @@ export default function Home() {
             >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Pakiet startowy</p>
               <p className="mt-4 text-3xl font-semibold text-white">Dla eleganckich firm</p>
-              <p className="mt-3 text-sm text-neutral-400">Wsparcie kontaktu, które podnosi liczbę rezerwacji bez obciążania zespołu.</p>
+              <p className="mt-3 text-sm text-neutral-400">Wsparcie kontaktu, ktĂłre podnosi liczbÄ™ rezerwacji bez obciÄ…ĹĽania zespoĹ‚u.</p>
             </motion.div>
             <motion.div
               whileHover={cardHover}
@@ -675,8 +606,8 @@ export default function Home() {
               className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 soft-transition"
             >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Ekskluzywna oferta</p>
-              <p className="mt-4 text-3xl font-semibold text-white">Dla firm, które oczekują więcej</p>
-              <p className="mt-3 text-sm text-neutral-400">Prestiżowa komunikacja i porądek w każdym kontakcie.</p>
+              <p className="mt-4 text-3xl font-semibold text-white">Dla firm, ktĂłre oczekujÄ… wiÄ™cej</p>
+              <p className="mt-3 text-sm text-neutral-400">PrestiĹĽowa komunikacja i porÄ…dek w kaĹĽdym kontakcie.</p>
             </motion.div>
             <motion.div
               whileHover={cardHover}
@@ -685,7 +616,7 @@ export default function Home() {
             >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Rozmowa demo</p>
               <p className="mt-4 text-3xl font-semibold text-white">Wycena po spotkaniu</p>
-              <p className="mt-3 text-sm text-neutral-400">Zarezerwuj krótką prezentację i poznaj rozwiązanie dopasowane do Twojej firmy.</p>
+              <p className="mt-3 text-sm text-neutral-400">Zarezerwuj krĂłtkÄ… prezentacjÄ™ i poznaj rozwiÄ…zanie dopasowane do Twojej firmy.</p>
             </motion.div>
           </div>
         </div>
@@ -696,8 +627,8 @@ export default function Home() {
         <div className="relative space-y-12">
           <div className="max-w-2xl space-y-4">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Kontakt</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">Umów prezentację</h2>
-            <p className="text-lg text-neutral-400">Krótka prezentacja. Zobacz, jak kontakt może podnieść jakość obsługi.</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">UmĂłw prezentacjÄ™</h2>
+            <p className="text-lg text-neutral-400">KrĂłtka prezentacja. Zobacz, jak kontakt moĹĽe podnieĹ›Ä‡ jakoĹ›Ä‡ obsĹ‚ugi.</p>
           </div>
 
           <div className="relative group">
@@ -708,10 +639,10 @@ export default function Home() {
                 {submitSuccess && (
                   <div className="rounded-3xl border border-green-500/20 bg-green-500/10 p-6">
                     <div className="flex items-center gap-3 text-green-200">
-                      <span className="text-2xl">✓</span>
+                      <span className="text-2xl">âś“</span>
                       <div>
-                        <p className="font-semibold">Wiadomość wysłana!</p>
-                        <p className="text-sm text-green-300/80">Odezwemy się w ciągu 24 godzin.</p>
+                        <p className="font-semibold">WiadomoĹ›Ä‡ wysĹ‚ana!</p>
+                        <p className="text-sm text-green-300/80">Odezwemy siÄ™ w ciÄ…gu 24 godzin.</p>
                       </div>
                     </div>
                   </div>
@@ -720,7 +651,7 @@ export default function Home() {
                 <form onSubmit={handleSubmit} className="grid gap-6">
                   <div className="grid gap-6 md:grid-cols-2">
                     <div>
-                      <label className="block text-sm font-medium text-neutral-300 mb-2">Imię i nazwisko</label>
+                      <label className="block text-sm font-medium text-neutral-300 mb-2">ImiÄ™ i nazwisko</label>
                       <input
                         type="text"
                         name="name"
@@ -773,12 +704,12 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-neutral-300 mb-2">Wiadomość</label>
+                    <label className="block text-sm font-medium text-neutral-300 mb-2">WiadomoĹ›Ä‡</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                        placeholder="Napisz krótko, czego potrzebujecie"
+                        placeholder="Napisz krĂłtko, czego potrzebujecie"
                       rows={5}
                       className={`w-full bg-black/25 border rounded-2xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition resize-none ${errors.message ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'}`}
                     />
@@ -794,11 +725,11 @@ export default function Home() {
                     disabled={isSubmitting}
                     className="inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-sm font-semibold text-black transition hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? 'Wysyłam...' : 'Wyślij zapytanie'}
+                    {isSubmitting ? 'WysyĹ‚am...' : 'WyĹ›lij zapytanie'}
                   </button>
                 </form>
 
-                <p className="text-sm text-neutral-500">Prywatność jest dla nas priorytetem. Tylko konkretne odpowiedzi, bez spamu.</p>
+                <p className="text-sm text-neutral-500">PrywatnoĹ›Ä‡ jest dla nas priorytetem. Tylko konkretne odpowiedzi, bez spamu.</p>
               </div>
             </div>
           </div>
@@ -813,8 +744,8 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-500">
             <a href="#funkcje" className="transition hover:text-white">Funkcje</a>
-            <a href="#korzysci" className="transition hover:text-white">Korzyści</a>
-            <a href="#jak-to-dziala" className="transition hover:text-white">Jak to działa</a>
+            <a href="#korzysci" className="transition hover:text-white">KorzyĹ›ci</a>
+            <a href="#jak-to-dziala" className="transition hover:text-white">Jak to dziaĹ‚a</a>
             <a href="#cennik" className="transition hover:text-white">Cennik</a>
             <a href="#contact-form" className="transition hover:text-white">Kontakt</a>
           </div>
