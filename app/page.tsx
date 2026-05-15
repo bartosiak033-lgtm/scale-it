@@ -221,7 +221,7 @@ export default function Home() {
                 Mniej straconych możliwości.
               </h1>
               <p className="mt-8 max-w-xl text-lg sm:text-xl leading-9 text-neutral-300">
-                Zaprojektowane, aby zwiększać efektywność Twojej kliniki i zapewniać doświadczenie na najwyższym poziomie.
+                Zaprojektowane, by oszczędzać czas kliniki i podnosić standard kontaktu.
               </p>
 
               <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -237,16 +237,16 @@ export default function Home() {
                   href="#jak-to-dziala"
                   className="inline-flex min-w-[15rem] items-center justify-center rounded-full border border-white/15 bg-white/5 px-10 py-4 text-sm font-semibold text-white transition duration-300 hover:border-white/25 hover:bg-white/10"
                 >
-                  Zobacz jak to działa
+                  Zobacz działanie
                 </motion.a>
               </div>
 
               <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {[
-                  { title: 'Więcej rezerwacji', subtitle: 'Bez dodatkowych działań.' },
-                  { title: 'Pełna automatyzacja', subtitle: 'Oszczędność czasu i zasobów.' },
-                  { title: 'Prestiż i doświadczenie', subtitle: 'Obsługa na poziomie premium.' },
-                  { title: 'Mierzalne efekty', subtitle: 'Wyniki, które robią różnicę.' }
+                  { title: 'Więcej rezerwacji', subtitle: 'Mniej pustych terminów.' },
+                  { title: 'Automatyczny przepływ', subtitle: 'Bez zbędnych interwencji.' },
+                  { title: 'Doświadczenie premium', subtitle: 'Komunikacja na najwyższym poziomie.' },
+                  { title: 'Mierzalne wyniki', subtitle: 'Efekty, które widać w liczbach.' }
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
@@ -288,8 +288,8 @@ export default function Home() {
                       <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end">
                         <p className="text-6xl font-semibold text-white">37%</p>
                         <div className="max-w-md">
-                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">ŚREDNIO WIĘCEJ KONWERSJI</p>
-                          <p className="mt-3 text-sm leading-7 text-neutral-300">Recepcja obsługuje więcej pacjentów szybciej i bez przerw.</p>
+                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Średnio +37% rezerwacji</p>
+                          <p className="mt-3 text-sm leading-7 text-neutral-300">Pacjenci otrzymują szybką odpowiedź, ale bez poczucia pośpiechu.</p>
                         </div>
                       </div>
                     </div>
@@ -297,9 +297,9 @@ export default function Home() {
                     <div className="mt-12 grid gap-4 sm:grid-cols-2">
                       {[
                         { label: 'Bez dodatkowej pracy', value: 'Kontakt obsłużony od początku do końca' },
-                        { label: 'Naturalny rytm', value: 'Rozmowy brzmią zwyczajnie' },
-                        { label: 'Całodobowa obsługa', value: 'Dostępność 24/7' },
-                        { label: 'Stylowa prezentacja', value: 'Obsługa w wysokim standardzie' }
+                        { label: 'Płynny rytm', value: 'Rozmowy brzmią naturalnie' },
+                        { label: 'Dostępność 24/7', value: 'Obsługa pacjenta bez przerw' },
+                        { label: 'Styl premium', value: 'Kontakt prowadzony w eleganckim tonie' }
                       ].map((item, index) => (
                         <motion.div
                           key={index}
@@ -352,7 +352,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto"
             >
-              Pełna kontrola nad wszystkimi kontaktami. Czytelnie, szybko, elegancko.
+              Kontakty, terminy i rozmowy w jednym, eleganckim widoku.
             </motion.p>
           </div>
 
@@ -410,9 +410,9 @@ export default function Home() {
               className="mt-16 grid gap-8 md:grid-cols-3"
             >
               {[
-                { icon: '⚡', title: 'Szybka odpowiedź', desc: 'Każde pytanie obsłużone w sekundach.' },
-                { icon: '👁️', title: 'Pełny przegląd', desc: 'Wszystkie rozmowy i rezerwacje na ekranie.' },
-                { icon: '🎯', title: 'Wyższe konwersje', desc: 'Mniej zagubionego czasu, więcej transakcji.' }
+                { icon: '⚡', title: 'Kontakt od razu', desc: 'Każde zapytanie otrzymuje uwagę niemal natychmiast.' },
+                { icon: '👁️', title: 'Przejrzysty dzień', desc: 'Cały harmonogram i rozmowy w jednym widoku.' },
+                { icon: '🎯', title: 'Większa konwersja', desc: 'Mniej porzuceń, więcej umówionych wizyt.' }
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -438,19 +438,19 @@ export default function Home() {
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Obsługa kontaktu</p>
             <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Przygotowane dla klinik premium</h2>
-            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Narzędzia, które usprawniają obsługę i dbają o pierwsze wrażenie.</p>
+            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Narzędzia, które usprawniają obsługę i podnoszą prestiż kontaktu.</p>
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {[
               { icon: '📅', title: 'Rezerwacje', desc: 'Terminy i potwierdzenia bez ręcznej pracy.' },
-              { icon: '💬', title: 'Kontakty po wizycie', desc: 'Przypomnienia trafiają w odpowiednim czasie.' },
-              { icon: '📲', title: 'Instagram i WhatsApp', desc: 'Wiadomości tam, gdzie pacjent jest.' },
-              { icon: '🔄', title: 'Odzyskiwanie rezerwacji', desc: 'Klienci wracają do terminu, który już wybrali.' },
-              { icon: '🌐', title: 'Strona kliniki', desc: 'Elegancka prezentacja, która dobrze wygląda.' },
-              { icon: '📊', title: 'Wyniki w prostym widoku', desc: 'Dane, które łatwo zrozumieć i wykorzystać.' },
+              { icon: '💬', title: 'Feedback po wizycie', desc: 'Follow-upy, które podtrzymują relację z pacjentem.' },
+              { icon: '📲', title: 'Instagram i WhatsApp', desc: 'Wiadomości tam, gdzie pacjent już jest.' },
+              { icon: '🔄', title: 'Odzyskiwanie rezerwacji', desc: 'Pacjenci wracają do pozostawionych terminów.' },
+              { icon: '🌐', title: 'Witryna kliniki', desc: 'Prestiżowa prezentacja, która wzmacnia markę.' },
+              { icon: '📊', title: 'Wyniki w skrócie', desc: 'Najważniejsze dane podane w klarowny sposób.' },
               { icon: '🗂️', title: 'Porządek w danych', desc: 'Pacjenci, terminy i preferencje w jednym miejscu.' },
-              { icon: '🤝', title: 'Obsługa premium', desc: 'Każdy kontakt ma szlachetny charakter.' }
+              { icon: '🤝', title: 'Obsługa premium', desc: 'Każdy kontakt prowadzimy z taktem i elegancją.' }
             ].map((service, idx) => (
               <motion.div
                 key={idx}
@@ -481,15 +481,15 @@ export default function Home() {
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Jak to działa</p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Dyskretna obsługa kontaktu</h2>
-            <p className="max-w-2xl text-lg text-neutral-400 font-light">Każdy telefon, wiadomość i rezerwacja obsługiwane z klasą.</p>
+            <p className="max-w-2xl text-lg text-neutral-400 font-light">Klient już od pierwszego kontaktu otrzymuje obsługę na poziomie ekskluzywnej recepcji.</p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="space-y-6">
               {[
-                { step: '1', title: 'Kontakt bez opóźnień', desc: 'Pacjent otrzymuje odpowiedź natychmiast.' },
-                { step: '2', title: 'Rezerwacja od ręki', desc: 'Kalendarz jest zawsze aktualny i bez błędów.' },
-                { step: '3', title: 'Wysoka jakość rozmowy', desc: 'Rozmowy brzmią naturalnie, jak w eleganckiej recepcji.' }
+                { step: '1', title: 'Kontakt od razu', desc: 'Pacjent otrzymuje odpowiedź niemal natychmiast.' },
+                { step: '2', title: 'Rezerwacja bez luk', desc: 'Kalendarz aktualizuje się automatycznie i bez pomyłek.' },
+                { step: '3', title: 'Rozmowa z klasą', desc: 'Każde połączenie brzmi naturalnie i profesjonalnie.' }
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -551,7 +551,7 @@ export default function Home() {
           <div className="space-y-6">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Prezentacja</p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">Rozmowa, która zamyka termin</h2>
-            <p className="max-w-2xl text-lg text-neutral-400">Kontakt prowadzony naturalnie, bez zbędnych formalności.</p>
+            <p className="max-w-2xl text-lg text-neutral-400">Naturalny kontakt, który konwertuje i buduje zaufanie.</p>
           </div>
 
           <motion.div
@@ -593,7 +593,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Całość</p>
             <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Wszystko w jednym miejscu</h2>
-            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Rezerwacje, wiadomości i przypomnienia działają razem bez zakłóceń.</p>
+            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Rezerwacje, wiadomości i przypomnienia działają razem, bez utraty jakości.</p>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -626,7 +626,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center mb-14">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Cennik</p>
             <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Oferta dla klinik premium</h2>
-            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Wycena dopasowana do prestiżu Twojej kliniki. Rozmowa, która otwiera nowy standard obsługi.</p>
+            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Oferta stworzona dla klinik, które traktują kontakt jako część luksusowego doświadczenia.</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -637,7 +637,7 @@ export default function Home() {
             >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Pakiet startowy</p>
               <p className="mt-4 text-3xl font-semibold text-white">Dla eleganckich klinik</p>
-              <p className="mt-3 text-sm text-neutral-400">Wsparcie kontaktu, które zwiększa liczbę rezerwacji bez zbędnych zmian w zespole.</p>
+              <p className="mt-3 text-sm text-neutral-400">Wsparcie kontaktu, które podnosi liczbę rezerwacji bez obciążania zespołu.</p>
             </motion.div>
             <motion.div
               whileHover={cardHover}
@@ -646,7 +646,7 @@ export default function Home() {
             >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Ekskluzywna oferta</p>
               <p className="mt-4 text-3xl font-semibold text-white">Dla klinik, które oczekują więcej</p>
-              <p className="mt-3 text-sm text-neutral-400">Prestiżowa obsługa pacjenta i pełny porządek w kontaktach.</p>
+              <p className="mt-3 text-sm text-neutral-400">Prestiżowa komunikacja i porządek w każdym kontakcie.</p>
             </motion.div>
             <motion.div
               whileHover={cardHover}
@@ -655,7 +655,7 @@ export default function Home() {
             >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Rozmowa demo</p>
               <p className="mt-4 text-3xl font-semibold text-white">Wycena po spotkaniu</p>
-              <p className="mt-3 text-sm text-neutral-400">Zarezerwuj demonstrację i poznaj spersonalizowane rozwiązanie dla swojej kliniki.</p>
+              <p className="mt-3 text-sm text-neutral-400">Zarezerwuj krótką prezentację i poznaj rozwiązanie dopasowane do Twojej kliniki.</p>
             </motion.div>
           </div>
         </div>
@@ -667,7 +667,7 @@ export default function Home() {
           <div className="max-w-2xl space-y-4">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Kontakt</p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white">Umów prezentację</h2>
-            <p className="text-lg text-neutral-400">Krótka prezentacja. Zobacz, jak kontakt może działać lepiej.</p>
+            <p className="text-lg text-neutral-400">Krótka prezentacja. Zobacz, jak kontakt może podnieść jakość obsługi.</p>
           </div>
 
           <div className="relative group">
@@ -764,11 +764,11 @@ export default function Home() {
                     disabled={isSubmitting}
                     className="inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-sm font-semibold text-black transition hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? 'Wysyłam...' : 'Wyślij wiadomość'}
+                    {isSubmitting ? 'Wysyłam...' : 'Wyślij zapytanie'}
                   </button>
                 </form>
 
-                <p className="text-sm text-neutral-500">Prywatność kliniki jest dla nas ważna. Bez spamu, tylko konkret.</p>
+                <p className="text-sm text-neutral-500">Prywatność jest dla nas priorytetem. Tylko konkretne odpowiedzi, bez spamu.</p>
               </div>
             </div>
           </div>
