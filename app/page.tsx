@@ -548,39 +548,6 @@ export default function Home() {
         </div>
       </motion.section>
 
-      <motion.section id="ekosystem" className="relative overflow-hidden bg-[#06050b] py-24 sm:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
-        <div className="absolute inset-x-0 bottom-0 h-[320px] bg-[radial-gradient(circle_at_bottom,rgba(255,255,255,0.06),transparent_45%)] blur-3xl opacity-50" />
-        <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">CaĹ‚oĹ›Ä‡</p>
-            <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Wszystko w jednym miejscu</h2>
-            <p className="mt-4 text-lg text-neutral-400 max-w-xl">Rezerwacje, wiadomoĹ›ci i przypomnienia dziaĹ‚ajÄ… razem, bez utraty jakoĹ›ci.</p>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              { title: 'ObsĹ‚uga kontaktu', desc: 'KaĹĽde zapytanie obsĹ‚ugiwane szybko i dyskretnie.' },
-              { title: 'Instagram i WhatsApp', desc: 'WiadomoĹ›ci trafiajÄ… tam, gdzie klient juĹĽ jest.' },
-              { title: 'PorÄ…dek w danych', desc: 'Klienci, terminy i preferencje w jednym miejscu.' },
-              { title: 'Wyniki w prostym widoku', desc: 'Raporty dostÄ™pne w klarownym formacie.' }
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={cardHover}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.7, delay: idx * 0.08, ease: 'easeOut' }}
-                className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/25 soft-transition"
-              >
-                <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">{item.title}</p>
-                <p className="mt-4 text-lg font-semibold text-white">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
       <motion.section id="cennik" className="relative overflow-hidden bg-[#06050b] py-24 sm:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
         <div className="absolute inset-x-0 top-0 h-[260px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)] blur-3xl opacity-70" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
@@ -754,3 +721,4 @@ export default function Home() {
     </main>
   );
 }
+
