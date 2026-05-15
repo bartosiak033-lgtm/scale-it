@@ -155,172 +155,6 @@ export default function Home() {
           box-shadow: 0 0 28px rgba(129, 90, 242, 0.18);
         }
 
-        .phone-frame {
-          position: relative;
-          width: min(420px, 100%);
-          border-radius: 48px;
-          background: rgba(10, 10, 14, 0.98);
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          box-shadow: 0 40px 120px -50px rgba(0, 0, 0, 0.72), 0 0 40px rgba(129, 90, 242, 0.08);
-          overflow: hidden;
-        }
-
-        .phone-frame::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          border-radius: 48px;
-          pointer-events: none;
-          box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
-        }
-
-        .phone-screen {
-          position: relative;
-          padding: 16px;
-          background: #09090f;
-          min-height: 740px;
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-        }
-
-        .screen-top {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: #f8fafc;
-          font-size: 0.78rem;
-          letter-spacing: 0.08em;
-          padding: 0 4px;
-        }
-
-        .screen-top span {
-          opacity: 0.85;
-        }
-
-        .phone-header {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 0 4px;
-        }
-
-        .phone-avatar {
-          width: 40px;
-          height: 40px;
-          border-radius: 999px;
-          background: linear-gradient(135deg, rgba(255,255,255,0.16), rgba(129,90,242,0.3));
-          display: grid;
-          place-items: center;
-          color: #fff;
-          font-size: 0.9rem;
-          font-weight: 700;
-          border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .phone-title {
-          display: grid;
-          gap: 0.15rem;
-        }
-
-        .phone-title strong {
-          color: #fff;
-          font-size: 1rem;
-          line-height: 1.1;
-        }
-
-        .phone-title span {
-          color: #a1a1aa;
-          font-size: 0.78rem;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-        }
-
-        .message-list {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-          padding-right: 4px;
-        }
-
-        .message {
-          max-width: 76%;
-          padding: 14px 16px;
-          line-height: 1.55;
-          font-size: 0.95rem;
-          border-radius: 24px;
-          box-shadow: 0 18px 45px -30px rgba(0, 0, 0, 0.45);
-          border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .message.incoming {
-          align-self: flex-start;
-          background: rgba(255, 255, 255, 0.06);
-          color: #f8fafc;
-          border-top-left-radius: 6px;
-          border-top-right-radius: 24px;
-          border-bottom-right-radius: 24px;
-          border-bottom-left-radius: 24px;
-        }
-
-        .message.outgoing {
-          align-self: flex-end;
-          background: rgba(129, 90, 242, 0.16);
-          color: #fff;
-          border-top-right-radius: 6px;
-          border-top-left-radius: 24px;
-          border-bottom-right-radius: 24px;
-          border-bottom-left-radius: 24px;
-        }
-
-        .message strong {
-          display: block;
-          margin-bottom: 6px;
-          color: #d6d6e0;
-          font-size: 0.82rem;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          opacity: 0.85;
-        }
-
-        .message-time {
-          margin-top: 8px;
-          color: rgba(255, 255, 255, 0.62);
-          font-size: 0.74rem;
-          letter-spacing: 0.08em;
-        }
-
-        .phone-footer {
-          margin-top: auto;
-          padding: 0 4px 8px;
-          display: flex;
-          justify-content: flex-end;
-          color: #6b7280;
-          font-size: 0.78rem;
-          letter-spacing: 0.08em;
-        }
-
-        .phone-frame.phone-float {
-          animation: float 16s ease-in-out infinite;
-        }
-
-        .phone-note {
-          color: #a1a1aa;
-          font-size: 0.86rem;
-          text-align: center;
-          line-height: 1.8;
-          opacity: 0.9;
-        }
-
-        .phone-background {
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(circle at top, rgba(129, 90, 242, 0.1), transparent 30%);
-          opacity: 0.45;
-          pointer-events: none;
-        }
-
         .animation-delay-200 { animation-delay: 0.2s; }
         .animation-delay-400 { animation-delay: 0.4s; }
         .animation-delay-600 { animation-delay: 0.6s; }
@@ -752,125 +586,31 @@ export default function Home() {
         </div>
       </motion.section>
 
-      <motion.section id="conversations" className="relative overflow-hidden py-24 sm:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
+      <motion.section id="communicate" className="relative overflow-hidden py-24 sm:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
         <div className="absolute inset-x-0 top-0 h-[240px] bg-[radial-gradient(circle_at_top,rgba(129,90,242,0.14),transparent_40%)] blur-3xl opacity-55" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Realistyczne rozmowy</p>
-            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Prawdziwe iPhone sat-szery konwersacje</h2>
-            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Dwa subtelnie nachylone mockupy, dokładnie jak realne Instagram DM i WhatsApp w ciemnym iOS.</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">KOMUNIKACJA, KTÓRA SPRZEDAJE</p>
+            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Instagram. WhatsApp. Kontakt bez chaosu.</h2>
+            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Dwa realistyczne iPhone mockupy w dark mode, prezentujące realną komunikację premium.</p>
           </div>
 
-          <div className="relative grid gap-8 lg:grid-cols-2 items-end justify-center">
-            <motion.div
-              initial={{ opacity: 0, y: 24, x: -20 }}
-              whileInView={{ opacity: 1, y: 0, x: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.85, ease: 'easeOut' }}
-              className="phone-frame phone-float soft-transition"
-              style={{ transform: 'rotate(-2deg)' }}
-            >
-              <div className="phone-background" />
-              <div className="phone-screen">
-                <div className="screen-top">
-                  <span>9:41</span>
-                  <span>100%</span>
-                </div>
-                <div className="phone-header">
-                  <div className="phone-avatar">A</div>
-                  <div className="phone-title">
-                    <strong>Anna S.</strong>
-                    <span>Instagram Direct</span>
-                  </div>
-                </div>
-                <div className="message-list">
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    className="message incoming"
-                  >
-                    <strong>Klient</strong>
-                    Hej 👋 widziałam efekty na stories, jaki jest najbliższy termin?
-                    <span className="message-time">10:42</span>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, delay: 0.18 }}
-                    className="message outgoing"
-                  >
-                    <strong>Odpowiedź</strong>
-                    Dzień dobry ✨ Najbliższy wolny termin mamy jutro o 16:30.
-                    <span className="message-time">10:45</span>
-                  </motion.div>
-                </div>
-                <div className="phone-footer">Instagram • Dark Mode</div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24, x: 20 }}
-              whileInView={{ opacity: 1, y: 0, x: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.85, ease: 'easeOut', delay: 0.08 }}
-              className="phone-frame phone-float soft-transition"
-              style={{ transform: 'rotate(2deg)' }}
-            >
-              <div className="phone-background" />
-              <div className="phone-screen">
-                <div className="screen-top">
-                  <span>9:41</span>
-                  <span>100%</span>
-                </div>
-                <div className="phone-header">
-                  <div className="phone-avatar">P</div>
-                  <div className="phone-title">
-                    <strong>Prestige Studio</strong>
-                    <span>WhatsApp</span>
-                  </div>
-                </div>
-                <div className="message-list">
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, delay: 0.12 }}
-                    className="message outgoing"
-                  >
-                    <strong>Przypomnienie</strong>
-                    Przypomnienie o jutrzejszej wizycie o 14:00.
-                    <span className="message-time">14:00</span>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, delay: 0.22 }}
-                    className="message incoming"
-                  >
-                    <strong>Klient</strong>
-                    Czy nadal są Państwo zainteresowani?
-                    <span className="message-time">14:02</span>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, delay: 0.32 }}
-                    className="message outgoing"
-                  >
-                    <strong>Odpowiedź</strong>
-                    Dziękujemy za wiadomość — wracamy z odpowiedzią za kilka minut.
-                    <span className="message-time">14:04</span>
-                  </motion.div>
-                </div>
-                <div className="phone-footer">WhatsApp • iOS Dark</div>
-              </div>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.85, ease: 'easeOut' }}
+            className="relative mx-auto max-w-[1200px]"
+          >
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(129,90,242,0.08),transparent_80%)]" />
+            <Image
+              src="/communication-showcase.svg"
+              alt="Realistyczne iPhone mockupy komunikacji Instagram i WhatsApp"
+              width={1200}
+              height={700}
+              className="w-full h-auto rounded-[3rem] shadow-[0_60px_140px_-70px_rgba(0,0,0,0.7)]"
+            />
+          </motion.div>
         </div>
       </motion.section>
 
