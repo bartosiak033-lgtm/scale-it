@@ -19,7 +19,7 @@ const buttonHover = { y: -1, scale: 1.01 };
 
 interface FormData {
   name: string;
-  clinic: string;
+  business: string;
   phone: string;
   email: string;
   message: string;
@@ -32,7 +32,7 @@ interface FormErrors {
 export default function Home() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
-    clinic: '',
+    business: '',
     phone: '',
     email: '',
     message: ''
@@ -44,7 +44,7 @@ export default function Home() {
   const validateForm = (): FormErrors => {
     const newErrors: FormErrors = {};
     if (!formData.name.trim()) newErrors.name = 'Podaj imię';
-    if (!formData.clinic.trim()) newErrors.clinic = 'Podaj nazwę kliniki';
+    if (!formData.business.trim()) newErrors.business = 'Podaj nazwę firmy';
     if (!formData.phone.trim()) newErrors.phone = 'Podaj telefon';
     if (!formData.email.trim()) newErrors.email = 'Podaj email';
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Wprowadź poprawny email';
@@ -74,7 +74,7 @@ export default function Home() {
     try {
       const form = new FormData();
       form.append('name', formData.name);
-      form.append('clinic', formData.clinic);
+      form.append('business', formData.business);
       form.append('phone', formData.phone);
       form.append('email', formData.email);
       form.append('message', formData.message);
@@ -86,7 +86,7 @@ export default function Home() {
 
       if (response.ok) {
         setSubmitSuccess(true);
-        setFormData({ name: '', clinic: '', phone: '', email: '', message: '' });
+        setFormData({ name: '', business: '', phone: '', email: '', message: '' });
         setTimeout(() => setSubmitSuccess(false), 5000);
       } else {
         setErrors({ submit: 'Wysyłka nie powiodła się. Spróbuj ponownie.' });
@@ -215,13 +215,13 @@ export default function Home() {
               transition={{ duration: 0.9, ease: 'easeOut' }}
               className="max-w-2xl"
             >
-              <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">DLA KLINIK PREMIUM</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">DLA FIRM PREMIUM</p>
               <h1 className="mt-8 text-[3.7rem] sm:text-[4.4rem] lg:text-[5.8rem] font-semibold leading-[0.92] tracking-[-0.04em] text-white">
-                Więcej rezerwacji.<br />
-                Mniej chaosu.
+                Więcej klientów.<br />
+                Mniej straconych możliwości.
               </h1>
               <p className="mt-10 max-w-xl text-lg sm:text-xl leading-9 text-neutral-300">
-                Nowoczesny standard kontaktu dla klinik premium.
+                Nowoczesny system kontaktu i obsługi klienta dla firm premium.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <motion.a
@@ -242,7 +242,7 @@ export default function Home() {
 
               <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {[
-                  { title: 'Więcej rezerwacji', subtitle: 'Mniej pustych terminów.' },
+                  { title: 'Więcej kontaktu', subtitle: 'Mniej porzuconych zapytań.' },
                   { title: 'Automatyczny przepływ', subtitle: 'Bez zbędnych interwencji.' },
                   { title: 'Doświadczenie premium', subtitle: 'Komunikacja na najwyższym poziomie.' },
                   { title: 'Mierzalne wyniki', subtitle: 'Efekty, które widać w liczbach.' }
@@ -279,25 +279,25 @@ export default function Home() {
                         <Image src="/logo-icon.png" alt="Scale It" width={28} height={28} className="object-contain" />
                         <span className="text-sm font-semibold uppercase tracking-[0.35em] text-white">SCALE IT</span>
                       </div>
-                      <span className="text-xs uppercase tracking-[0.35em] text-neutral-400">Dyskretne wsparcie</span>
+                      <span className="text-xs uppercase tracking-[0.35em] text-neutral-400">Premium support</span>
                     </div>
 
                     <div className="mt-10 border-t border-white/10 pt-10">
-                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Więcej rezerwacji</p>
+                      <p className="text-xs uppercase tracking-[0.35em] text-neutral-400">Konwersja zapytań</p>
                       <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end">
                         <p className="text-6xl font-semibold text-white">37%</p>
                         <div className="max-w-md">
-                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Więcej umówień bez dodatkowego wysiłku</p>
-                          <p className="mt-3 text-sm leading-7 text-neutral-300">Pacjenci otrzymują szybką odpowiedź, ale bez poczucia pośpiechu.</p>
+                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Więcej umówionych spotkań bez dodatkowego wysiłku</p>
+                          <p className="mt-3 text-sm leading-7 text-neutral-300">Klienci otrzymują szybką odpowiedź, ale bez poczucia pośpiechu.</p>
                         </div>
                       </div>
                     </div>
 
                     <div className="mt-12 grid gap-4 sm:grid-cols-2">
                       {[
-                        { label: 'Bez dodatkowej pracy', value: 'Kontakt obsłużony od początku do końca' },
+                        { label: 'Bez dodatkowej pracy', value: 'Zapytanie obsłużone od początku do końca' },
                         { label: 'Płynny rytm', value: 'Rozmowy brzmią naturalnie' },
-                        { label: 'Dostępność 24/7', value: 'Obsługa pacjenta bez przerw' },
+                        { label: 'Dostępność 24/7', value: 'Obsługa klienta bez przerw' },
                         { label: 'Styl premium', value: 'Kontakt prowadzony w eleganckim tonie' }
                       ].map((item, index) => (
                         <motion.div
@@ -411,7 +411,7 @@ export default function Home() {
               {[
                 { icon: '⚡', title: 'Kontakt od razu', desc: 'Każde zapytanie otrzymuje uwagę niemal natychmiast.' },
                 { icon: '👁️', title: 'Przejrzysty dzień', desc: 'Cały harmonogram i rozmowy w jednym widoku.' },
-                { icon: '🎯', title: 'Większa konwersja', desc: 'Mniej porzuceń, więcej umówionych wizyt.' }
+                { icon: '🎯', title: 'Większa konwersja', desc: 'Mniej porzuconych zapytań, więcej umówionych spotkań.' }
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -436,19 +436,19 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Obsługa kontaktu</p>
-            <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Przygotowane dla klinik premium</h2>
+            <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] text-white">Przygotowane dla firm premium</h2>
             <p className="mt-4 text-lg text-neutral-400 max-w-xl">Narzędzia, które usprawniają obsługę i podnoszą prestiż kontaktu.</p>
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {[
               { icon: '📅', title: 'Rezerwacje', desc: 'Terminy i potwierdzenia bez ręcznej pracy.' },
-              { icon: '💬', title: 'Feedback po wizycie', desc: 'Follow-upy, które podtrzymują relację z pacjentem.' },
-              { icon: '📲', title: 'Instagram i WhatsApp', desc: 'Wiadomości tam, gdzie pacjent już jest.' },
-              { icon: '🔄', title: 'Odzyskiwanie rezerwacji', desc: 'Pacjenci wracają do pozostawionych terminów.' },
-              { icon: '🌐', title: 'Witryna kliniki', desc: 'Prestiżowa prezentacja, która wzmacnia markę.' },
-              { icon: '📊', title: 'Wyniki w skrócie', desc: 'Najważniejsze dane podane w klarowny sposób.' },
-              { icon: '🗂️', title: 'Porządek w danych', desc: 'Pacjenci, terminy i preferencje w jednym miejscu.' },
+              { icon: '📤', title: 'Follow-up', desc: 'Rozmowy pośrodowiska, które podtrzymują relację.' },
+              { icon: '📲', title: 'Instagram i WhatsApp', desc: 'Wiadomości tam, gdzie klient już jest.' },
+              { icon: '🔄', title: 'Odzyskiwanie zapytań', desc: 'Klienci wracają do pozostawionych terminów.' },
+              { icon: '🌐', title: 'Witryna firmy', desc: 'Prestiżowa prezentacja, która wzmacnia markę.' },
+              { icon: '📐', title: 'Wyniki w skrócie', desc: 'Najważniejsze dane podane w klarowny sposób.' },
+              { icon: '📄', title: 'Porądek w danych', desc: 'Klienci, terminy i preferencje w jednym miejscu.' },
               { icon: '🤝', title: 'Obsługa premium', desc: 'Każdy kontakt prowadzimy z taktem i elegancją.' }
             ].map((service, idx) => (
               <motion.div
@@ -479,14 +479,14 @@ export default function Home() {
         <div className="relative space-y-12">
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Jak to działa</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Dyskretna obsługa kontaktu</h2>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Dyskretna obsługa klienta</h2>
             <p className="max-w-2xl text-lg text-neutral-400 font-light">Klient już od pierwszego kontaktu otrzymuje obsługę na poziomie ekskluzywnej recepcji.</p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="space-y-6">
               {[
-                { step: '1', title: 'Kontakt od razu', desc: 'Pacjent otrzymuje odpowiedź niemal natychmiast.' },
+                { step: '1', title: 'Kontakt od razu', desc: 'Klient otrzymuje odpowiedź niemal natychmiast.' },
                 { step: '2', title: 'Rezerwacja bez luk', desc: 'Kalendarz aktualizuje się automatycznie i bez pomyłek.' },
                 { step: '3', title: 'Rozmowa z klasą', desc: 'Każde połączenie brzmi naturalnie i profesjonalnie.' }
               ].map((item, idx) => (
@@ -532,10 +532,10 @@ export default function Home() {
 
                 <div className="space-y-4 rounded-[2rem] border border-white/10 bg-white/5 p-6">
                   <div className="grid gap-4 text-sm">
-                    <div className="text-neutral-400">Dyskretny kontakt</div>
-                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Dzień dobry, czy mogę pomóc w ustaleniu terminu konsultacji?</div>
+                    <div className="text-neutral-400">Premium kontakt</div>
+                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Dzień dobry, czy mogę pomóc w ustaleniu terminu spotkania?</div>
                     <div className="rounded-3xl bg-black/40 p-5 text-white font-semibold">Piątek o 16:30 będzie najlepszy.</div>
-                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Termin zapisany i potwierdzony w systemie.</div>
+                    <div className="rounded-3xl bg-black/40 p-5 text-neutral-300">Termin zapisany i potwierdzony od razu.</div>
                   </div>
                 </div>
               </div>
@@ -598,8 +598,8 @@ export default function Home() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {[
               { title: 'Obsługa kontaktu', desc: 'Każde zapytanie obsługiwane szybko i dyskretnie.' },
-              { title: 'Instagram i WhatsApp', desc: 'Wiadomości trafiają tam, gdzie pacjent jest.' },
-              { title: 'Porządek w danych', desc: 'Pacjenci, terminy i preferencje w jednym miejscu.' },
+              { title: 'Instagram i WhatsApp', desc: 'Wiadomości trafiają tam, gdzie klient już jest.' },
+              { title: 'Porądek w danych', desc: 'Klienci, terminy i preferencje w jednym miejscu.' },
               { title: 'Wyniki w prostym widoku', desc: 'Raporty dostępne w klarownym formacie.' }
             ].map((item, idx) => (
               <motion.div
@@ -624,8 +624,8 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Cennik</p>
-            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Oferta dla klinik premium</h2>
-            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Oferta stworzona dla klinik, które traktują kontakt jako część luksusowego doświadczenia.</p>
+            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Oferta dla firm premium</h2>
+            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Oferta stworzona dla firm, które traktują kontakt jako część luksusowego doświadczenia.</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
@@ -635,7 +635,7 @@ export default function Home() {
               className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 soft-transition"
             >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Pakiet startowy</p>
-              <p className="mt-4 text-3xl font-semibold text-white">Dla eleganckich klinik</p>
+              <p className="mt-4 text-3xl font-semibold text-white">Dla eleganckich firm</p>
               <p className="mt-3 text-sm text-neutral-400">Wsparcie kontaktu, które podnosi liczbę rezerwacji bez obciążania zespołu.</p>
             </motion.div>
             <motion.div
@@ -644,8 +644,8 @@ export default function Home() {
               className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 soft-transition"
             >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Ekskluzywna oferta</p>
-              <p className="mt-4 text-3xl font-semibold text-white">Dla klinik, które oczekują więcej</p>
-              <p className="mt-3 text-sm text-neutral-400">Prestiżowa komunikacja i porządek w każdym kontakcie.</p>
+              <p className="mt-4 text-3xl font-semibold text-white">Dla firm, które oczekują więcej</p>
+              <p className="mt-3 text-sm text-neutral-400">Prestiżowa komunikacja i porądek w każdym kontakcie.</p>
             </motion.div>
             <motion.div
               whileHover={cardHover}
@@ -654,7 +654,7 @@ export default function Home() {
             >
               <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Rozmowa demo</p>
               <p className="mt-4 text-3xl font-semibold text-white">Wycena po spotkaniu</p>
-              <p className="mt-3 text-sm text-neutral-400">Zarezerwuj krótką prezentację i poznaj rozwiązanie dopasowane do Twojej kliniki.</p>
+              <p className="mt-3 text-sm text-neutral-400">Zarezerwuj krótką prezentację i poznaj rozwiązanie dopasowane do Twojej firmy.</p>
             </motion.div>
           </div>
         </div>
@@ -701,16 +701,16 @@ export default function Home() {
                       {errors.name && <p className="text-xs text-red-400 mt-2">{errors.name}</p>}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-neutral-300 mb-2">Nazwa kliniki</label>
+                      <label className="block text-sm font-medium text-neutral-300 mb-2">Nazwa firmy</label>
                       <input
                         type="text"
-                        name="clinic"
-                        value={formData.clinic}
+                        name="business"
+                        value={formData.business}
                         onChange={handleChange}
-                        placeholder="Klinika Nova"
-                        className={`w-full bg-black/25 border rounded-2xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition ${errors.clinic ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'}`}
+                        placeholder="Moja Firma"
+                        className={`w-full bg-black/25 border rounded-2xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition ${errors.business ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'}`}
                       />
-                      {errors.clinic && <p className="text-xs text-red-400 mt-2">{errors.clinic}</p>}
+                      {errors.business && <p className="text-xs text-red-400 mt-2">{errors.business}</p>}
                     </div>
                   </div>
 
@@ -734,7 +734,7 @@ export default function Home() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="jan@clinic.pl"
+                        placeholder="jan@firma.pl"
                         className={`w-full bg-black/25 border rounded-2xl px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 transition ${errors.email ? 'border-red-500/50' : 'border-white/10 hover:border-white/20'}`}
                       />
                       {errors.email && <p className="text-xs text-red-400 mt-2">{errors.email}</p>}
