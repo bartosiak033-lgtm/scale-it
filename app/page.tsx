@@ -200,37 +200,42 @@ export default function Home() {
       </nav>
 
       <motion.section id="hero" className="relative overflow-hidden pt-28 pb-24 sm:pt-32 sm:pb-36" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
-        <div className="absolute inset-x-0 top-0 h-[220px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)] blur-3xl opacity-70" />
-        <div className="absolute left-[8%] top-[16%] h-[420px] w-[420px] rounded-full bg-violet-500/12 blur-3xl opacity-80" />
-        <div className="absolute right-[6%] bottom-[12%] h-[520px] w-[520px] rounded-full bg-cyan-300/10 blur-3xl opacity-70" />
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute left-[6%] top-[12%] h-[420px] w-[420px] rounded-full bg-violet-500/16 blur-3xl opacity-80" />
+          <div className="absolute right-[4%] bottom-[10%] h-[520px] w-[520px] rounded-full bg-cyan-300/12 blur-3xl opacity-75" />
+          <div className="absolute inset-x-0 top-0 h-[220px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_45%)] blur-3xl opacity-70" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(129,90,242,0.02),transparent_48%)]" />
+        </div>
+
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid gap-12 xl:grid-cols-[0.96fr_1.04fr] items-center">
+          <div className="grid gap-16 lg:grid-cols-[0.96fr_1.04fr] items-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: 'easeOut' }}
               className="max-w-2xl"
             >
               <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">DLA KLINIK PREMIUM</p>
-              <h1 className="mt-8 text-5xl sm:text-[5.3rem] lg:text-[5.9rem] font-semibold leading-[0.92] tracking-[-0.04em] text-white">
+              <h1 className="mt-8 text-[3.7rem] sm:text-[4.4rem] lg:text-[5.8rem] font-semibold leading-[0.92] tracking-[-0.04em] text-white">
                 Więcej rezerwacji.<br />
                 Mniej straconych możliwości.
               </h1>
               <p className="mt-8 max-w-xl text-lg sm:text-xl leading-9 text-neutral-300">
                 Zaprojektowane, aby zwiększać efektywność Twojej kliniki i zapewniać doświadczenie na najwyższym poziomie.
               </p>
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+
+              <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <motion.a
-                  whileHover={{ y: -1, scale: 1.01 }}
+                  whileHover={buttonHover}
                   href="#contact-form"
-                  className="inline-flex min-w-[14rem] items-center justify-center rounded-full bg-white px-9 py-4 text-sm font-semibold text-black shadow-[0_24px_80px_-56px_rgba(255,255,255,0.92)] transition duration-300 hover:shadow-[0_28px_90px_-50px_rgba(255,255,255,0.95)]"
+                  className="inline-flex min-w-[15rem] items-center justify-center rounded-full bg-white px-10 py-4 text-sm font-semibold text-black shadow-[0_28px_90px_-56px_rgba(255,255,255,0.95)] transition duration-300 hover:shadow-[0_32px_100px_-40px_rgba(255,255,255,0.95)]"
                 >
                   Zarezerwuj demo
                 </motion.a>
                 <motion.a
-                  whileHover={{ y: -1, scale: 1.01 }}
+                  whileHover={buttonHover}
                   href="#jak-to-dziala"
-                  className="inline-flex min-w-[14rem] items-center justify-center rounded-full border border-white/15 bg-white/5 px-9 py-4 text-sm font-semibold text-white transition duration-300 hover:border-white/25 hover:bg-white/10"
+                  className="inline-flex min-w-[15rem] items-center justify-center rounded-full border border-white/15 bg-white/5 px-10 py-4 text-sm font-semibold text-white transition duration-300 hover:border-white/25 hover:bg-white/10"
                 >
                   Zobacz jak to działa
                 </motion.a>
@@ -245,7 +250,7 @@ export default function Home() {
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
-                    whileHover={cardHover}
+                    whileHover={buttonHover}
                     transition={{ duration: 0.35, ease: 'easeOut' }}
                     className="rounded-[1.75rem] border border-white/10 bg-white/5 p-5 backdrop-blur-xl soft-transition"
                   >
@@ -257,18 +262,18 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               whileHover={{ y: -4, scale: 1.003 }}
               transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
-              className="relative flex justify-end lg:justify-start soft-transition"
+              className="relative flex justify-center"
             >
-              <div className="relative w-full max-w-[46rem] animate-float">
-                <div className="absolute inset-0 rounded-[3rem] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(129,90,242,0.24),transparent_40%)] blur-3xl opacity-80" />
+              <div className="relative w-full max-w-[44rem] animate-float">
+                <div className="absolute inset-0 rounded-[3rem] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(129,90,242,0.18),transparent_40%)] blur-3xl opacity-80" />
                 <div className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-[#09050f]/75 shadow-[0_90px_170px_-85px_rgba(0,0,0,0.75)] backdrop-blur-[1.8rem]">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(129,90,242,0.18),transparent_30%)] opacity-75" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(129,90,242,0.14),transparent_36%)] opacity-75" />
                   <div className="absolute right-8 top-10 h-32 w-32 rounded-full bg-violet-500/20 blur-3xl opacity-70" />
-                  <div className="absolute left-10 bottom-10 h-28 w-28 rounded-full bg-cyan-300/10 blur-3xl opacity-60" />
+                  <div className="absolute left-10 bottom-10 h-28 w-28 rounded-full bg-cyan-300/10 blur-3xl opacity-65" />
                   <div className="relative p-10 sm:p-12">
                     <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                       <div className="flex items-center gap-3">
@@ -298,7 +303,7 @@ export default function Home() {
                       ].map((item, index) => (
                         <motion.div
                           key={index}
-                          whileHover={cardHover}
+                          whileHover={buttonHover}
                           transition={{ duration: 0.35, ease: 'easeOut' }}
                           className="rounded-3xl border border-white/10 bg-black/20 p-5 soft-transition"
                         >
