@@ -218,12 +218,11 @@ export default function Home() {
               <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">DLA KLINIK PREMIUM</p>
               <h1 className="mt-8 text-[3.7rem] sm:text-[4.4rem] lg:text-[5.8rem] font-semibold leading-[0.92] tracking-[-0.04em] text-white">
                 Więcej rezerwacji.<br />
-                Mniej straconych możliwości.
+                Mniej chaosu.
               </h1>
               <p className="mt-8 max-w-xl text-lg sm:text-xl leading-9 text-neutral-300">
-                Zaprojektowane, by oszczędzać czas kliniki i podnosić standard kontaktu.
+                Nowoczesny standard kontaktu dla klinik premium.
               </p>
-
               <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <motion.a
                   whileHover={buttonHover}
@@ -288,7 +287,7 @@ export default function Home() {
                       <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end">
                         <p className="text-6xl font-semibold text-white">37%</p>
                         <div className="max-w-md">
-                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Średnio +37% rezerwacji</p>
+                          <p className="text-sm uppercase tracking-[0.35em] text-neutral-400">Więcej umówień bez dodatkowego wysiłku</p>
                           <p className="mt-3 text-sm leading-7 text-neutral-300">Pacjenci otrzymują szybką odpowiedź, ale bez poczucia pośpiechu.</p>
                         </div>
                       </div>
@@ -387,7 +386,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
-                className="relative z-20 -mt-12 lg:-ml-12"
+                className="relative z-20 lg:-mt-16 lg:-ml-12"
               >
                 <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-[0_80px_160px_-80px_rgba(0,0,0,0.7)] backdrop-blur-3xl p-2">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(129,90,242,0.08),transparent_35%)] rounded-[2rem]" />
