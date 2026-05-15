@@ -155,109 +155,169 @@ export default function Home() {
           box-shadow: 0 0 28px rgba(129, 90, 242, 0.18);
         }
 
-        .chat-device {
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(9, 5, 15, 0.82);
-          box-shadow: 0 42px 120px -90px rgba(0, 0, 0, 0.75);
-          backdrop-filter: blur(20px);
+        .phone-frame {
+          position: relative;
+          width: min(420px, 100%);
+          border-radius: 48px;
+          background: rgba(10, 10, 14, 0.98);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          box-shadow: 0 40px 120px -50px rgba(0, 0, 0, 0.72), 0 0 40px rgba(129, 90, 242, 0.08);
+          overflow: hidden;
         }
 
-        .chat-float {
-          animation: float 14s ease-in-out infinite;
-        }
-
-        .chat-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 0.85rem;
-          padding: 1rem 1.25rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-          background: rgba(255, 255, 255, 0.035);
-          backdrop-filter: blur(20px);
-        }
-
-        .chat-title {
-          color: #f8fafc;
-          font-size: 0.95rem;
-          font-weight: 700;
-        }
-
-        .chat-subtitle {
-          color: #a1a1aa;
-          font-size: 0.78rem;
-          letter-spacing: 0.11em;
-          text-transform: uppercase;
-        }
-
-        .chat-screen {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          padding: 1.25rem;
-          background: rgba(0, 0, 0, 0.4);
-          border-radius: 2rem;
-          border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .chat-bubble {
-          max-width: 88%;
-          padding: 1rem 1.2rem;
-          border-radius: 1.7rem;
-          line-height: 1.65;
-          font-size: 0.95rem;
-          border: 1px solid rgba(255, 255, 255, 0.06);
-          backdrop-filter: blur(16px);
-          box-shadow: 0 18px 45px -24px rgba(0, 0, 0, 0.55);
-        }
-
-        .bubble-incoming {
-          background: rgba(255, 255, 255, 0.05);
-          color: #f8fafc;
-          align-self: flex-start;
-        }
-
-        .bubble-outgoing {
-          background: rgba(129, 90, 242, 0.16);
-          color: #ffffff;
-          align-self: flex-end;
-          border-color: rgba(129, 90, 242, 0.22);
-        }
-
-        .bubble-label {
-          display: block;
-          margin-bottom: 0.45rem;
-          color: #9ca3af;
-          font-size: 0.75rem;
-          letter-spacing: 0.09em;
-          text-transform: uppercase;
-        }
-
-        .chat-avatar {
-          width: 36px;
-          height: 36px;
-          border-radius: 999px;
-          display: grid;
-          place-items: center;
-          font-size: 0.85rem;
-          font-weight: 700;
-          color: #ffffff;
-          background: radial-gradient(circle at top left, rgba(129, 90, 242, 0.34), rgba(20, 20, 30, 0.95));
-          border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .chat-note {
-          color: #a1a1aa;
-          font-size: 0.84rem;
-          letter-spacing: 0.04em;
-        }
-
-        .chat-screen::after {
+        .phone-frame::before {
           content: "";
           position: absolute;
           inset: 0;
-          border-radius: 2rem;
-          box-shadow: inset 0 0 70px rgba(129, 90, 242, 0.12);
+          border-radius: 48px;
+          pointer-events: none;
+          box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+        }
+
+        .phone-screen {
+          position: relative;
+          padding: 16px;
+          background: #09090f;
+          min-height: 740px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .screen-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #f8fafc;
+          font-size: 0.78rem;
+          letter-spacing: 0.08em;
+          padding: 0 4px;
+        }
+
+        .screen-top span {
+          opacity: 0.85;
+        }
+
+        .phone-header {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 0 4px;
+        }
+
+        .phone-avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 999px;
+          background: linear-gradient(135deg, rgba(255,255,255,0.16), rgba(129,90,242,0.3));
+          display: grid;
+          place-items: center;
+          color: #fff;
+          font-size: 0.9rem;
+          font-weight: 700;
+          border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .phone-title {
+          display: grid;
+          gap: 0.15rem;
+        }
+
+        .phone-title strong {
+          color: #fff;
+          font-size: 1rem;
+          line-height: 1.1;
+        }
+
+        .phone-title span {
+          color: #a1a1aa;
+          font-size: 0.78rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+
+        .message-list {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          padding-right: 4px;
+        }
+
+        .message {
+          max-width: 76%;
+          padding: 14px 16px;
+          line-height: 1.55;
+          font-size: 0.95rem;
+          border-radius: 24px;
+          box-shadow: 0 18px 45px -30px rgba(0, 0, 0, 0.45);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .message.incoming {
+          align-self: flex-start;
+          background: rgba(255, 255, 255, 0.06);
+          color: #f8fafc;
+          border-top-left-radius: 6px;
+          border-top-right-radius: 24px;
+          border-bottom-right-radius: 24px;
+          border-bottom-left-radius: 24px;
+        }
+
+        .message.outgoing {
+          align-self: flex-end;
+          background: rgba(129, 90, 242, 0.16);
+          color: #fff;
+          border-top-right-radius: 6px;
+          border-top-left-radius: 24px;
+          border-bottom-right-radius: 24px;
+          border-bottom-left-radius: 24px;
+        }
+
+        .message strong {
+          display: block;
+          margin-bottom: 6px;
+          color: #d6d6e0;
+          font-size: 0.82rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          opacity: 0.85;
+        }
+
+        .message-time {
+          margin-top: 8px;
+          color: rgba(255, 255, 255, 0.62);
+          font-size: 0.74rem;
+          letter-spacing: 0.08em;
+        }
+
+        .phone-footer {
+          margin-top: auto;
+          padding: 0 4px 8px;
+          display: flex;
+          justify-content: flex-end;
+          color: #6b7280;
+          font-size: 0.78rem;
+          letter-spacing: 0.08em;
+        }
+
+        .phone-frame.phone-float {
+          animation: float 16s ease-in-out infinite;
+        }
+
+        .phone-note {
+          color: #a1a1aa;
+          font-size: 0.86rem;
+          text-align: center;
+          line-height: 1.8;
+          opacity: 0.9;
+        }
+
+        .phone-background {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at top, rgba(129, 90, 242, 0.1), transparent 30%);
+          opacity: 0.45;
           pointer-events: none;
         }
 
@@ -697,145 +757,117 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Realistyczne rozmowy</p>
-            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Prawdziwe konwersacje klient–firma</h2>
-            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Instagram DM, WhatsApp i iPhone w ciemnym trybie — zaprojektowane jak realne wiadomości premium.</p>
+            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Prawdziwe iPhone sat-szery konwersacje</h2>
+            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Dwa subtelnie nachylone mockupy, dokładnie jak realne Instagram DM i WhatsApp w ciemnym iOS.</p>
           </div>
 
-          <div className="grid gap-8 xl:grid-cols-3">
+          <div className="relative grid gap-8 lg:grid-cols-2 items-end justify-center">
             <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8 }}
-              className="chat-device chat-float overflow-hidden rounded-[3rem]"
+              initial={{ opacity: 0, y: 24, x: -20 }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.85, ease: 'easeOut' }}
+              className="phone-frame phone-float soft-transition"
+              style={{ transform: 'rotate(-2deg)' }}
             >
-              <div className="chat-header">
-                <div>
-                  <p className="chat-subtitle">Instagram DM</p>
-                  <p className="chat-title">@sfera.beauty</p>
+              <div className="phone-background" />
+              <div className="phone-screen">
+                <div className="screen-top">
+                  <span>9:41</span>
+                  <span>100%</span>
                 </div>
-                <div className="chat-avatar">SB</div>
-              </div>
-              <div className="chat-screen relative">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.7, delay: 0.1 }}
-                  className="chat-bubble bubble-incoming"
-                >
-                  <span className="bubble-label">Klient</span>
-                  Hej 👋 widziałam efekty na stories, jaki jest najbliższy termin?
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.7, delay: 0.2 }}
-                  className="chat-bubble bubble-outgoing"
-                >
-                  <span className="bubble-label">Odpowiedź</span>
-                  Dzień dobry ✨ Najbliższy wolny termin mamy jutro o 16:30.
-                </motion.div>
-                <p className="chat-note mt-3">Realistyczny komunikator biznesowy w Instagramowym stylu.</p>
+                <div className="phone-header">
+                  <div className="phone-avatar">A</div>
+                  <div className="phone-title">
+                    <strong>Anna S.</strong>
+                    <span>Instagram Direct</span>
+                  </div>
+                </div>
+                <div className="message-list">
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    className="message incoming"
+                  >
+                    <strong>Klient</strong>
+                    Hej 👋 widziałam efekty na stories, jaki jest najbliższy termin?
+                    <span className="message-time">10:42</span>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.18 }}
+                    className="message outgoing"
+                  >
+                    <strong>Odpowiedź</strong>
+                    Dzień dobry ✨ Najbliższy wolny termin mamy jutro o 16:30.
+                    <span className="message-time">10:45</span>
+                  </motion.div>
+                </div>
+                <div className="phone-footer">Instagram • Dark Mode</div>
               </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.05 }}
-              className="chat-device chat-float overflow-hidden rounded-[3rem]"
+              initial={{ opacity: 0, y: 24, x: 20 }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.85, ease: 'easeOut', delay: 0.08 }}
+              className="phone-frame phone-float soft-transition"
+              style={{ transform: 'rotate(2deg)' }}
             >
-              <div className="chat-header">
-                <div>
-                  <p className="chat-subtitle">WhatsApp</p>
-                  <p className="chat-title">Biuro Prestige</p>
+              <div className="phone-background" />
+              <div className="phone-screen">
+                <div className="screen-top">
+                  <span>9:41</span>
+                  <span>100%</span>
                 </div>
-                <div className="chat-avatar">BP</div>
-              </div>
-              <div className="chat-screen relative">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.7, delay: 0.12 }}
-                  className="chat-bubble bubble-outgoing"
-                >
-                  <span className="bubble-label">Wiadomość</span>
-                  Przypomnienie o jutrzejszej wizycie o 14:00.
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.7, delay: 0.22 }}
-                  className="chat-bubble bubble-incoming"
-                >
-                  <span className="bubble-label">Klient</span>
-                  Czy nadal są Państwo zainteresowani konsultacją?
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.7, delay: 0.32 }}
-                  className="chat-bubble bubble-outgoing"
-                >
-                  <span className="bubble-label">Odpowiedź</span>
-                  Dziękujemy za kontakt — wracamy z odpowiedzią za kilka minut.
-                </motion.div>
-                <p className="chat-note mt-3">Autentyczna rozmowa telefoniczna w ciemnym, eleganckim stylu.</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="chat-device chat-float overflow-hidden rounded-[3rem]"
-            >
-              <div className="chat-header">
-                <div>
-                  <p className="chat-subtitle">iPhone Dark Mode</p>
-                  <p className="chat-title">Konsultacja premium</p>
+                <div className="phone-header">
+                  <div className="phone-avatar">P</div>
+                  <div className="phone-title">
+                    <strong>Prestige Studio</strong>
+                    <span>WhatsApp</span>
+                  </div>
                 </div>
-                <div className="chat-avatar">IO</div>
-              </div>
-              <div className="chat-screen relative">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.7, delay: 0.14 }}
-                  className="chat-bubble bubble-incoming"
-                >
-                  <span className="bubble-label">Klient</span>
-                  Cześć, czy mogę prosić o dostępny termin na konsultację?
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.7, delay: 0.24 }}
-                  className="chat-bubble bubble-outgoing"
-                >
-                  <span className="bubble-label">Odpowiedź</span>
-                  Oczywiście, mamy termin w środę o 17:00. Potwierdzam?
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.7, delay: 0.34 }}
-                  className="chat-bubble bubble-incoming"
-                >
-                  <span className="bubble-label">Klient</span>
-                  Tak, proszę zarezerwować.
-                </motion.div>
-                <p className="chat-note mt-3">Elegancki iPhone dark mode w stylu premium, bez sztucznego efektu.</p>
+                <div className="message-list">
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.12 }}
+                    className="message outgoing"
+                  >
+                    <strong>Przypomnienie</strong>
+                    Przypomnienie o jutrzejszej wizycie o 14:00.
+                    <span className="message-time">14:00</span>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.22 }}
+                    className="message incoming"
+                  >
+                    <strong>Klient</strong>
+                    Czy nadal są Państwo zainteresowani?
+                    <span className="message-time">14:02</span>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.32 }}
+                    className="message outgoing"
+                  >
+                    <strong>Odpowiedź</strong>
+                    Dziękujemy za wiadomość — wracamy z odpowiedzią za kilka minut.
+                    <span className="message-time">14:04</span>
+                  </motion.div>
+                </div>
+                <div className="phone-footer">WhatsApp • iOS Dark</div>
               </div>
             </motion.div>
           </div>
