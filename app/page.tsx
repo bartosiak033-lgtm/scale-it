@@ -155,6 +155,112 @@ export default function Home() {
           box-shadow: 0 0 28px rgba(129, 90, 242, 0.18);
         }
 
+        .chat-device {
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(9, 5, 15, 0.82);
+          box-shadow: 0 42px 120px -90px rgba(0, 0, 0, 0.75);
+          backdrop-filter: blur(20px);
+        }
+
+        .chat-float {
+          animation: float 14s ease-in-out infinite;
+        }
+
+        .chat-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 0.85rem;
+          padding: 1rem 1.25rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(255, 255, 255, 0.035);
+          backdrop-filter: blur(20px);
+        }
+
+        .chat-title {
+          color: #f8fafc;
+          font-size: 0.95rem;
+          font-weight: 700;
+        }
+
+        .chat-subtitle {
+          color: #a1a1aa;
+          font-size: 0.78rem;
+          letter-spacing: 0.11em;
+          text-transform: uppercase;
+        }
+
+        .chat-screen {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          padding: 1.25rem;
+          background: rgba(0, 0, 0, 0.4);
+          border-radius: 2rem;
+          border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .chat-bubble {
+          max-width: 88%;
+          padding: 1rem 1.2rem;
+          border-radius: 1.7rem;
+          line-height: 1.65;
+          font-size: 0.95rem;
+          border: 1px solid rgba(255, 255, 255, 0.06);
+          backdrop-filter: blur(16px);
+          box-shadow: 0 18px 45px -24px rgba(0, 0, 0, 0.55);
+        }
+
+        .bubble-incoming {
+          background: rgba(255, 255, 255, 0.05);
+          color: #f8fafc;
+          align-self: flex-start;
+        }
+
+        .bubble-outgoing {
+          background: rgba(129, 90, 242, 0.16);
+          color: #ffffff;
+          align-self: flex-end;
+          border-color: rgba(129, 90, 242, 0.22);
+        }
+
+        .bubble-label {
+          display: block;
+          margin-bottom: 0.45rem;
+          color: #9ca3af;
+          font-size: 0.75rem;
+          letter-spacing: 0.09em;
+          text-transform: uppercase;
+        }
+
+        .chat-avatar {
+          width: 36px;
+          height: 36px;
+          border-radius: 999px;
+          display: grid;
+          place-items: center;
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #ffffff;
+          background: radial-gradient(circle at top left, rgba(129, 90, 242, 0.34), rgba(20, 20, 30, 0.95));
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .chat-note {
+          color: #a1a1aa;
+          font-size: 0.84rem;
+          letter-spacing: 0.04em;
+        }
+
+        .chat-screen::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 2rem;
+          box-shadow: inset 0 0 70px rgba(129, 90, 242, 0.12);
+          pointer-events: none;
+        }
+
         .animation-delay-200 { animation-delay: 0.2s; }
         .animation-delay-400 { animation-delay: 0.4s; }
         .animation-delay-600 { animation-delay: 0.6s; }
@@ -583,6 +689,156 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </motion.section>
+
+      <motion.section id="conversations" className="relative overflow-hidden py-24 sm:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
+        <div className="absolute inset-x-0 top-0 h-[240px] bg-[radial-gradient(circle_at_top,rgba(129,90,242,0.14),transparent_40%)] blur-3xl opacity-55" />
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">Realistyczne rozmowy</p>
+            <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Prawdziwe konwersacje klient–firma</h2>
+            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Instagram DM, WhatsApp i iPhone w ciemnym trybie — zaprojektowane jak realne wiadomości premium.</p>
+          </div>
+
+          <div className="grid gap-8 xl:grid-cols-3">
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+              className="chat-device chat-float overflow-hidden rounded-[3rem]"
+            >
+              <div className="chat-header">
+                <div>
+                  <p className="chat-subtitle">Instagram DM</p>
+                  <p className="chat-title">@sfera.beauty</p>
+                </div>
+                <div className="chat-avatar">SB</div>
+              </div>
+              <div className="chat-screen relative">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, delay: 0.1 }}
+                  className="chat-bubble bubble-incoming"
+                >
+                  <span className="bubble-label">Klient</span>
+                  Hej 👋 widziałam efekty na stories, jaki jest najbliższy termin?
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  className="chat-bubble bubble-outgoing"
+                >
+                  <span className="bubble-label">Odpowiedź</span>
+                  Dzień dobry ✨ Najbliższy wolny termin mamy jutro o 16:30.
+                </motion.div>
+                <p className="chat-note mt-3">Realistyczny komunikator biznesowy w Instagramowym stylu.</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.05 }}
+              className="chat-device chat-float overflow-hidden rounded-[3rem]"
+            >
+              <div className="chat-header">
+                <div>
+                  <p className="chat-subtitle">WhatsApp</p>
+                  <p className="chat-title">Biuro Prestige</p>
+                </div>
+                <div className="chat-avatar">BP</div>
+              </div>
+              <div className="chat-screen relative">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, delay: 0.12 }}
+                  className="chat-bubble bubble-outgoing"
+                >
+                  <span className="bubble-label">Wiadomość</span>
+                  Przypomnienie o jutrzejszej wizycie o 14:00.
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, delay: 0.22 }}
+                  className="chat-bubble bubble-incoming"
+                >
+                  <span className="bubble-label">Klient</span>
+                  Czy nadal są Państwo zainteresowani konsultacją?
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, delay: 0.32 }}
+                  className="chat-bubble bubble-outgoing"
+                >
+                  <span className="bubble-label">Odpowiedź</span>
+                  Dziękujemy za kontakt — wracamy z odpowiedzią za kilka minut.
+                </motion.div>
+                <p className="chat-note mt-3">Autentyczna rozmowa telefoniczna w ciemnym, eleganckim stylu.</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="chat-device chat-float overflow-hidden rounded-[3rem]"
+            >
+              <div className="chat-header">
+                <div>
+                  <p className="chat-subtitle">iPhone Dark Mode</p>
+                  <p className="chat-title">Konsultacja premium</p>
+                </div>
+                <div className="chat-avatar">IO</div>
+              </div>
+              <div className="chat-screen relative">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, delay: 0.14 }}
+                  className="chat-bubble bubble-incoming"
+                >
+                  <span className="bubble-label">Klient</span>
+                  Cześć, czy mogę prosić o dostępny termin na konsultację?
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, delay: 0.24 }}
+                  className="chat-bubble bubble-outgoing"
+                >
+                  <span className="bubble-label">Odpowiedź</span>
+                  Oczywiście, mamy termin w środę o 17:00. Potwierdzam?
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.7, delay: 0.34 }}
+                  className="chat-bubble bubble-incoming"
+                >
+                  <span className="bubble-label">Klient</span>
+                  Tak, proszę zarezerwować.
+                </motion.div>
+                <p className="chat-note mt-3">Elegancki iPhone dark mode w stylu premium, bez sztucznego efektu.</p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 
