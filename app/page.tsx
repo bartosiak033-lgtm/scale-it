@@ -199,7 +199,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <motion.section id="hero" className="relative overflow-hidden pt-28 pb-24 sm:pt-32 sm:pb-36" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
+      <motion.section id="hero" className="relative overflow-hidden pt-28 pb-32 sm:pt-32 sm:pb-40 lg:pb-44" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
         <div className="absolute inset-0 -z-10">
           <div className="absolute left-[6%] top-[12%] h-[420px] w-[420px] rounded-full bg-violet-500/16 blur-3xl opacity-80" />
           <div className="absolute right-[4%] bottom-[10%] h-[520px] w-[520px] rounded-full bg-cyan-300/12 blur-3xl opacity-75" />
@@ -208,7 +208,7 @@ export default function Home() {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid gap-16 lg:grid-cols-[0.96fr_1.04fr] items-center">
+          <div className="grid gap-20 lg:grid-cols-[0.96fr_1.04fr] items-start">
             <motion.div
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
@@ -220,7 +220,7 @@ export default function Home() {
                 Więcej rezerwacji.<br />
                 Mniej chaosu.
               </h1>
-              <p className="mt-8 max-w-xl text-lg sm:text-xl leading-9 text-neutral-300">
+              <p className="mt-10 max-w-xl text-lg sm:text-xl leading-9 text-neutral-300">
                 Nowoczesny standard kontaktu dla klinik premium.
               </p>
               <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -240,7 +240,7 @@ export default function Home() {
                 </motion.a>
               </div>
 
-              <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {[
                   { title: 'Więcej rezerwacji', subtitle: 'Mniej pustych terminów.' },
                   { title: 'Automatyczny przepływ', subtitle: 'Bez zbędnych interwencji.' },
