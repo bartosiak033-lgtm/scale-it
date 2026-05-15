@@ -587,28 +587,31 @@ export default function Home() {
       </motion.section>
 
       <motion.section id="communicate" className="relative overflow-hidden py-24 sm:py-28 lg:py-32" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.18 }} variants={sectionFade}>
-        <div className="absolute inset-x-0 top-0 h-[240px] bg-[radial-gradient(circle_at_top,rgba(129,90,242,0.14),transparent_40%)] blur-3xl opacity-55" />
-        <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
+        <div className="absolute inset-x-0 top-0 h-[280px] pointer-events-none">
+          <div className="absolute inset-x-0 top-1/2 mx-auto h-[420px] max-w-[1400px] rounded-full bg-[radial-gradient(circle_at_center,rgba(129,90,242,0.16),transparent_70%)]" />
+        </div>
+
+        <div className="relative max-w-[1400px] mx-auto px-6 sm:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-xs uppercase tracking-[0.35em] text-neutral-500 font-semibold">KOMUNIKACJA, KTÓRA SPRZEDAJE</p>
             <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight text-white">Instagram. WhatsApp. Kontakt bez chaosu.</h2>
-            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Dwa realistyczne iPhone mockupy w dark mode, prezentujące realną komunikację premium.</p>
+            <p className="mt-6 text-lg text-neutral-400 max-w-2xl mx-auto">Minimalny premium showcase, z pełnym naciskiem na gotowy asset i cinematic rozmowę.</p>
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.85, ease: 'easeOut' }}
-            className="relative mx-auto max-w-[1200px]"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 14, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror' }}
+            className="relative mx-auto overflow-visible"
           >
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(129,90,242,0.08),transparent_80%)]" />
             <Image
-              src="/communication-showcase.svg"
-              alt="Realistyczne iPhone mockupy komunikacji Instagram i WhatsApp"
-              width={1200}
-              height={700}
-              className="w-full h-auto rounded-[3rem] shadow-[0_60px_140px_-70px_rgba(0,0,0,0.7)]"
+              src="/communication-showcase.png"
+              alt="Premiunowy showcase komunikacji Instagram i WhatsApp"
+              width={1535}
+              height={1024}
+              className="w-full h-auto shadow-[0_60px_140px_-70px_rgba(0,0,0,0.55)]"
             />
           </motion.div>
         </div>
