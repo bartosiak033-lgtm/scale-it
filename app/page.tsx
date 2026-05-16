@@ -539,15 +539,31 @@ export default function Home() {
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 18, ease: 'easeInOut', repeat: Infinity, repeatType: 'mirror' }}
-              className="relative"
+              className="relative overflow-visible"
             >
               <Image
                 src="/communication-showcase.png"
                 alt="Premium showcase komunikacji Instagram i WhatsApp"
                 width={1535}
                 height={1024}
-                className="w-full h-auto"
+                className="w-full h-auto relative z-10"
               />
+
+              <div className="absolute left-[6%] top-[10%] h-[78%] w-[42%] overflow-hidden rounded-[2.5rem] group cursor-pointer">
+                <div
+                  className="absolute inset-0 transition-transform duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:scale-[1.055] group-hover:shadow-[0_0_32px_rgba(255,255,255,0.14)] bg-no-repeat bg-[length:100%_auto] bg-left-top"
+                  style={{ backgroundImage: 'url(/communication-showcase.png)' }}
+                />
+                <span className="sr-only">Lewy telefon</span>
+              </div>
+
+              <div className="absolute right-[6%] top-[10%] h-[78%] w-[42%] overflow-hidden rounded-[2.5rem] group cursor-pointer">
+                <div
+                  className="absolute inset-0 transition-transform duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:scale-[1.055] group-hover:shadow-[0_0_32px_rgba(255,255,255,0.14)] bg-no-repeat bg-[length:100%_auto] bg-right-top"
+                  style={{ backgroundImage: 'url(/communication-showcase.png)' }}
+                />
+                <span className="sr-only">Prawy telefon</span>
+              </div>
             </motion.div>
           </motion.div>
         </div>
