@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { Phone, Clock, TrendingUp, Calendar, MessageCircle, Instagram, RefreshCcw, Globe, BarChart3, Database, Sparkles, CheckCircle } from 'lucide-react';
 
 const sectionFade = {
   hidden: { opacity: 0, y: 28 },
@@ -409,9 +410,9 @@ export default function Home() {
               className="mt-16 grid gap-8 md:grid-cols-3"
             >
               {[
-                { icon: 'âšˇ', title: 'Kontakt od razu', desc: 'Każde zapytanie otrzymuje uwagę niemal natychmiast.' },
-                { icon: 'đź‘ď¸Ź', title: 'Przejrzysty dzień', desc: 'Cały harmonogram i rozmowy w jednym widoku.' },
-                { icon: 'đźŽŻ', title: 'Większa konwersja', desc: 'Mniej porzuconych zapytań, więcej umówionych spotkań.' }
+                { icon: Phone, title: 'Kontakt od razu', desc: 'Każde zapytanie otrzymuje uwagę niemal natychmiast.' },
+                { icon: Clock, title: 'Przejrzysty dzień', desc: 'Cały harmonogram i rozmowy w jednym widoku.' },
+                { icon: TrendingUp, title: 'Większa konwersja', desc: 'Mniej porzuconych zapytań, więcej umówionych spotkań.' }
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -421,7 +422,9 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.5 + idx * 0.08 }}
                   className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 backdrop-blur-xl"
                 >
-                  <p className="text-3xl mb-4">{item.icon}</p>
+                  <div className="mb-4 grid h-12 w-12 place-items-center rounded-3xl bg-white/10 text-white/90 shadow-[0_0_24px_rgba(255,255,255,0.06)]">
+                    <item.icon className="h-6 w-6" strokeWidth={1.5} />
+                  </div>
                   <h3 className="text-lg font-semibold text-white">{item.title}</h3>
                   <p className="mt-3 text-sm text-neutral-400">{item.desc}</p>
                 </motion.div>
@@ -442,14 +445,14 @@ export default function Home() {
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {[
-              { icon: 'đź“…', title: 'Rezerwacje', desc: 'Terminy i potwierdzenia bez ręcznej pracy.' },
-              { icon: 'đź“¤', title: 'Follow-up', desc: 'Rozmowy pośrodowiska, które podtrzymują relację.' },
-              { icon: 'đź“˛', title: 'Instagram i WhatsApp', desc: 'Wiadomości tam, gdzie klient już jest.' },
-              { icon: 'đź”„', title: 'Odzyskiwanie zapytań', desc: 'Klienci wracają do pozostawionych terminów.' },
-              { icon: 'đźŚ', title: 'Witryna firmy', desc: 'Prestiżowa prezentacja, która wzmacnia markę.' },
-              { icon: 'đź“', title: 'Wyniki w skrócie', desc: 'Najważniejsze dane podane w klarowny sposób.' },
-              { icon: 'đź“„', title: 'Porądek w danych', desc: 'Klienci, terminy i preferencje w jednym miejscu.' },
-              { icon: 'đź¤ť', title: 'Obsługa premium', desc: 'Każdy kontakt prowadzimy z taktem i elegancją.' }
+              { icon: Calendar, title: 'Rezerwacje', desc: 'Terminy i potwierdzenia bez ręcznej pracy.' },
+              { icon: MessageCircle, title: 'Follow-up', desc: 'Rozmowy pośrodowiska, które podtrzymują relację.' },
+              { icon: Instagram, title: 'Instagram i WhatsApp', desc: 'Wiadomości tam, gdzie klient już jest.' },
+              { icon: RefreshCcw, title: 'Odzyskiwanie zapytań', desc: 'Klienci wracają do pozostawionych terminów.' },
+              { icon: Globe, title: 'Witryna firmy', desc: 'Prestiżowa prezentacja, która wzmacnia markę.' },
+              { icon: BarChart3, title: 'Wyniki w skrócie', desc: 'Najważniejsze dane podane w klarowny sposób.' },
+              { icon: Database, title: 'Porządek w danych', desc: 'Klienci, terminy i preferencje w jednym miejscu.' },
+              { icon: Sparkles, title: 'Obsługa premium', desc: 'Każdy kontakt prowadzimy z taktem i elegancją.' }
             ].map((service, idx) => (
               <motion.div
                 key={idx}
@@ -462,7 +465,9 @@ export default function Home() {
               >
                 <div className="absolute -inset-0.5 rounded-[2rem] bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 transition duration-500 group-hover:opacity-100" />
                 <div className="relative space-y-5">
-                  <div className="grid h-12 w-12 place-items-center rounded-3xl bg-white/10 text-2xl">{service.icon}</div>
+                  <div className="grid h-12 w-12 place-items-center rounded-3xl bg-white/10 text-white/90 shadow-[0_0_28px_rgba(255,255,255,0.06)]">
+                    <service.icon className="h-6 w-6" strokeWidth={1.5} />
+                  </div>
                   <div>
                     <h3 className="text-lg font-semibold text-white">{service.title}</h3>
                     <p className="mt-3 text-sm text-neutral-400 leading-relaxed">{service.desc}</p>
@@ -606,7 +611,7 @@ export default function Home() {
                 {submitSuccess && (
                   <div className="rounded-3xl border border-green-500/20 bg-green-500/10 p-6">
                     <div className="flex items-center gap-3 text-green-200">
-                      <span className="text-2xl">âś“</span>
+                      <CheckCircle className="h-6 w-6" strokeWidth={1.5} />
                       <div>
                         <p className="font-semibold">Wiadomość wysłana!</p>
                         <p className="text-sm text-green-300/80">Odezwemy się w ciągu 24 godzin.</p>
