@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState, ChangeEvent, FormEvent } from 'react';
-import { Phone, Clock, TrendingUp, Calendar, MessageCircle, Instagram, RefreshCcw, Globe, BarChart3, Database, Sparkles, CheckCircle } from 'lucide-react';
+import { Phone, Clock, TrendingUp, Calendar, MessageCircle, Camera, RefreshCcw, Globe, BarChart3, Database, Sparkles, CheckCircle } from 'lucide-react';
 
 const sectionFade = {
   hidden: { opacity: 0, y: 28 },
@@ -447,7 +447,7 @@ export default function Home() {
             {[
               { icon: Calendar, title: 'Rezerwacje', desc: 'Terminy i potwierdzenia bez ręcznej pracy.' },
               { icon: MessageCircle, title: 'Follow-up', desc: 'Rozmowy pośrodowiska, które podtrzymują relację.' },
-              { icon: Instagram, title: 'Instagram i WhatsApp', desc: 'Wiadomości tam, gdzie klient już jest.' },
+              { icon: Camera, title: 'Instagram i WhatsApp', desc: 'Wiadomości tam, gdzie klient już jest.' },
               { icon: RefreshCcw, title: 'Odzyskiwanie zapytań', desc: 'Klienci wracają do pozostawionych terminów.' },
               { icon: Globe, title: 'Witryna firmy', desc: 'Prestiżowa prezentacja, która wzmacnia markę.' },
               { icon: BarChart3, title: 'Wyniki w skrócie', desc: 'Najważniejsze dane podane w klarowny sposób.' },
