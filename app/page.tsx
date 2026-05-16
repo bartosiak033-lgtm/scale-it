@@ -8,6 +8,7 @@ export default function Page() {
   const [counter, setCounter] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const statRef = useRef<HTMLSpanElement | null>(null);
   const revealRefs = useRef<HTMLElement[]>([]);
 
@@ -85,16 +86,30 @@ export default function Page() {
 
   const closeMenu = () => setMenuOpen(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitting(true);
-    const form = e.target as HTMLFormElement;
-    setTimeout(() => {
+    setSubmitError(null);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://formspree.io/f/maqvgypg', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        form.reset();
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setSubmitError('Wysyłka nie powiodła się. Napisz bezpośrednio na scaleit.space@gmail.com.');
+      }
+    } catch {
+      setSubmitError('Problem z połączeniem. Sprawdź internet i spróbuj ponownie.');
+    } finally {
       setSubmitting(false);
-      setSubmitted(true);
-      form.reset();
-      setTimeout(() => setSubmitted(false), 3000);
-    }, 900);
+    }
   };
 
   return (
@@ -477,6 +492,7 @@ export default function Page() {
                 ? <>Wysyłam... <span className="arrow">→</span></>
                 : <>Zarezerwuj demo <span className="arrow">→</span></>}
             </button>
+            {submitError && <p className="form-error">{submitError}</p>}
             <p className="form-note">
               Klikając przycisk akceptujesz politykę prywatności. Odezwiemy się w ciągu 24h roboczych.
             </p>

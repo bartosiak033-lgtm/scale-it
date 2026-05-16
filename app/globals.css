@@ -457,6 +457,17 @@ img { max-width: 100%; display: block; }
 }
 .contact-form button { grid-column: 1 / -1; margin-top: 8px; }
 .form-note { grid-column: 1 / -1; font-size: 12px; color: var(--text-dim); margin: 0; text-align: center; }
+.form-error {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 0;
+  text-align: center;
+}
 
 /* FOOTER */
 .site-footer {
