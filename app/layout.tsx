@@ -9,14 +9,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SCALE IT — AI receptionist dla klinik medycyny estetycznej",
+  title: "SCALE IT — Cała obsługa klienta. Na autopilocie.",
   description:
-    "AI po polsku odbiera nieodebrane połączenia, odpowiada na DM-y 24/7 i automatyzuje obsługę klienta. Działa z Booksy, Versum, Instagram i WhatsApp.",
+    "Kompleksowy system, który spina wszystkie aplikacje Twojego biznesu — Booksy, Versum, Instagram, WhatsApp, kalendarz, płatności — i automatyzuje obsługę klienta.",
   metadataBase: new URL("https://scaleit.space"),
   openGraph: {
-    title: "SCALE IT — AI receptionist dla klinik medycyny estetycznej",
+    title: "SCALE IT — Cała obsługa klienta. Na autopilocie.",
     description:
-      "Ani jeden zgubiony pacjent. AI odbiera telefony 24/7, odpowiada na DM-y w 5 sekund i książkuje wizyty bezpośrednio w Booksy/Versum.",
+      "Wszystkie narzędzia i kanały komunikacji w jednym systemie. Automatyzacje, AI, CRM i analityka — pełna kontrola nad biznesem z jednego panelu.",
     url: "https://scaleit.space",
     siteName: "SCALE IT",
     locale: "pl_PL",
