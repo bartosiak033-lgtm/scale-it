@@ -20,11 +20,11 @@ export default function Page() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Animated counter (37%) when hero stat enters view
+  // Animated counter (100%) when hero stat enters view
   useEffect(() => {
     const el = statRef.current;
     if (!el) return;
-    const target = 37;
+    const target = 100;
     const duration = 1400;
     let raf = 0;
     let started = false;
@@ -147,7 +147,7 @@ export default function Page() {
           </nav>
 
           <a href="#kontakt" className="btn btn-pill btn-outline">
-            Zarezerwuj demo <span className="arrow">→</span>
+            Early access <span className="arrow">→</span>
           </a>
 
           <button
@@ -165,19 +165,20 @@ export default function Page() {
         <div className="hero-bg" />
         <div className="container hero-grid">
           <div className="hero-text">
-            <span className="badge">DLA USŁUG PREMIUM</span>
+            <span className="badge">DLA KLINIK MEDYCYNY ESTETYCZNEJ</span>
             <h1>
-              Więcej rezerwacji.<br />
-              <span className="dim">Mniej straconych</span><br />
-              <span className="dim">możliwości.</span>
+              Ani jeden<br />
+              <span className="dim">zgubiony</span><br />
+              <span className="dim">pacjent.</span>
             </h1>
             <p className="lead">
-              Zaprojektowane, aby zwiększać efektywność Twojego biznesu
-              i zapewniać doświadczenie na najwyższym poziomie.
+              AI receptionist po polsku, który odbiera telefony 24/7,
+              odpowiada na Instagram i WhatsApp w 5 sekund, i automatyzuje
+              całą obsługę klienta. Działa z Booksy, Versum i Twoim kalendarzem.
             </p>
             <div className="hero-cta">
               <a href="#kontakt" className="btn btn-pill btn-light">
-                Zarezerwuj demo <span className="arrow">→</span>
+                Dołącz do early access <span className="arrow">→</span>
               </a>
               <a href="#jak-to-dziala" className="btn btn-ghost">
                 Zobacz jak to działa
@@ -187,15 +188,15 @@ export default function Page() {
           </div>
 
           <div className="hero-stat">
-            <span className="stat-label">WIĘCEJ REZERWACJI</span>
+            <span className="stat-label">ODEBRANYCH POŁĄCZEŃ</span>
             <span className="stat-number" ref={statRef}>
               {counter}
               <span className="pct">%</span>
             </span>
             <span className="stat-sub">
-              ŚREDNIO WIĘCEJ
+              TAKŻE O 23:00
               <br />
-              KONWERSJI
+              I W WEEKEND
             </span>
           </div>
         </div>
@@ -203,24 +204,24 @@ export default function Page() {
         <div className="container hero-features">
           <HFItem icon={
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="1.8">
-              <circle cx="12" cy="12" r="10" /><path d="m8 12 3 3 5-6" />
+              <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/>
             </svg>
-          } title="Więcej rezerwacji" desc="Bez dodatkowych działań." />
+          } title="Łapie nieodebrane" desc="AI oddzwania w 5 sekund." />
           <HFItem icon={
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="1.8">
-              <circle cx="12" cy="12" r="10" /><path d="M12 7v5l3 2" />
+              <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/>
             </svg>
-          } title="Pełna automatyzacja" desc="Oszczędność czasu i zasobów." />
+          } title="Odpowiada na DM-y" desc="Instagram + WhatsApp 24/7." />
           <HFItem icon={
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="1.8">
-              <path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4Z" />
+              <path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 1 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/>
             </svg>
-          } title="Prestiż i doświadczenie" desc="Obsługa na poziomie premium." />
+          } title="Łączy Twój stack" desc="Booksy, Versum, Google Cal." />
           <HFItem icon={
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="1.8">
               <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
             </svg>
-          } title="Mierzalne efekty" desc="Wyniki, które robią różnicę." />
+          } title="Mierzy każdy lead" desc="Skąd, ile, kiedy, dlaczego." />
         </div>
       </section>
 
@@ -230,12 +231,12 @@ export default function Page() {
           <div className="section-head" ref={addReveal}>
             <span className="eyebrow">FUNKCJE</span>
             <h2>
-              Wszystko, czego potrzebujesz
-              <br />w jednym miejscu.
+              Cały stack obsługi klienta.
+              <br />W jednym miejscu.
             </h2>
             <p className="section-sub">
-              Zaprojektowane dla zespołów, które nie chcą tracić czasu na ręczne procesy
-              i dla klientów, którzy oczekują obsługi premium.
+              Klinika ma już Booksy, Instagram, WhatsApp, telefon. SCALE IT spina to wszystko
+              i przejmuje pracę, której zespół nie nadąża wykonywać sam.
             </p>
           </div>
 
@@ -243,18 +244,20 @@ export default function Page() {
             <article className="feature-card feature-big" ref={addReveal}>
               <div className="fc-icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <rect x="3" y="5" width="18" height="16" rx="2" />
-                  <path d="M16 3v4M8 3v4M3 10h18" />
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3Z"/>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
                 </svg>
               </div>
-              <h3>Inteligentny kalendarz rezerwacji</h3>
+              <h3>AI receptionist po polsku</h3>
               <p>
-                Klient sam wybiera termin 24/7. System dobiera optymalne sloty i unika luk w grafiku — tak, by każda godzina była zarezerwowana.
+                Pacjent dzwoni → 5 sekund później AI oddzwania. Rozmawia po polsku, rozpoznaje
+                cel rozmowy, sprawdza dostępność w Twoim kalendarzu, ksiegowuje wizytę i wysyła
+                SMS z potwierdzeniem. Działa 24/7, bez przerwy obiadowej.
               </p>
               <ul className="feature-list">
-                <li>Synchronizacja Google / Outlook / iCal</li>
-                <li>Automatyczne przesuwanie terminów</li>
-                <li>Multi-lokalizacja i multi-team</li>
+                <li>Natywny polski głos i rozumienie kontekstu kliniki</li>
+                <li>Książkowanie do Booksy / Versum / Google Calendar</li>
+                <li>Automatyczne SMS-y potwierdzenia + przypomnienia</li>
               </ul>
             </article>
 
@@ -262,31 +265,41 @@ export default function Page() {
               addReveal={addReveal}
               icon={
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z" />
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z"/>
                 </svg>
               }
-              title="Automatyczna komunikacja"
-              desc="SMS, e-mail, WhatsApp — w jednym przepływie. Przypomnienia, potwierdzenia i follow-up bez angażowania zespołu."
+              title="Unified inbox"
+              desc="Instagram DM, WhatsApp, formularze ze strony, telefon — wszystkie kanały w jednej kolejce. Zespół (albo AI) odpowiada z jednego miejsca."
             />
             <FCard
               addReveal={addReveal}
               icon={
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <path d="M12 2v20M2 12h20" />
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
                 </svg>
               }
-              title="CRM klienta premium"
-              desc="Pełna historia wizyt, preferencji i wydatków. Twój zespół zna klienta zanim podniesie słuchawkę."
+              title="AI auto-reply 24/7"
+              desc="Pytanie o cennik o 22:30? AI odpowiada w 5 sekund, kwalifikuje leada, proponuje termin. Klient nie zdąży sprawdzić konkurencji."
             />
             <FCard
               addReveal={addReveal}
               icon={
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <path d="M12 1v6M12 17v6M4.2 4.2l4.3 4.3M15.5 15.5l4.3 4.3M1 12h6M17 12h6M4.2 19.8l4.3-4.3M15.5 8.5l4.3-4.3" />
+                  <path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 1 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/>
                 </svg>
               }
-              title="Płatności online"
-              desc="Zintegrowane płatności — Stripe, BLIK, karty. Klient płaci wygodnie, Ty masz przychód bez czekania."
+              title="Integracje z Twoim stackiem"
+              desc="Booksy, Versum, Google Calendar, Stripe — łączy się z tym, co już używasz. Nic nie zmieniasz, dodajesz tylko warstwę nad."
+            />
+            <FCard
+              addReveal={addReveal}
+              icon={
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M3 12a9 9 0 1 0 9-9M21 3v6h-6"/>
+                </svg>
+              }
+              title="Follow-up i cross-sell"
+              desc="Po wizycie auto-podziękowanie + przypomnienie o kontynuacji za 4-6 tygodni. System pamięta historię klienta i proponuje sensowne następne zabiegi."
             />
             <FCard
               addReveal={addReveal}
@@ -295,18 +308,8 @@ export default function Page() {
                   <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
                 </svg>
               }
-              title="Analityka i raporty"
-              desc="Widzisz wszystko: konwersję, źródła ruchu, lojalność, LTV. Decyzje oparte na danych, nie intuicji."
-            />
-            <FCard
-              addReveal={addReveal}
-              icon={
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <circle cx="12" cy="12" r="10" /><path d="m4.93 4.93 14.14 14.14" />
-                </svg>
-              }
-              title="Integracje"
-              desc="Łączy się z tym, czego już używasz: Google, Meta, Stripe, Twilio, Slack i ponad 200 innymi narzędziami."
+              title="Konwersja end-to-end"
+              desc="Każdy lead od pierwszego kontaktu do zapłaty. Ile zgubionych połączeń odzyskało AI, z którego kanału przychodzą najlepsi klienci, gdzie pęka lejek."
             />
           </div>
         </div>
@@ -317,19 +320,19 @@ export default function Page() {
         <div className="container">
           <div className="section-head" ref={addReveal}>
             <span className="eyebrow">KORZYŚCI</span>
-            <h2>Liczby, które mówią same za siebie.</h2>
+            <h2>Liczby, które realnie zmieniają operacje.</h2>
             <p className="section-sub">
-              Wyniki obserwowane u klientów wdrażających SCALE IT w pierwszych 90 dniach.
+              Oczekiwane wyniki dla klinik wdrażających SCALE IT w pierwszych 90 dniach.
             </p>
           </div>
 
           <div className="benefits-grid">
-            <BTile addReveal={addReveal} stat="+37%" title="Więcej rezerwacji" desc="Klienci rezerwują, gdy są gotowi — także w nocy i w weekendy." />
-            <BTile addReveal={addReveal} stat="−68%" title="Mniej no-show" desc="Automatyczne przypomnienia w wielu kanałach skutecznie redukują nieobecności." />
-            <BTile addReveal={addReveal} stat="12h" title="Oszczędzonych co tydzień" desc="Zespół przestaje grzęznąć w telefonach, mailach i Excelu." />
-            <BTile addReveal={addReveal} stat="4.9★" title="Średnia ocen klientów" desc="Premium doświadczenie od pierwszego kontaktu po follow-up." />
-            <BTile addReveal={addReveal} stat="×2.4" title="Wyższy LTV klienta" desc="Powracające wizyty i programy lojalnościowe działają w tle." />
-            <BTile addReveal={addReveal} stat="90d" title="Do pełnego zwrotu" desc="Typowy czas, w którym SCALE IT zwraca koszt wdrożenia." />
+            <BTile addReveal={addReveal} stat="100%" title="Odebranych połączeń" desc="Także w nocy, weekendy, podczas zabiegów. AI nie idzie na obiad." />
+            <BTile addReveal={addReveal} stat="<5s" title="Średnia reakcja AI" desc="Klient nie zdąży się rozmyślić — już ma odpowiedź na telefonie albo w DM." />
+            <BTile addReveal={addReveal} stat="+37%" title="Więcej rezerwacji" desc="Odzyskane nieodebrane połączenia + błyskawiczne DM-y dają wymierny wzrost." />
+            <BTile addReveal={addReveal} stat="−68%" title="Mniej zgubionych leadów" desc="Każdy, kto się odezwał, dostaje odpowiedź. Nawet o 2 w nocy." />
+            <BTile addReveal={addReveal} stat="12h" title="Oszczędność co tydzień" desc="Zespół przestaje grzęznąć w powtarzalnych telefonach i DM-ach." />
+            <BTile addReveal={addReveal} stat="3 mies." title="Do pełnego zwrotu" desc="Typowy czas, w którym SCALE IT zwraca koszt wdrożenia w odzyskanych pacjentach." />
           </div>
         </div>
       </section>
@@ -340,16 +343,16 @@ export default function Page() {
           <div className="section-head" ref={addReveal}>
             <span className="eyebrow">JAK TO DZIAŁA</span>
             <h2>
-              Od pierwszej rozmowy
-              <br />do pełnego wdrożenia — w 14 dni.
+              Od pierwszego telefonu
+              <br />do pełnej automatyzacji — w 14 dni.
             </h2>
           </div>
 
           <div className="steps">
-            <Step addReveal={addReveal} num="01" title="Audyt i strategia" desc="Analizujemy Twój obecny proces rezerwacji, źródła klientów i wąskie gardła. Przygotowujemy plan wdrożenia szyty na miarę." />
-            <Step addReveal={addReveal} num="02" title="Konfiguracja i integracje" desc="Łączymy SCALE IT z Twoimi narzędziami — kalendarzami, płatnościami, kanałami komunikacji. Ty nie robisz nic." />
-            <Step addReveal={addReveal} num="03" title="Szkolenie zespołu" desc="Krótki onboarding online + dokumentacja. Twój zespół jest gotowy w jeden dzień, nie miesiąc." />
-            <Step addReveal={addReveal} num="04" title="Start i optymalizacja" desc="Uruchamiamy system i monitorujemy wyniki. Co miesiąc dostajesz raport z rekomendacjami optymalizacji." />
+            <Step addReveal={addReveal} num="01" title="Audyt obecnego stacku" desc="Mapujemy wszystkie kanały, którymi klient się odzywa (telefon, IG, WhatsApp, mail), źródła ruchu i nieodebrane okazje. Plan z konkretną listą dziur do zalatania." />
+            <Step addReveal={addReveal} num="02" title="Trening AI" desc="Uczymy AI receptionist Twojej oferty cenowej, języka zespołu, preferencji klientów. AI brzmi jak Twoja klinika, nie jak generyczny bot." />
+            <Step addReveal={addReveal} num="03" title="Podpięcie integracji" desc="Łączymy SCALE IT z Booksy/Versum przez Google Calendar, IG i WhatsApp przez Meta API, Twój numer przez Twilio. Ty wysyłasz dostępy, my robimy resztę." />
+            <Step addReveal={addReveal} num="04" title="Start + ciągłe uczenie" desc="AI idzie live. Pierwszy tydzień monitorujemy razem, każdy edge case poprawiamy. System uczy się specyfiki Twojej kliniki przez 30 dni." />
           </div>
         </div>
       </section>
@@ -359,24 +362,24 @@ export default function Page() {
         <div className="container">
           <div className="section-head" ref={addReveal}>
             <span className="eyebrow">CENNIK</span>
-            <h2>Jasno. Bez ukrytych kosztów.</h2>
+            <h2>Plan dopasowany do skali Twojej kliniki.</h2>
             <p className="section-sub">
-              Wybierz plan dopasowany do skali Twojego biznesu. Możesz zmienić go w dowolnym momencie.
+              Płacisz za realny wolumen — minuty AI, kanały, integracje. Roczna płatność z góry: 10% off.
             </p>
           </div>
 
           <div className="pricing-grid">
             <div className="price-card" ref={addReveal}>
               <span className="price-name">Starter</span>
-              <p className="price-desc">Dla małych zespołów rozpoczynających digitalizację.</p>
+              <p className="price-desc">Dla małych klinik testujących AI obsługę.</p>
               <div className="price">
                 <span className="amount">499</span>
                 <span className="currency">zł / mies.</span>
               </div>
               <ul className="price-features">
-                <li>Do 2 użytkowników</li>
-                <li>Inteligentny kalendarz</li>
-                <li>SMS + e-mail (do 500/mies.)</li>
+                <li>Do 500 minut AI / mies.</li>
+                <li>1 kanał: telefon LUB Instagram</li>
+                <li>Google Calendar integracja</li>
                 <li>Podstawowe raporty</li>
                 <li>Wsparcie e-mail</li>
               </ul>
@@ -388,16 +391,16 @@ export default function Page() {
             <div className="price-card price-card-featured" ref={addReveal}>
               <span className="ribbon">Najczęściej wybierane</span>
               <span className="price-name">Premium</span>
-              <p className="price-desc">Dla rozwijających się biznesów premium.</p>
+              <p className="price-desc">Dla aktywnych klinik z multi-kanałem.</p>
               <div className="price">
                 <span className="amount">1 299</span>
                 <span className="currency">zł / mies.</span>
               </div>
               <ul className="price-features">
-                <li>Do 10 użytkowników</li>
-                <li>Wszystko ze Starter</li>
-                <li>WhatsApp + płatności online</li>
-                <li>CRM klienta + segmenty</li>
+                <li>Do 2 000 minut AI / mies.</li>
+                <li>Wszystkie kanały: telefon + IG + WhatsApp</li>
+                <li>Booksy / Versum integracja</li>
+                <li>Smart follow-up + cross-sell</li>
                 <li>Zaawansowana analityka</li>
                 <li>Wsparcie priorytetowe 7 dni</li>
               </ul>
@@ -408,14 +411,14 @@ export default function Page() {
 
             <div className="price-card" ref={addReveal}>
               <span className="price-name">Enterprise</span>
-              <p className="price-desc">Dla sieci lokalizacji i zespołów premium.</p>
+              <p className="price-desc">Dla sieci klinik i dużego wolumenu.</p>
               <div className="price">
                 <span className="amount">Indywidualnie</span>
               </div>
               <ul className="price-features">
-                <li>Bez limitu użytkowników</li>
-                <li>Wszystko z Premium</li>
+                <li>Bez limitu minut AI</li>
                 <li>Multi-lokalizacja</li>
+                <li>Własny głos AI (klonowany)</li>
                 <li>Dedykowany opiekun</li>
                 <li>SLA 99.9%</li>
                 <li>Integracje na zamówienie</li>
@@ -434,17 +437,18 @@ export default function Page() {
           <div className="contact-text" ref={addReveal}>
             <span className="eyebrow">KONTAKT</span>
             <h2>
-              Zarezerwuj demo
-              <br />i zobacz różnicę
+              Dołącz do early access
+              <br />i zobacz prototyp
               <br />w 20 minut.
             </h2>
             <p className="section-sub">
-              Pokażemy Ci SCALE IT na Twoim realnym przypadku — bez prezentacji w PowerPoincie, bez zobowiązań.
+              SCALE IT jest w fazie pre-launch. Pierwsze 5 klinik wchodzi do programu pilotażowego
+              z 50% rabatem przez 6 miesięcy w zamian za feedback i case study.
             </p>
             <ul className="contact-points">
-              <li><span className="check">✓</span> Demo 1:1 z konsultantem</li>
-              <li><span className="check">✓</span> Plan wdrożenia w 48h</li>
-              <li><span className="check">✓</span> Wycena Twojego ROI</li>
+              <li><span className="check">✓</span> Demo prototypu 1:1</li>
+              <li><span className="check">✓</span> Dożywotni rabat dla pilotów</li>
+              <li><span className="check">✓</span> Wpływ na to, co budujemy</li>
             </ul>
 
             <div className="contact-direct">
@@ -470,27 +474,27 @@ export default function Page() {
               <input type="text" name="name" required placeholder="Jan Kowalski" />
             </label>
             <label>
-              <span>Firma</span>
-              <input type="text" name="company" placeholder="Twoja firma" />
+              <span>Klinika</span>
+              <input type="text" name="company" placeholder="Nazwa kliniki" />
             </label>
             <label>
               <span>E-mail</span>
-              <input type="email" name="email" required placeholder="jan@firma.pl" />
+              <input type="email" name="email" required placeholder="jan@klinika.pl" />
             </label>
             <label>
               <span>Telefon</span>
               <input type="tel" name="phone" placeholder="+48 ___ ___ ___" />
             </label>
             <label className="full">
-              <span>O czym chciał(a)byś porozmawiać?</span>
-              <textarea name="message" rows={4} placeholder="Krótko opisz swoją sytuację..." />
+              <span>Co Cię najbardziej interesuje?</span>
+              <textarea name="message" rows={4} placeholder="Np. ile tracicie nieodebranych połączeń, jakie kanały używacie, czego brakuje w Booksy..." />
             </label>
             <button type="submit" className="btn btn-pill btn-light w-full" disabled={submitting || submitted}>
               {submitted
                 ? 'Dziękujemy! Odezwiemy się ✓'
                 : submitting
                 ? <>Wysyłam... <span className="arrow">→</span></>
-                : <>Zarezerwuj demo <span className="arrow">→</span></>}
+                : <>Dołącz do early access <span className="arrow">→</span></>}
             </button>
             {submitError && <p className="form-error">{submitError}</p>}
             <p className="form-note">
@@ -516,7 +520,7 @@ export default function Page() {
               </svg>
               <span>SCALE IT<sup>®</sup></span>
             </a>
-            <p>Więcej rezerwacji. Mniej straconych możliwości.</p>
+            <p>AI receptionist dla klinik medycyny estetycznej.</p>
           </div>
 
           <div className="foot-col">
