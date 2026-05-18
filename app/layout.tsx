@@ -9,14 +9,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SCALE IT — Cała obsługa klienta. Na autopilocie.",
+  title: "SCALE IT — Jeden system. Cały biznes.",
   description:
-    "Kompleksowy system, który spina wszystkie aplikacje Twojego biznesu — Booksy, Versum, Instagram, WhatsApp, kalendarz, płatności — i automatyzuje obsługę klienta.",
+    "Łączymy wszystkie aplikacje Twojego biznesu — Booksy, Versum, Instagram, WhatsApp, kalendarz, płatności — w jedną platformę. Pełna kontrola operacyjna z jednego miejsca.",
   metadataBase: new URL("https://scaleit.space"),
   openGraph: {
-    title: "SCALE IT — Cała obsługa klienta. Na autopilocie.",
+    title: "SCALE IT — Jeden system. Cały biznes.",
     description:
-      "Wszystkie narzędzia i kanały komunikacji w jednym systemie. Automatyzacje, AI, CRM i analityka — pełna kontrola nad biznesem z jednego panelu.",
+      "Spinamy wszystkie aplikacje, kanały i procesy Twojego biznesu w jeden system. Pełna kontrola operacyjna z jednego miejsca.",
     url: "https://scaleit.space",
     siteName: "SCALE IT",
     locale: "pl_PL",

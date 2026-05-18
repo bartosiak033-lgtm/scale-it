@@ -166,14 +166,12 @@ export default function Page() {
         <div className="container hero-grid">
           <div className="hero-text">
             <h1>
-              Cała obsługa<br />
-              klienta.<br />
-              <span className="dim">Na autopilocie.</span>
+              Jeden system.<br />
+              <span className="dim">Cały biznes.</span>
             </h1>
             <p className="lead">
-              SCALE IT spina wszystkie aplikacje, z których korzysta Twój biznes —
-              Booksy, Versum, Instagram, WhatsApp, kalendarz, płatności — w jeden system.
-              Automatyzuje powtarzalne procesy. Zostawia Ci pełną kontrolę z jednego miejsca.
+              Łączymy aplikacje, kanały komunikacji i procesy Twojego biznesu w jedną platformę.
+              Mniej skakania między oknami. Więcej czasu na to, co naprawdę napędza wzrost.
             </p>
             <div className="hero-cta">
               <a href="#kontakt" className="btn btn-pill btn-light">
@@ -522,7 +520,7 @@ export default function Page() {
               </svg>
               <span>SCALE IT<sup>®</sup></span>
             </a>
-            <p>Cała obsługa klienta. Na autopilocie.</p>
+            <p>Jeden system. Cały biznes.</p>
           </div>
 
           <div className="foot-col">
